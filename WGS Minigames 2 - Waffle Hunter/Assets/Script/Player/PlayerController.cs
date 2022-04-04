@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Variable")] CharacterController _controller;
+    [Header("Player Variable")] 
+    CharacterController _controller;
     [SerializeField] float playerSpeed = 5f;
     [SerializeField] float rotationSpeed = 10f;
 
-    [Header("Camera Variable")] [SerializeField]
-    Camera followCamera;
+    [Header("Camera Variable")] 
+    [SerializeField] Camera followCamera;
 
-    [Header("Jump Variable")] Vector3 playerVelocity;
+    [Header("Jump Variable")] 
+    Vector3 playerVelocity;
     bool _isGrounded;
     [SerializeField] [Range(0, 1)] float jumpHeight = 1.0f;
     [SerializeField] float gravity = -9.8f;

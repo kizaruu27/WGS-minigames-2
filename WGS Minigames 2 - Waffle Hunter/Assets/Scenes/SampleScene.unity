@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-72050
+  m_Name: pb_Mesh17596
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -313,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382792315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.83, y: -0.002, z: -15.807}
+  m_LocalPosition: {x: -14.52, y: -0.002, z: -15.807}
   m_LocalScale: {x: 1.0732877, y: 1.0732877, z: 1.0732877}
   m_Children:
   - {fileID: 1435767182}
@@ -2070,9 +2070,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0.12
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2162,8 +2162,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.8396226, g: 0.19406372, b: 0.56756926, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2204,7 +2204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5219225, y: -0, z: -0, w: 0.8529929}
-  m_LocalPosition: {x: -7.8899994, y: 9.1, z: -20.32}
+  m_LocalPosition: {x: -14.58, y: 9.1, z: -20.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2306,7 +2306,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-128420
+  m_Name: pb_Mesh17660
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4706,7 +4706,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-8132
+  m_Name: pb_Mesh17584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4870,7 +4870,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-101920
+  m_Name: pb_Mesh17630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

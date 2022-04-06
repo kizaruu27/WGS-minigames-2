@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Waffle
   - Direction
+  - VisibilityItem
   layers:
   - Default
   - TransparentFX

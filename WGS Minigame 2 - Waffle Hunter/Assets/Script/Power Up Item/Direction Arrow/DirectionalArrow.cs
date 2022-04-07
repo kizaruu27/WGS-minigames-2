@@ -11,6 +11,7 @@ public class DirectionalArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         var target = GameObject.FindWithTag(targetTag);
 
 
@@ -18,4 +19,23 @@ public class DirectionalArrow : MonoBehaviour
         targetPosition.y = transform.position.y;
         transform.LookAt(targetPosition);
     }
+
+    // void FindClosest()
+    // {
+    //     float distanceObject = Mathf.Infinity;
+    //     Waffle closestWaffle = null;
+    //     Waffle[] allWaffle = GameObject.FindObjectsOfType<Waffle>();
+
+    //     foreach (Waffle currentWaffle in allWaffle)
+    //     {
+    //         float distanceWaffle = (currentWaffle.transform.position - this.transform.position).sqrMagnitude;
+    //         if (distanceObject < distanceWaffle)
+    //         {
+    //             distanceObject = distanceWaffle;
+    //             closestWaffle = currentWaffle;
+    //         }
+    //     }
+
+    //     transform.LookAt(this.transform.position, closestWaffle.transform.position);
+    // }
 }

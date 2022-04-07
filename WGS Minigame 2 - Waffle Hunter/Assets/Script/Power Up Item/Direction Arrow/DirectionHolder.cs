@@ -10,9 +10,10 @@ public class DirectionHolder : MonoBehaviour
 
     public void ShowDirection()
     {
+
         Direction.SetActive(true);
         Invoke("hidDirection", itemTime);
-        
+
     }
 
     public void hidDirection()

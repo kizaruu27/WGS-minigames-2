@@ -5,12 +5,14 @@ using UnityEngine;
 public class DirectionHolder : MonoBehaviour
 {
     public GameObject Direction;
-    // Start is called before the first frame update
+    public float itemTime;
 
 
     public void ShowDirection()
     {
         Direction.SetActive(true);
+        Invoke("hidDirection", itemTime);
+        
     }
 
     public void hidDirection()

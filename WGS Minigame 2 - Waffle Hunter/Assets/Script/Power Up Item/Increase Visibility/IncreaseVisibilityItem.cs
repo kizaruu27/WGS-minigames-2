@@ -30,7 +30,7 @@ public class IncreaseVisibilityItem : MonoBehaviour
         Invoke("backToDefault", itemTime);
     }
 
-    void backToDefault()
+    public void backToDefault()
     {
         _light.range = defaultLightRange;
         transform.position = new Vector3(transform.position.x, defaultPositionY, transform.position.z);

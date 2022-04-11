@@ -1388,6 +1388,8 @@ GameObject:
   - component: {fileID: 4509563489014113607}
   - component: {fileID: 4509563489014113606}
   - component: {fileID: 3524260023078579933}
+  - component: {fileID: 1176315918767057815}
+  - component: {fileID: 8496227672391369582}
   m_Layer: 0
   m_Name: -----Player
   m_TagString: Untagged
@@ -1438,6 +1440,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {fileID: 6949664829840845837}
   itemTime: 10
+--- !u!114 &1176315918767057815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509563489014113605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0499c56b427b84da57ae9592192265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8496227672391369582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509563489014113605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a38d68bf0a425479e3496752bf9ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemIsActive: 0
+  useItem: 0
 --- !u!1 &4509563489034764209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1852,7 @@ GameObject:
   - component: {fileID: 4509563489369549849}
   - component: {fileID: 6849122171383975600}
   - component: {fileID: 923775901550006872}
+  - component: {fileID: 4964704796740448240}
   m_Layer: 0
   m_Name: Player Controller
   m_TagString: Player
@@ -1978,6 +2007,34 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   targetTag: Direction
+--- !u!114 &4964704796740448240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509563489369550311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088e6c6046d3d2b4681a154ff4e04688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1176315918767057815}
+        m_TargetAssemblyTypeName: DropItemBehaviour, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  targetTag: Player
 --- !u!1 &4509563489377549133
 GameObject:
   m_ObjectHideFlags: 0

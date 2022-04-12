@@ -21,13 +21,11 @@ public class PlayerController : MonoBehaviour
     //Animation variable
     Animator anim;
     bool touchGround;
-    public SpeedUp _speedUp;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-        _speedUp = GetComponent<SpeedUp>();
         followCamera = Camera.main;
     }
 

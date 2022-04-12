@@ -6,15 +6,19 @@ public class SpeedUp : MonoBehaviour
 {
 
     private float speed;
-    // private float normalSpeed = 5f;
+    private float normalSpeed = 5f;
     private float speedBoost = 8.5f;
     private float speedBoostDuration = 5f;
+    private float slowSpeed = 3f;
 
-    PlayerController playerController;
+    public PlayerController playerController;
+    // public SpeedChanger speedChanger;
+
+    // public string namePowerUp;
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         playerController = GetComponent<PlayerController>();
     }
@@ -27,14 +31,35 @@ public class SpeedUp : MonoBehaviour
 
     public void PlusSpeed()
     {
-        StartCoroutine(SpeedBoostCooldown());
+        SpeedChanger Changer = GetComponent<SpeedChanger>();
+
+        if (Changer.namePowerUp == "SpeedUp")
+        {
+
+            StartCoroutine(SpeedBoostCooldown());
+        }
+
+        if (Changer.namePowerUp == "SlowDown")
+        {
+            StartCoroutine(SlowBoostCooldown());
+        }
+        // playerController.playerSpeed *= 1.5f;
+
     }
 
     IEnumerator SpeedBoostCooldown()
     {
-        speed = speedBoost;
+        playerController.playerSpeed = speedBoost;
         yield return new WaitForSeconds(speedBoostDuration);
-        speed = playerController.playerSpeed;
+        playerController.playerSpeed = normalSpeed;
+
+    }
+
+    IEnumerator SlowBoostCooldown()
+    {
+        playerController.playerSpeed = slowSpeed;
+        yield return new WaitForSeconds(speedBoostDuration);
+        playerController.playerSpeed = normalSpeed;
     }
 
 }

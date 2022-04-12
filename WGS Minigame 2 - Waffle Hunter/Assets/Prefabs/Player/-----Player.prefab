@@ -1388,8 +1388,6 @@ GameObject:
   - component: {fileID: 4509563489014113607}
   - component: {fileID: 4509563489014113606}
   - component: {fileID: 3524260023078579933}
-  - component: {fileID: 1176315918767057815}
-  - component: {fileID: 8496227672391369582}
   m_Layer: 0
   m_Name: -----Player
   m_TagString: Untagged
@@ -1440,32 +1438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {fileID: 6949664829840845837}
   itemTime: 10
---- !u!114 &1176315918767057815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4509563489014113605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0499c56b427b84da57ae9592192265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8496227672391369582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4509563489014113605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6a38d68bf0a425479e3496752bf9ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemIsActive: 0
-  useItem: 0
+  isShowing: 0
 --- !u!1 &4509563489034764209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +1995,7 @@ MonoBehaviour:
   onTriggerEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1176315918767057815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DropItemBehaviour, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 1

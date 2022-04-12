@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Variable")] 
+    [Header("Player Variable")]
     CharacterController _controller;
-    [SerializeField] float playerSpeed = 5f;
+    [SerializeField] public float playerSpeed = 5f;
     [SerializeField] float rotationSpeed = 10f;
 
-    [Header("Camera Variable")] 
+    [Header("Camera Variable")]
     Camera followCamera;
 
-    [Header("Jump Variable")] 
+    [Header("Jump Variable")]
     Vector3 playerVelocity;
     bool _isGrounded;
-    [SerializeField] [Range(0, 1)] float jumpHeight = 1.0f;
+    [SerializeField][Range(0, 1)] float jumpHeight = 1.0f;
     [SerializeField] float gravity = -9.8f;
 
     //Animation variable
     Animator anim;
     bool touchGround;
+    public SpeedUp _speedUp;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+        _speedUp = GetComponent<SpeedUp>();
         followCamera = Camera.main;
     }
 

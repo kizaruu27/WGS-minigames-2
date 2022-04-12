@@ -6,17 +6,19 @@ public class DirectionHolder : MonoBehaviour
 {
     public GameObject Direction;
     public float itemTime;
+    public bool isShowing;
 
 
     public void ShowDirection()
     {
-            Direction.SetActive(true);
-            Invoke("hidDirection", itemTime);
+        isShowing = true;
+        Direction.SetActive(true);
+        Invoke("hidDirection", itemTime);
     }
 
     public void hidDirection()
     {
         Direction.SetActive(false);
-
+        isShowing = false;
     }
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class SpeedChanger : MonoBehaviour
 {
-    public string namePowerUp;
+    public string namePowerUp;  
 }

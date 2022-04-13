@@ -11,7 +11,7 @@ public class SpeedUp : MonoBehaviour
     private float speedBoostDuration = 5f;
     private float slowSpeed = 3f;
 
-    public PlayerController playerController;
+    PlayerController playerController;
     // public SpeedChanger speedChanger;
 
     // public string namePowerUp;
@@ -20,7 +20,7 @@ public class SpeedUp : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
+        playerController = GetComponentInChildren<PlayerController>();
     }
 
     // Update is called once per frame

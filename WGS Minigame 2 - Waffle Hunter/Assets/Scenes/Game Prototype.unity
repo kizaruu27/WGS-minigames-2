@@ -2425,10 +2425,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
@@ -2440,7 +2444,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1808227098}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 956196541}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
@@ -2452,6 +2464,10 @@ PrefabInstance:
       value: backToDefault
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: BackToNormalSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DirectionHolder, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2460,7 +2476,15 @@ PrefabInstance:
       value: IncreaseVisibilityItem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SpeedUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []

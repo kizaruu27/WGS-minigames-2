@@ -29,23 +29,43 @@ public class SpeedUp : MonoBehaviour
 
     }
 
-    public void PlusSpeed()
+    private void OnTriggerEnter(Collider other)
     {
-        SpeedChanger Changer = GetComponent<SpeedChanger>();
-
-        if (Changer.namePowerUp == "SpeedUp")
+        if (other.tag == "SpeedChange")
         {
+            SpeedChanger Changer = other.GetComponent<SpeedChanger>();
 
-            StartCoroutine(SpeedBoostCooldown());
+            if (Changer.namePowerUp == "SpeedUp")
+            {
+
+                StartCoroutine(SpeedBoostCooldown());
+            }
+
+            if (Changer.namePowerUp == "SlowDown")
+            {
+                StartCoroutine(SlowBoostCooldown());
+            }
+            // playerController.playerSpeed *= 1.5f;
         }
-
-        if (Changer.namePowerUp == "SlowDown")
-        {
-            StartCoroutine(SlowBoostCooldown());
-        }
-        // playerController.playerSpeed *= 1.5f;
-
     }
+
+    // public void PlusSpeed()
+    // {
+    //     SpeedChanger Changer = GetComponent<SpeedChanger>();
+
+    //     if (Changer.namePowerUp == "SpeedUp")
+    //     {
+
+    //         StartCoroutine(SpeedBoostCooldown());
+    //     }
+
+    //     if (Changer.namePowerUp == "SlowDown")
+    //     {
+    //         StartCoroutine(SlowBoostCooldown());
+    //     }
+    //     // playerController.playerSpeed *= 1.5f;
+
+    // }
 
     IEnumerator SpeedBoostCooldown()
     {

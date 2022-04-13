@@ -1758,13 +1758,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956196538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7f5442def6e854aa2a0cbc04d40e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1702027915}
-  speedChanger: {fileID: 185697204}
 --- !u!43 &1044532552
 Mesh:
   m_ObjectHideFlags: 0
@@ -2192,7 +2191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38f147aa55521e4386c913257e56f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1702027916
+--- !u!114 &1702027922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2201,25 +2200,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1702027914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088e6c6046d3d2b4681a154ff4e04688, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7f5442def6e854aa2a0cbc04d40e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 956196541}
-        m_TargetAssemblyTypeName: SpeedUp, Assembly-CSharp
-        m_MethodName: PlusSpeed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SpeedUp
-          m_BoolArgument: 0
-        m_CallState: 2
-  targetTag: SpeedChange
+  playerController: {fileID: 1702027915}
 --- !u!43 &1708012334
 Mesh:
   m_ObjectHideFlags: 0

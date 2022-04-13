@@ -1763,8 +1763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7f5442def6e854aa2a0cbc04d40e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1702027915}
-  speedChanger: {fileID: 185697204}
 --- !u!43 &1044532552
 Mesh:
   m_ObjectHideFlags: 0
@@ -2181,17 +2179,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4509563489369550311, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
   m_PrefabInstance: {fileID: 1757043310}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1702027915 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4509563489369549850, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
-  m_PrefabInstance: {fileID: 1757043310}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702027914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38f147aa55521e4386c913257e56f87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1702027916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2441,10 +2428,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
@@ -2456,7 +2447,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1808227098}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 956196541}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
@@ -2468,6 +2467,10 @@ PrefabInstance:
       value: backToDefault
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: BackToNormalSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DirectionHolder, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2476,7 +2479,15 @@ PrefabInstance:
       value: IncreaseVisibilityItem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SpeedUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964704796740448240, guid: 02b62a24d946b1d48bea2407875bfb07, type: 3}
+      propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []

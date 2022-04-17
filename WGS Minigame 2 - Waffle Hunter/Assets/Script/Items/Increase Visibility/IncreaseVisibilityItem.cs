@@ -12,6 +12,8 @@ public class IncreaseVisibilityItem : MonoBehaviour
     public float newPositionY;
     public float defaultPositionY;
 
+    public bool itemIsActive;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,18 +23,36 @@ public class IncreaseVisibilityItem : MonoBehaviour
     private void Start()
     {
         _light.range = defaultLightRange;
+        itemIsActive = false;
+    }
+
+    private void Update()
+    {
+        if (itemIsActive)
+        {
+            StartCoroutine(ActivateItem());
+        }
+    }
+
+    IEnumerator ActivateItem()
+    {
+        IncreaseVisibility();
+
+        yield return new WaitForSeconds(itemTime);
+
+        backToDefault();
     }
 
     public void IncreaseVisibility()
     {
         _light.range = newLightRange;
         transform.position = new Vector3(transform.position.x, newPositionY, transform.position.z);
-        Invoke("backToDefault", itemTime);
     }
 
     public void backToDefault()
     {
         _light.range = defaultLightRange;
         transform.position = new Vector3(transform.position.x, defaultPositionY, transform.position.z);
+        itemIsActive = false;
     }
 }

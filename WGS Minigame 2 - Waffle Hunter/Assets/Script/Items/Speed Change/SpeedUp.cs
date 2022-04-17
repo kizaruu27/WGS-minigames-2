@@ -33,7 +33,7 @@ public class SpeedUp : MonoBehaviour
     {
         if (other.tag == "SpeedChange")
         {
-            SpeedChanger Changer = other.GetComponent<SpeedChanger>();
+            SpeedUpItem Changer = other.GetComponent<SpeedUpItem>();
 
             if (Changer.namePowerUp == "SpeedUp")
             {

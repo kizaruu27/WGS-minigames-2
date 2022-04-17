@@ -5,9 +5,19 @@ using UnityEngine;
 public class DirectionHolder : MonoBehaviour
 {
     public GameObject Direction;
+    public Transform directionSpawnPoint;
     public float itemTime;
     public bool isShowing;
 
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Direction")
+        {
+            ShowDirection();
+            Destroy(col.gameObject);
+        }
+    }
 
     public void ShowDirection()
     {

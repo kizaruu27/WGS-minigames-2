@@ -9,6 +9,7 @@ TagManager:
   - VisibilityItem
   - SpeedChange
   - Pointer
+  - Sword
   layers:
   - Default
   - TransparentFX

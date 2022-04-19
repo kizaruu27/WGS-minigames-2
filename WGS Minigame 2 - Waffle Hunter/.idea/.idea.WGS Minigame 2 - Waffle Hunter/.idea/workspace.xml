@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/-----Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/-----Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Object Behaviour.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Object Behaviour/DestroyGameobject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Object Behaviour/DestroyGameobject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Power Up Item/Direction Arrow/DirectionHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Power Up Item/Direction Arrow/DirectionHolder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +62,7 @@
       <workItem from="1649667306835" duration="1534000" />
       <workItem from="1649668941130" duration="1738000" />
       <workItem from="1649711391928" duration="42000" />
+      <workItem from="1650346936070" duration="159000" />
     </task>
     <servers />
   </component>

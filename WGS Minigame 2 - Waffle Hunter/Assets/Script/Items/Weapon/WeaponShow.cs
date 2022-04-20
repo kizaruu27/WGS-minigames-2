@@ -9,7 +9,7 @@ public class WeaponShow : MonoBehaviour
 
     private void Start()
     {
-        Sword.SetActive(false);
+        // Sword.SetActive(false);
     }
     private void OnTriggerEnter(Collider col)
     {

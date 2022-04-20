@@ -2303,6 +2303,51 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1389316373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389316374}
+  - component: {fileID: 1389316375}
+  m_Layer: 0
+  m_Name: Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1389316374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389316373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.826, z: -0.353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2030598710}
+  m_Father: {fileID: 4509563488956003958}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389316375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389316373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762bb77a424e9ec4ca59d472d24089f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 2
 --- !u!1 &1515712428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,11 +3146,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4509563488956003958}
+    m_TransformParent: {fileID: 1389316374}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
       propertyPath: m_LocalScale.x
@@ -3121,15 +3166,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.743
+      value: 0.74300015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.196
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.38
+      value: -0.02700001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3169,15 +3214,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
---- !u!1 &2030598709 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
-  m_PrefabInstance: {fileID: 1982125078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2030598710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab63d3a815579fe409ad59e1f7f1d021, type: 3}
@@ -4448,7 +4488,7 @@ Transform:
   m_Children:
   - {fileID: 4509563488484084738}
   - {fileID: 1309939126}
-  - {fileID: 2030598710}
+  - {fileID: 1389316374}
   - {fileID: 312411301}
   m_Father: {fileID: 4509563489412169513}
   m_RootOrder: 1
@@ -4501,7 +4541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e395d76473bcad468024a390f049838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sword: {fileID: 2030598709}
+  Sword: {fileID: 1389316373}
 --- !u!137 &4509563488971021050
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

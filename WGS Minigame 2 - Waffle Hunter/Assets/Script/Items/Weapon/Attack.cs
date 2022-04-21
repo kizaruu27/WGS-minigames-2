@@ -7,6 +7,8 @@ public class Attack : MonoBehaviour
     public float range = 5f;
     public LayerMask playerMask;
 
+    public Animator anim;
+
 
     // Update is called once per frame
     void Update()
@@ -20,7 +22,7 @@ public class Attack : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                
+                anim.SetTrigger("Attack");
                 print("Attack player");
                 gameObject.SetActive(false);
             }

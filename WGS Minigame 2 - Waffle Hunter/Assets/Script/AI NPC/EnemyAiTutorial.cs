@@ -8,6 +8,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     public Transform player;
     public Animator anim;
+    public float range;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -83,9 +84,15 @@ public class EnemyAiTutorial : MonoBehaviour
 
         transform.LookAt(player);
 
-        gameObject.GetComponent<Attack>().anim.SetTrigger("Attack");
+        // Vector3 direction = Vector3.forward;
+        // Ray theRay = new Ray(transform.position, transform.TransformDirection(direction * range));
+        // Debug.DrawRay(transform.position, transform.TransformDirection(direction * range));
+
+        // if (Physics.Raycast(theRay, out RaycastHit hit, range, whatIsPlayer)) print("NPC DAMAGE");
         if (!alreadyAttacked)
         {
+            // anim.SetTrigger("Attack");
+            print("NPC DAMAGE");
             ///Attack code here
             // Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);

@@ -2317,7 +2317,7 @@ GameObject:
   - component: {fileID: 1336278028}
   - component: {fileID: 1336278024}
   m_Layer: 0
-  m_Name: Magnet Object
+  m_Name: Magnet Pick Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6278,8 +6278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb8089220248e24a8c6d9c3bbad3395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 4509563488484084738}
-  moveSpeed: 5
 --- !u!114 &5098668232313211008
 MonoBehaviour:
   m_ObjectHideFlags: 0

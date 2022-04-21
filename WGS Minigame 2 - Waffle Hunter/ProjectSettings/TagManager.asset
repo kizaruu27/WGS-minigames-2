@@ -10,6 +10,8 @@ TagManager:
   - SpeedChange
   - Pointer
   - Sword
+  - WaffleMagnet
+  - PlayerBubble
   layers:
   - Default
   - TransparentFX

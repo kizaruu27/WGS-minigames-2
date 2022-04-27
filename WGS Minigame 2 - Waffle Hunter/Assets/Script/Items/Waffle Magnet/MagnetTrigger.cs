@@ -5,6 +5,7 @@ using UnityEngine;
 public class MagnetTrigger : MonoBehaviour
 {
     private Transform Player;
+    public float magnetDistance = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +18,11 @@ public class MagnetTrigger : MonoBehaviour
     {
         if(Magnet.isMagnet == true)
         {
-            //if(Vector3.Distance(transform.position, Player.position) < 5)
-            //{
-            //    transform.position = Vector3.MoveTowards(transform.position, Player.position, 0.1f);
-            //}
-            transform.position = Vector3.MoveTowards(transform.position, Player.position, 0.1f);
+            if(Vector3.Distance(transform.position, Player.position) < magnetDistance)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, Player.position, 0.1f);
+            }
+            //transform.position = Vector3.MoveTowards(transform.position, Player.position, 0.1f);
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
     [Header("Player Variable")]
     CharacterController _controller;
     [SerializeField] public float playerSpeed = 5f;
@@ -17,6 +18,14 @@ public class PlayerController : MonoBehaviour
     bool _isGrounded;
     [SerializeField][Range(0, 1)] float jumpHeight = 1.0f;
     [SerializeField] float gravity = -9.8f;
+    
+
+    [Header("Joypad Variable")]
+    //[SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private FixedJoystick _joystick;
+    [SerializeField] private Animator _animator;
+
+    //[SerializeField] private float _moveSpeed;
 
     //Animation variable
     Animator anim;
@@ -31,9 +40,49 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Movement();
+        //Movement();
     }
 
+    //Joy Pad Controller
+    private void FixedUpdate()
+    {
+        //Player Gravity
+        _isGrounded = _controller.isGrounded;
+        if (_isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0;
+        }
+
+        //Player Move
+        float horizontal = _joystick.Horizontal;
+        float vertical = _joystick.Vertical;
+
+        Vector3 movementInput = Quaternion.Euler(0, followCamera.transform.eulerAngles.y, 0) * new Vector3(horizontal, 0, vertical);
+        Vector3 movementDirection = movementInput.normalized;
+
+        _controller.Move(movementDirection * playerSpeed * Time.deltaTime);
+
+        //_rigidbody.velocity = new Vector3(_joystick.Horizontal * _moveSpeed, _rigidbody.velocity.y, _joystick.Vertical * _moveSpeed);
+
+        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+        {
+            Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+            anim.SetBool("isRunning", true);
+            
+            /*
+            transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
+            anim.SetBool("isRunning", true);
+            */
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
+    }
+
+    /*
     void Movement()
     {
         //Player Gravity
@@ -69,6 +118,7 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravity * Time.deltaTime;
         _controller.Move(playerVelocity * Time.deltaTime);
     }
+    */
 
     void Jump()
     {

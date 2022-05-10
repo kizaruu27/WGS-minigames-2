@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnWaffleManager : MonoBehaviour
 {
-    public ScriptableValue waffleCollected;
     public GameObject waffle;
     public Transform[] spawnPosition;
 
@@ -17,10 +16,13 @@ public class SpawnWaffleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (waffleCollected.validation)
-        // {
-        //     StartCoroutine(spawnWaffle());
-        // }
+        AddWaffleScript addWaffle;
+        addWaffle = FindObjectOfType<AddWaffleScript>();
+        
+        if (addWaffle.waffleCollected)
+        {
+            StartCoroutine(spawnWaffle());
+        }
     }
 
     IEnumerator spawnWaffle()
@@ -29,6 +31,6 @@ public class SpawnWaffleManager : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        waffleCollected.validation = false;
+        FindObjectOfType<AddWaffleScript>().waffleCollected = false;
     }
 }

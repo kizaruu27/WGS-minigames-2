@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddWaffleScript : MonoBehaviour
 {
     public ScriptableValue waffleValue;
-    public ScriptableValue waffleCollected;
+    public bool waffleCollected;
 
     private void OnTriggerEnter(Collider col)
     {
@@ -18,7 +18,7 @@ public class AddWaffleScript : MonoBehaviour
     public void AddWaffle()
     {
         waffleValue.value++;
-        Destroy(gameObject);
-        waffleCollected.validation = true;
+        Destroy(gameObject, 0.01f);
+        waffleCollected = true;
     }
 }

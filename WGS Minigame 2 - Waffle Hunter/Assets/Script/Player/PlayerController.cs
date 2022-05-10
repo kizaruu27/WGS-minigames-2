@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //Movement();
+        Movement();
     }
 
     //Joy Pad Controller
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
             Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
-            anim.SetBool("isRunning", true);
+            anim.SetBool("isWalking", true);
             
             /*
             transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
@@ -78,11 +78,11 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("isWalking", false);
         }
     }
 
-    /*
+    
     void Movement()
     {
         //Player Gravity
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravity * Time.deltaTime;
         _controller.Move(playerVelocity * Time.deltaTime);
     }
-    */
+    
 
     void Jump()
     {

@@ -2573,9 +2573,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fc81889c0dd3b43a313e883ebe6153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waffleCollected: {fileID: 0}
-  waffle: {fileID: 0}
-  spawnPosition: []
+  waffleCollected: {fileID: 11400000, guid: 59eee6f792026bf4b912b06a2d369f32, type: 2}
+  waffle: {fileID: 2367619921800891249, guid: a38d3341dc79583478548207b20a45cc, type: 3}
+  spawnPosition:
+  - {fileID: 1886753992}
+  - {fileID: 1515712429}
+  - {fileID: 1085741153}
+  - {fileID: 1229333048}
+  - {fileID: 208937090}
+  - {fileID: 122982874}
+  - {fileID: 266732735}
 --- !u!1 &1515712428
 GameObject:
   m_ObjectHideFlags: 0

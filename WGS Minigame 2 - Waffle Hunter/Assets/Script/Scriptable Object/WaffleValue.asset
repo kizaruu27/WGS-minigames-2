@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f18d8e935fbeb4f93694c6ffae2e01, type: 3}
   m_Name: WaffleValue
   m_EditorClassIdentifier: 
-  value: 0
+  value: -3
+  validation: 0

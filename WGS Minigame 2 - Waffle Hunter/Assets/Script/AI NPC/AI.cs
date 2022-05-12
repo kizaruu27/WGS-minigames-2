@@ -9,6 +9,7 @@ public class AI : MonoBehaviour
     public Transform player;
     public Transform[] waypoint;
     public LayerMask playerMask;
+    public ScriptableValue waffleValue;
     public float range;
     public Animator anim;
     int currentWaypointIndex;
@@ -35,7 +36,7 @@ public class AI : MonoBehaviour
         maxWaitingTime = 0;
         GoToNextPoint();
         playerInrange = false;
-        fireRate = 1;
+        fireRate = 2;
         nextFire = Time.time;
     }
 
@@ -46,6 +47,7 @@ public class AI : MonoBehaviour
         {
             agent.SetDestination(player.position);
             playerInrange = true;
+            currentWaitingTime = 0;
 
         }
         if (playerInrange = false)
@@ -97,13 +99,16 @@ public class AI : MonoBehaviour
 
         if (Physics.Raycast(theRay, out RaycastHit hit, range, playerMask))
         {
+            agent.isStopped = true;
             if (Time.time > nextFire)
             {
-
+                // anim.SetTrigger("Attack");
+                waffleValue.value--;
                 nextFire = Time.time + fireRate;
                 print("Attack Player");
             }
         }
+        else { agent.isStopped = false; }
     }
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()

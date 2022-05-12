@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
     [Header("Player Variable")]
     CharacterController _controller;
     [SerializeField] public float playerSpeed = 5f;
@@ -30,6 +29,11 @@ public class PlayerController : MonoBehaviour
     //Animation variable
     Animator anim;
     bool touchGround;
+
+    private void Awake()
+    {
+        _joystick.gameObject.SetActive(CheckPlatform.isAndroid || CheckPlatform.isIos);
+    }
 
     private void Start()
     {

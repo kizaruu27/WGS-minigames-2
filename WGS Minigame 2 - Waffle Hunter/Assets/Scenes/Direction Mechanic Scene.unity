@@ -1301,7 +1301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &892761903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,7 +1333,6 @@ MonoBehaviour:
   currentWaitingTime: 0
   maxWaitingTime: 0
   distance: 7
-  attackRange: 1
 --- !u!54 &892761904
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1344,7 +1343,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1359,14 +1358,14 @@ NavMeshAgent:
   m_GameObject: {fileID: 892761902}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 4
-  m_Acceleration: 8
+  m_Acceleration: 7
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
@@ -1511,14 +1510,14 @@ NavMeshAgent:
   m_GameObject: {fileID: 1040490365}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 4
-  m_Acceleration: 8
+  m_Acceleration: 7
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
@@ -1649,7 +1648,6 @@ MonoBehaviour:
   currentWaitingTime: 0
   maxWaitingTime: 0
   distance: 7
-  attackRange: 1
 --- !u!43 &1044532552
 Mesh:
   m_ObjectHideFlags: 0

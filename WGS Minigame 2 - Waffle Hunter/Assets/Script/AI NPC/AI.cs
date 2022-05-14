@@ -18,7 +18,6 @@ public class AI : MonoBehaviour
     private Rigidbody rb;
     Vector3 target;
     public float distance;
-    public float attackRange;
     bool playerInrange;
     float fireRate, nextFire;
 
@@ -48,7 +47,6 @@ public class AI : MonoBehaviour
             agent.SetDestination(player.position);
             playerInrange = true;
             currentWaitingTime = 0;
-
         }
         if (playerInrange = false)
         {
@@ -109,14 +107,13 @@ public class AI : MonoBehaviour
             }
         }
         else { agent.isStopped = false; }
+
     }
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distance);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
 #endif

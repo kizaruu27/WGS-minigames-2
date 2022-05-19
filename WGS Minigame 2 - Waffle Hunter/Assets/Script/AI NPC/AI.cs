@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     NavMeshAgent agent;
-    public Transform player, nextPlayer;
+    public Transform player;
     public Transform[] waypoint;
     public LayerMask playerMask;
     public ScriptableValue waffleValue;
@@ -17,7 +17,7 @@ public class AI : MonoBehaviour
     public float maxWaitingTime;
     private Rigidbody rb;
     Vector3 target;
-    public float distance;
+    public float distance, turnSpeed;
     bool playerInrange, inAttackRange;
     float fireRate, nextFire;
     public GameObject RandPlayer;
@@ -28,19 +28,14 @@ public class AI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        // player = GameObject.FindWithTag("Player").transform;
-
+        // InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        GoToNextPoint();
         anim = GetComponentInChildren<Animator>();
-        listOnPlayer = RandPlayer.GetComponent<ListOnPlayer>();
-        nextPlayer = player;
-
 
 
         currentWaypointIndex = -1;
         currentWaitingTime = 0;
         maxWaitingTime = 0;
-        GoToNextPoint();
         playerInrange = false;
         fireRate = 2;
         nextFire = Time.time;
@@ -49,13 +44,14 @@ public class AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckOnRange();
-        // if (Vector3.Distance(transform.position, player.position) < distance)
-        // {
-        //     agent.SetDestination(player.position);
-        //     playerInrange = true;
-        //     currentWaitingTime = 0;
-        // }
+        UpdateTarget();
+        if (player == null) return;
+        if (Vector3.Distance(transform.position, player.position) < distance)
+        {
+            agent.SetDestination(player.position);
+            playerInrange = true;
+            currentWaitingTime = 0;
+        }
         if (playerInrange = false)
         {
             GoToNextPoint();
@@ -125,32 +121,41 @@ public class AI : MonoBehaviour
         }
     }
 
-    void CheckOnRange()
+
+    void UpdateTarget()
     {
-        foreach (ListOnPlayer playerList in ListOnPlayer.getPlayerList())
+        GameObject[] NextPlayer = GameObject.FindGameObjectsWithTag("Player");
+        float ShortersDistance = Mathf.Infinity;
+        GameObject nearestTarget = null;
+        foreach (GameObject TargetPlayer in NextPlayer)
         {
-            if (Vector3.Distance(transform.position, playerList.transform.position) < distance)
+            float distanceToTarget = Vector3.Distance(transform.position, TargetPlayer.transform.position);
+            if (distanceToTarget < ShortersDistance)
             {
-                // player = GameObject.FindWithTag("Player").transform;
-                player = listOnPlayer.trialPlayer;
-                Debug.Log(playerList);
-                // player = GameObject.FindGameObjectWithTag("Player").transform;
-                // if (Vector3.Distance(transform.position, player.position) < distance)
-                // {
-                //     agent.SetDestination(player.position);
-                //     playerInrange = true;
-                //     currentWaitingTime = 0;
-                // }
-
+                ShortersDistance = distanceToTarget;
+                nearestTarget = TargetPlayer;
             }
-            else
-            {
-                player = nextPlayer;
+        }
 
-            }
-
+        if (nearestTarget != null && ShortersDistance < distance)
+        {
+            player = nearestTarget.transform;
+        }
+        else
+        {
+            player = null;
         }
     }
+
+    void LockOnTarget()
+    {
+        Vector3 dir = player.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()

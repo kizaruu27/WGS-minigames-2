@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     NavMeshAgent agent;
-    public Transform player;
+    public Transform player, nextPlayer;
     public Transform[] waypoint;
     public LayerMask playerMask;
     public ScriptableValue waffleValue;
-    public float range;
+    public float range, attackRange;
     public Animator anim;
     int currentWaypointIndex;
     public float currentWaitingTime;
@@ -18,16 +18,23 @@ public class AI : MonoBehaviour
     private Rigidbody rb;
     Vector3 target;
     public float distance;
-    bool playerInrange;
+    bool playerInrange, inAttackRange;
     float fireRate, nextFire;
+    public GameObject RandPlayer;
+    public ListOnPlayer listOnPlayer;
 
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindWithTag("Player").transform;
+
+        // player = GameObject.FindWithTag("Player").transform;
+
         anim = GetComponentInChildren<Animator>();
+        listOnPlayer = RandPlayer.GetComponent<ListOnPlayer>();
+        nextPlayer = player;
+
 
 
         currentWaypointIndex = -1;
@@ -42,17 +49,21 @@ public class AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.position) < distance)
-        {
-            agent.SetDestination(player.position);
-            playerInrange = true;
-            currentWaitingTime = 0;
-        }
+        CheckOnRange();
+        // if (Vector3.Distance(transform.position, player.position) < distance)
+        // {
+        //     agent.SetDestination(player.position);
+        //     playerInrange = true;
+        //     currentWaitingTime = 0;
+        // }
         if (playerInrange = false)
         {
-
             GoToNextPoint();
         }
+        // if (waffleValue.value < 0) waffleValue.value = 0;
+
+        if (Vector3.Distance(transform.position, player.position) <= attackRange) agent.isStopped = true;
+        else agent.isStopped = false; anim.SetBool("NPCwalk", true);
 
         if (currentWaitingTime == 0) anim.SetBool("NPCwalk", true);
         if (currentWaitingTime > 0) anim.SetBool("NPCwalk", false);
@@ -97,18 +108,50 @@ public class AI : MonoBehaviour
 
         if (Physics.Raycast(theRay, out RaycastHit hit, range, playerMask))
         {
-            agent.isStopped = true;
-            if (Time.time > nextFire)
-            {
-                // anim.SetTrigger("Attack");
-                waffleValue.value--;
-                nextFire = Time.time + fireRate;
-                print("Attack Player");
-            }
+            AttackPlayer();
         }
-        else { agent.isStopped = false; }
+        else anim.SetBool("NPCwalk", true);
 
     }
+
+    void AttackPlayer()
+    {
+        if (Time.time > nextFire)
+        {
+            anim.SetTrigger("Attack");
+            waffleValue.value--;
+            nextFire = Time.time + fireRate;
+            print("Attack Player");
+        }
+    }
+
+    void CheckOnRange()
+    {
+        foreach (ListOnPlayer playerList in ListOnPlayer.getPlayerList())
+        {
+            if (Vector3.Distance(transform.position, playerList.transform.position) < distance)
+            {
+                // player = GameObject.FindWithTag("Player").transform;
+                player = listOnPlayer.trialPlayer;
+                Debug.Log(playerList);
+                // player = GameObject.FindGameObjectWithTag("Player").transform;
+                // if (Vector3.Distance(transform.position, player.position) < distance)
+                // {
+                //     agent.SetDestination(player.position);
+                //     playerInrange = true;
+                //     currentWaitingTime = 0;
+                // }
+
+            }
+            else
+            {
+                player = nextPlayer;
+
+            }
+
+        }
+    }
+
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {

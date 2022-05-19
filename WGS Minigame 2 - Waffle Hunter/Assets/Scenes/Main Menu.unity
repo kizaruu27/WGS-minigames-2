@@ -962,7 +962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Singleplayer
+  m_Text: Play
 --- !u!222 &1876032560
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1120,7 +1120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Multiplayer (Coming Soon)
+  m_Text: Multiplayer is Coming Soon
 --- !u!222 &1900781177
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1208,7 +1208,7 @@ GameObject:
   - component: {fileID: 2104167218}
   - component: {fileID: 2104167217}
   m_Layer: 5
-  m_Name: Singleplayer_btn
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

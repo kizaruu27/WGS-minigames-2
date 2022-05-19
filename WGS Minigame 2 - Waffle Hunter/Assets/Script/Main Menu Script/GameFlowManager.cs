@@ -20,9 +20,9 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
-    public void ResumeGame()
+    public void ResumeGame(GameObject UI)
     {
         Time.timeScale = 1;
-        PauseUI.SetActive(false);
+        UI.SetActive(false);
     }
 }

@@ -7,6 +7,12 @@ public class InGameTimer : MonoBehaviour
 {
     public float timer;
     public Text timerText;
+    public GameObject GameOverUI;
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,6 +28,8 @@ public class InGameTimer : MonoBehaviour
         {
             timer = 0;
             timerText.text = "00:00";
+            GameOverUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

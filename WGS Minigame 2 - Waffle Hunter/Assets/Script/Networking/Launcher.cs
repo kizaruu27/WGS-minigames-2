@@ -23,10 +23,15 @@ public class Launcher : MonoBehaviourPunCallbacks
     public TMP_InputField roomNameInput;
 
     public GameObject roomScreen;
-    public TMP_Text roomNameText;
+    public TMP_Text roomNameText, playerNameLabel;
+    private List<TMP_Text> allPlayerNames = new List<TMP_Text>();
 
     public GameObject errorScreen;
     public TMP_Text errorText;
+
+    public GameObject roomBrowserScreen;
+    public RoomButton theRoomButton;
+    private List<RoomButton> allRoomButtons = new List<RoomButton>();
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +51,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         createRoomScreen.SetActive(false);
         roomScreen.SetActive(false);
         errorScreen.SetActive(false);
+        roomBrowserScreen.SetActive(false);
     }
 
     public override void OnConnectedToMaster()
@@ -60,6 +66,8 @@ public class Launcher : MonoBehaviourPunCallbacks
         //base.OnJoinedLobby();
         CloseMenu();
         menuButtons.SetActive(true);
+
+        PhotonNetwork.NickName = Random.Range(0, 1000).ToString();
     }
 
     public void OpenRoomCreate()
@@ -70,7 +78,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
-        if (!string.IsNullOrEmpty(roomNameInput.text))
+        if(!string.IsNullOrEmpty(roomNameInput.text))
         {
             RoomOptions options = new RoomOptions();
             options.MaxPlayers = 4;
@@ -90,6 +98,27 @@ public class Launcher : MonoBehaviourPunCallbacks
         roomScreen.SetActive(true);
 
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+
+        ListAllPlayers();
+    }
+
+    private void ListAllPlayers()
+    {
+        foreach(TMP_Text player in allPlayerNames)
+        {
+            Destroy(player.gameObject);
+        }
+        allPlayerNames.Clear();
+
+        Player[] players = PhotonNetwork.PlayerList;
+        for(int i = 0; i < players.Length; i++)
+        {
+            TMP_Text newPlayerLabel = Instantiate(playerNameLabel, playerNameLabel.transform.parent);
+            newPlayerLabel.text = players[i].NickName;
+            newPlayerLabel.gameObject.SetActive(true);
+
+            allPlayerNames.Add(newPlayerLabel);
+        }
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
@@ -119,5 +148,56 @@ public class Launcher : MonoBehaviourPunCallbacks
         //base.OnLeftRoom();
         CloseMenu();
         menuButtons.SetActive(true);
+    }
+
+    public void OpenRoomBrowser()
+    {
+        CloseMenu();
+        roomBrowserScreen.SetActive(true);
+    }
+
+    public void CloseRoomBrowser()
+    {
+        CloseMenu();
+        menuButtons.SetActive(true);
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        //base.OnRoomListUpdate(roomList);
+        foreach(RoomButton rb in allRoomButtons)
+        {
+            Destroy(rb.gameObject);
+        }
+        allRoomButtons.Clear();
+
+        theRoomButton.gameObject.SetActive(false);
+
+        for(int i = 0; i < roomList.Count; i++)
+        {
+            if(roomList[i].PlayerCount != roomList[i].MaxPlayers && !roomList[i].RemovedFromList)
+            {
+                RoomButton newButton = Instantiate(theRoomButton, theRoomButton.transform.parent);
+                newButton.SetButtonDetails(roomList[i]);
+                newButton.gameObject.SetActive(true);
+
+                allRoomButtons.Add(newButton);
+            }
+        }
+    }
+
+    public void JoinRoom(RoomInfo inputInfo)
+    {
+        PhotonNetwork.JoinRoom(inputInfo.Name);
+
+        CloseMenu();
+        loadingText.text = "Joining Room... ";
+        loadingScreen.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Keluar Game!");
     }
 }

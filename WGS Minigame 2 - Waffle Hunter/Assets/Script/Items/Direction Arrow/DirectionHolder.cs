@@ -14,16 +14,18 @@ public class DirectionHolder : MonoBehaviour
     {
         if (col.tag == "Direction")
         {
-            ShowDirection();
-            Destroy(col.gameObject);
+            ShowDirection(col);
+            Destroy(col.gameObject, itemTime);
         }
     }
 
-    public void ShowDirection()
+    public void ShowDirection(Collider col)
     {
         isShowing = true;
         Direction.SetActive(true);
         Invoke("hidDirection", itemTime);
+        col.GetComponent<MeshRenderer>().enabled = false;
+        col.GetComponent<BoxCollider>().enabled = false;
     }
 
     public void hidDirection()

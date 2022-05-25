@@ -12,6 +12,7 @@ TagManager:
   - Sword
   - WaffleMagnet
   - PlayerBubble
+  - Shield
   layers:
   - Default
   - TransparentFX

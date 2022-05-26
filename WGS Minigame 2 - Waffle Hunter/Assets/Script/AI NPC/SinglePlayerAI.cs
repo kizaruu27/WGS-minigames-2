@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AI : MonoBehaviour
+public class SinglePlayerAI : MonoBehaviour
 {
     NavMeshAgent agent;
     public Transform player;
+    public Animator anim;
     public Transform[] waypoint;
     public LayerMask playerMask;
     public ScriptableValue waffleValue;
-    public float range, attackRange;
-    public Animator anim;
+    public float range;
     int currentWaypointIndex;
     public float currentWaitingTime;
     public float maxWaitingTime;
     private Rigidbody rb;
     Vector3 target;
-    public float distance, turnSpeed;
-    bool playerInrange, inAttackRange;
+    public float distance;
+    public float attackRange, turnSpeed;
+    bool playerInrange;
     float fireRate, nextFire;
 
 
@@ -26,16 +27,16 @@ public class AI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        // InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        player = GameObject.FindWithTag("Player").transform;
         anim = GetComponentInChildren<Animator>();
-        GoToNextPoint();
 
 
         currentWaypointIndex = -1;
         currentWaitingTime = 0;
         maxWaitingTime = 0;
+        GoToNextPoint();
         playerInrange = false;
-        fireRate = 2;
+        fireRate = 1;
         nextFire = Time.time;
     }
 
@@ -47,13 +48,13 @@ public class AI : MonoBehaviour
             agent.SetDestination(player.position);
             playerInrange = true;
             currentWaitingTime = 0;
-            UpdateTarget();
+            LockOnTarget();
         }
         if (playerInrange = false)
         {
+
             GoToNextPoint();
         }
-        // if (waffleValue.value < 0) waffleValue.value = 0;
 
         if (Vector3.Distance(transform.position, player.position) <= attackRange) agent.isStopped = true;
         else agent.isStopped = false; anim.SetBool("NPCwalk", true);
@@ -73,7 +74,6 @@ public class AI : MonoBehaviour
         {
             randomPointer = (randomPointer + 1) % waypoint.Length;
             agent.SetDestination(waypoint[randomPointer].position);
-
         }
     }
 
@@ -81,7 +81,8 @@ public class AI : MonoBehaviour
     {
         if (agent.remainingDistance < 0.5f)
         {
-            if (maxWaitingTime == 0) { maxWaitingTime = Random.Range(0, 2); }
+            if (maxWaitingTime == 0)
+            { maxWaitingTime = Random.Range(0, 2); }
 
             if (currentWaitingTime >= maxWaitingTime)
             {
@@ -89,7 +90,8 @@ public class AI : MonoBehaviour
                 currentWaitingTime = 0;
                 GoToNextPoint();
             }
-            else { currentWaitingTime += Time.deltaTime; }
+            else
+            { currentWaitingTime += Time.deltaTime; }
         }
     }
 
@@ -101,46 +103,14 @@ public class AI : MonoBehaviour
 
         if (Physics.Raycast(theRay, out RaycastHit hit, range, playerMask))
         {
-            AttackPlayer();
-        }
-        else anim.SetBool("NPCwalk", true);
-
-    }
-
-    void AttackPlayer()
-    {
-        if (Time.time > nextFire)
-        {
-            anim.SetTrigger("Attack");
-            waffleValue.value--;
-            nextFire = Time.time + fireRate;
-            print("Attack Player");
-        }
-    }
-
-
-    void UpdateTarget()
-    {
-        GameObject[] NextPlayer = GameObject.FindGameObjectsWithTag("Player");
-        float ShortersDistance = Mathf.Infinity;
-        GameObject nearestTarget = null;
-        foreach (GameObject TargetPlayer in NextPlayer)
-        {
-            float distanceToTarget = Vector3.Distance(transform.position, TargetPlayer.transform.position);
-            if (distanceToTarget < ShortersDistance)
+            if (Time.time > nextFire)
             {
-                ShortersDistance = distanceToTarget;
-                nearestTarget = TargetPlayer;
+                anim.SetTrigger("Attack");
+                waffleValue.value--;
+                nextFire = Time.time + fireRate;
+                print("Attack Player");
             }
-        }
-
-        if (nearestTarget != null && ShortersDistance < distance)
-        {
-            player = nearestTarget.transform;
-        }
-        else
-        {
-            player = null;
+            else anim.SetBool("NPCwalk", true);
         }
     }
 
@@ -153,12 +123,13 @@ public class AI : MonoBehaviour
     }
 
 
-
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distance);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
 #endif

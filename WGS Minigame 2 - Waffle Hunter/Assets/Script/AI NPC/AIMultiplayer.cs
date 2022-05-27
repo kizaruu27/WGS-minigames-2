@@ -8,6 +8,8 @@ public class AIMultiplayer : MonoBehaviour
     public Transform player;
     public Transform[] waypoint;
     public LayerMask playerMask;
+    public Animator anim;
+    public ScriptableValue waffleValue;
     public float range;
     int currentWaypointIndex;
     public float currentWaitingTime;
@@ -26,6 +28,7 @@ public class AIMultiplayer : MonoBehaviour
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         // player = GameObject.FindWithTag("Player").transform;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        anim = GetComponentInChildren<Animator>();
 
 
         currentWaypointIndex = -1;
@@ -41,21 +44,16 @@ public class AIMultiplayer : MonoBehaviour
     void Update()
     {
         UpdateTarget();
-        // if (Vector3.Distance(transform.position, player.position) < distance)
-        // {
-        //     agent.SetDestination(player.position);
-        //     playerInrange = true;
-        //     currentWaitingTime = 0;
-        //     LockOnTarget();
-        // }
+
         if (playerInrange = false)
         {
 
             GoToNextPoint();
         }
 
-        // if (Vector3.Distance(transform.position, player.transform.position) <= attackRange) agent.isStopped = true;
-        // else agent.isStopped = false;
+
+
+
 
         // CheckingTimer();
         Attack();
@@ -98,15 +96,15 @@ public class AIMultiplayer : MonoBehaviour
 
         if (Physics.Raycast(theRay, out RaycastHit hit, range, playerMask))
         {
-            agent.isStopped = true;
             if (Time.time > nextFire)
             {
 
+                anim.SetTrigger("Attack");
+                waffleValue.value--;
                 nextFire = Time.time + fireRate;
                 print("Attack Player");
             }
         }
-        else agent.isStopped = false;
     }
 
     void LockOnTarget()
@@ -144,7 +142,13 @@ public class AIMultiplayer : MonoBehaviour
         {
             player = null;
             CheckingTimer();
+            if (currentWaitingTime == 0) anim.SetBool("NPCwalk", true);
+            if (currentWaitingTime > 0) anim.SetBool("NPCwalk", false);
         }
+
+        if (Vector3.Distance(transform.position, player.position) <= attackRange) agent.isStopped = true;
+        else agent.isStopped = false;
+
     }
 
 

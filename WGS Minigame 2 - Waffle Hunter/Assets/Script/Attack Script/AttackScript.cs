@@ -7,6 +7,10 @@ public class AttackScript : MonoBehaviour
     public float desiredCooldown;
     public float cooldown;
 
+    public float rayDistance;
+    public float rayHeight;
+    public LayerMask enemyMask;
+
     Animator _anim;
 
     private void Awake()
@@ -37,9 +41,24 @@ public class AttackScript : MonoBehaviour
         _anim.SetTrigger("Attack");
         GetComponent<PlayerController>().enabled = false;
 
+
+        
+        Ray ray = new Ray (new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, rayDistance, enemyMask))
+        {
+            Debug.Log("Hit Player");
+            hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+        }
+
         yield return new WaitForSeconds(1.1f);
 
         GetComponent<PlayerController>().enabled = true;
         
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
     }
 }

@@ -49,7 +49,7 @@ public class AI : MonoBehaviour
             currentWaitingTime = 0;
             UpdateTarget();
         }
-        if (playerInrange = false)
+        if (playerInrange == false)
         {
             GoToNextPoint();
         }

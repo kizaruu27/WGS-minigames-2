@@ -50,7 +50,7 @@ public class SinglePlayerAI : MonoBehaviour
             currentWaitingTime = 0;
             LockOnTarget();
         }
-        if (playerInrange = false)
+        if (playerInrange == false)
         {
 
             GoToNextPoint();

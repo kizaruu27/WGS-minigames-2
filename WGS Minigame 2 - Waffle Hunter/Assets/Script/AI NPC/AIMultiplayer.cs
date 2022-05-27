@@ -45,7 +45,7 @@ public class AIMultiplayer : MonoBehaviour
     {
         UpdateTarget();
 
-        if (playerInrange = false)
+        if (playerInrange == false)
         {
 
             GoToNextPoint();

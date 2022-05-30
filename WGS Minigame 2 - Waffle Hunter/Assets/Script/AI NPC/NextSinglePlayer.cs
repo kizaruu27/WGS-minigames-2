@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SinglePlayerAI : MonoBehaviour
+public class NextSinglePlayer : MonoBehaviour
 {
     NavMeshAgent agent;
     public Transform player;
     public Animator anim;
     public Transform[] waypoint;
     public LayerMask playerMask;
-    public ScriptableValue waffleValue;
     public float range;
     int currentWaypointIndex;
+    public ScriptableValue waffleValue;
     public float currentWaitingTime;
     public float maxWaitingTime;
     private Rigidbody rb;
@@ -50,14 +50,14 @@ public class SinglePlayerAI : MonoBehaviour
             currentWaitingTime = 0;
             LockOnTarget();
         }
-        if (playerInrange == false)
+        if (playerInrange = false)
         {
+
             GoToNextPoint();
         }
 
         if (Vector3.Distance(transform.position, player.position) <= attackRange) agent.isStopped = true;
-        else agent.isStopped = false; anim.SetBool("NPCwalk", true);
-
+        else agent.isStopped = false;
         if (currentWaitingTime == 0) anim.SetBool("NPCwalk", true);
         if (currentWaitingTime > 0) anim.SetBool("NPCwalk", false);
 
@@ -102,7 +102,6 @@ public class SinglePlayerAI : MonoBehaviour
 
         if (Physics.Raycast(theRay, out RaycastHit hit, range, playerMask))
         {
-
             if (Time.time > nextFire)
             {
                 anim.SetTrigger("Attack");
@@ -111,7 +110,6 @@ public class SinglePlayerAI : MonoBehaviour
                 print("Attack Player");
             }
         }
-
     }
 
     void LockOnTarget()

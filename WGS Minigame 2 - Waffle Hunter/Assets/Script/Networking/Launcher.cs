@@ -36,12 +36,13 @@ public class Launcher : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        CloseMenu();
+        // CloseMenu();
+        // loadingScreen.SetActive(true);
+        // loadingText.text = "Connecting To Network...";
+        // PhotonNetwork.ConnectUsingSettings();
 
-        loadingScreen.SetActive(true);
-        loadingText.text = "Connecting To Network...";
-
-        PhotonNetwork.ConnectUsingSettings();
+        menuButtons.SetActive(true);
+        Debug.Log(PhotonNetwork.NickName);
     }
 
     void CloseMenu()
@@ -63,6 +64,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
+        //! it has provided on WGS2_Login scene
+
         //base.OnJoinedLobby();
         CloseMenu();
         menuButtons.SetActive(true);
@@ -78,7 +81,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
-        if(!string.IsNullOrEmpty(roomNameInput.text))
+        if (!string.IsNullOrEmpty(roomNameInput.text))
         {
             RoomOptions options = new RoomOptions();
             options.MaxPlayers = 5;
@@ -104,14 +107,14 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     private void ListAllPlayers()
     {
-        foreach(TMP_Text player in allPlayerNames)
+        foreach (TMP_Text player in allPlayerNames)
         {
             Destroy(player.gameObject);
         }
         allPlayerNames.Clear();
 
         Player[] players = PhotonNetwork.PlayerList;
-        for(int i = 0; i < players.Length; i++)
+        for (int i = 0; i < players.Length; i++)
         {
             TMP_Text newPlayerLabel = Instantiate(playerNameLabel, playerNameLabel.transform.parent);
             newPlayerLabel.text = players[i].NickName;
@@ -165,7 +168,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         //base.OnRoomListUpdate(roomList);
-        foreach(RoomButton rb in allRoomButtons)
+        foreach (RoomButton rb in allRoomButtons)
         {
             Destroy(rb.gameObject);
         }
@@ -173,9 +176,9 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         theRoomButton.gameObject.SetActive(false);
 
-        for(int i = 0; i < roomList.Count; i++)
+        for (int i = 0; i < roomList.Count; i++)
         {
-            if(roomList[i].PlayerCount != roomList[i].MaxPlayers && !roomList[i].RemovedFromList)
+            if (roomList[i].PlayerCount != roomList[i].MaxPlayers && !roomList[i].RemovedFromList)
             {
                 RoomButton newButton = Instantiate(theRoomButton, theRoomButton.transform.parent);
                 newButton.SetButtonDetails(roomList[i]);

@@ -42,13 +42,15 @@ public class AttackScript : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
 
 
-        
         Ray ray = new Ray (new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, rayDistance, enemyMask))
         {
-            Debug.Log("Hit Player");
-            hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+            if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
+            {
+                Debug.Log("Hit Player");
+                hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+            }
         }
 
         yield return new WaitForSeconds(1.1f);

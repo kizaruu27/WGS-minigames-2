@@ -1533,6 +1533,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 1338635114}
   shieldTime: 3
+  shieldActivated: 1
+--- !u!114 &505371246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505371243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c832f039969c5c041b37a6d1a5f42933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waffle: 3
 --- !u!114 &505371250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,9 +2293,10 @@ GameObject:
   - component: {fileID: 854719191}
   - component: {fileID: 854719192}
   - component: {fileID: 854719193}
+  - component: {fileID: 854719194}
   m_Layer: 6
   m_Name: AnotherPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2328,6 +2343,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waffle: 3
+--- !u!114 &854719194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854719190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5522a10aac79f944698ddc49e59faabe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shield: {fileID: 0}
+  shieldTime: 0
+  shieldActivated: 0
 --- !u!1 &863717306
 GameObject:
   m_ObjectHideFlags: 0
@@ -4661,7 +4691,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918646227}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83ca37c541f4538409c9470aa69e5c5b, type: 3}
   m_Name: 
@@ -4783,6 +4813,10 @@ PrefabInstance:
     - target: {fileID: 7370492479322699818, guid: cc266b1e1c999974298a65d6e27e511c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.229
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370492479322700245, guid: cc266b1e1c999974298a65d6e27e511c, type: 3}
+      propertyPath: m_TagString
+      value: PlayerBubble
       objectReference: {fileID: 0}
     - target: {fileID: 7370492481114681717, guid: cc266b1e1c999974298a65d6e27e511c, type: 3}
       propertyPath: m_RootOrder

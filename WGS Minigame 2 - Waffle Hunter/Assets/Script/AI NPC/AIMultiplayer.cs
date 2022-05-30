@@ -31,9 +31,9 @@ public class AIMultiplayer : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
 
-        currentWaypointIndex = -1;
         currentWaitingTime = 0;
         maxWaitingTime = 0;
+        currentWaypointIndex = -1;
         GoToNextPoint();
         playerInrange = false;
         fireRate = 1;
@@ -51,11 +51,6 @@ public class AIMultiplayer : MonoBehaviour
             GoToNextPoint();
         }
 
-
-
-
-
-        // CheckingTimer();
         Attack();
 
     }
@@ -105,6 +100,7 @@ public class AIMultiplayer : MonoBehaviour
                 print("Attack Player");
             }
         }
+
     }
 
     void LockOnTarget()
@@ -117,6 +113,10 @@ public class AIMultiplayer : MonoBehaviour
 
     void UpdateTarget()
     {
+
+        currentWaitingTime = 0;
+        maxWaitingTime = 0;
+
         GameObject[] NextPlayer = GameObject.FindGameObjectsWithTag("Player");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestTarget = null;

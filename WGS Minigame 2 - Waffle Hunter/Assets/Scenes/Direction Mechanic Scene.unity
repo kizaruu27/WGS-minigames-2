@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &29578616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,12 +173,12 @@ MonoBehaviour:
     m_Bits: 64
   anim: {fileID: 0}
   waffleValue: {fileID: 11400000, guid: b84adfe16542c8943b991c4906067086, type: 2}
-  range: 1.5
+  range: 2
   currentWaitingTime: 0
   maxWaitingTime: 0
   distance: 4
   attackRange: 2.5
-  turnSpeed: 3
+  turnSpeed: 5
 --- !u!114 &29578617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2378,7 +2378,7 @@ MonoBehaviour:
   maxWaitingTime: 0
   distance: 4
   attackRange: 2.5
-  turnSpeed: 1
+  turnSpeed: 5
 --- !u!195 &1040490367
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2472,7 +2472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040490365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.94, y: 1.533, z: -14.86}
+  m_LocalPosition: {x: 13.94, y: 1.533, z: -11.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 288064830}
@@ -4526,6 +4526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waffleValue: {fileID: 11400000, guid: b84adfe16542c8943b991c4906067086, type: 2}
+  waffleCollected: 0
+  WinUI: {fileID: 0}
   waffleText: {fileID: 251783842}
 --- !u!1001 &1980538465
 PrefabInstance:

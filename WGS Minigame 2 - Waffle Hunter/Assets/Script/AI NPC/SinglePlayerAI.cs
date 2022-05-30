@@ -48,7 +48,7 @@ public class SinglePlayerAI : MonoBehaviour
             agent.SetDestination(player.position);
             playerInrange = true;
             currentWaitingTime = 0;
-            LockOnTarget();
+            // LockOnTarget();
         }
         if (playerInrange == false)
         {
@@ -103,6 +103,7 @@ public class SinglePlayerAI : MonoBehaviour
 
         if (Physics.Raycast(theRay, out RaycastHit hit, range, playerMask))
         {
+
             if (Time.time > nextFire)
             {
                 anim.SetTrigger("Attack");
@@ -110,8 +111,8 @@ public class SinglePlayerAI : MonoBehaviour
                 nextFire = Time.time + fireRate;
                 print("Attack Player");
             }
-            else anim.SetBool("NPCwalk", true);
         }
+
     }
 
     void LockOnTarget()

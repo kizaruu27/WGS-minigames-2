@@ -1,32 +1,12 @@
 fileFormatVersion: 2
-guid: e8261537e23fc78458bfecb7d7c402dd
+guid: f89686549a418f940a5cebbf742e7c2a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: c_cat_humanoid_all_MAT
-    second: {fileID: 2100000, guid: aaaa9958339c81b44812eb173205a86e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: c_cat_humanoid_all_MAT.002
-    second: {fileID: 2100000, guid: 0bfcc091276609a4cb2b1d7bc40b2c80, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: c_cat_humanoid_eye_MAT
-    second: {fileID: 2100000, guid: 4da5485b8ede7084883ff02cdfc7dd4f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: c_cat_humanoid_mouth_MAT
-    second: {fileID: 2100000, guid: a86014c888f52204c8706437fec58810, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -117,7 +97,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

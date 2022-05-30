@@ -6,10 +6,12 @@ public class WaffleHandler : MonoBehaviour
 {
     public float waffle;
     ShieldHandler handler;
+    Animator _anim;
 
     private void Awake()
     {
         handler = GetComponent<ShieldHandler>();
+        _anim = GetComponentInChildren<Animator>();
     }
 
 
@@ -20,6 +22,7 @@ public class WaffleHandler : MonoBehaviour
             if (handler.shieldActivated != true)
             {
                 DecreaseWaffle();
+
                 Debug.Log("Kena Player");
             }
         }
@@ -33,5 +36,7 @@ public class WaffleHandler : MonoBehaviour
     public void DecreaseWaffle()
     {
         waffle--;
+        _anim.SetTrigger("Hit");
+        //GetComponent<PlayerController>().enabled = false;
     }
 }

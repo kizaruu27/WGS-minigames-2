@@ -51,6 +51,11 @@ public class AttackScript : MonoBehaviour
                 Debug.Log("Hit Player");
                 hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
             }
+            else
+            {
+                Debug.Log("Shielded");
+                hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
+            }
         }
 
         yield return new WaitForSeconds(1.1f);

@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WGS2_Login.unity
+    guid: 2665ba1ddeca98b438e309294dd743d5
+  - enabled: 1
+    path: Assets/Scenes/_Multiplayer Mode.unity
+    guid: 2d3e902276789264295232429d155006
   - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 88392fd10b5d70744a296b11d35c80ea

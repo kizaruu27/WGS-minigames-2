@@ -265,7 +265,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2843081353099394316, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3488019760912027249, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
       propertyPath: m_Pivot.x
@@ -355,6 +355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Timer Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8081329229739791893, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
 --- !u!224 &62291283 stripped
@@ -384,11 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &62291286 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2843081353099394316, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
-  m_PrefabInstance: {fileID: 62291282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &77515201
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,6 +3490,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 3
   player: {fileID: 505371244}
+--- !u!1 &1380421029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8081329229739791893, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+  m_PrefabInstance: {fileID: 62291282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1388786440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,7 +3854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f4d7d2d78242848b1b11c35c73a7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UITimer: {fileID: 62291286}
+  UITimer: {fileID: 1380421029}
   textMessage: {fileID: 62291285}
   textTimer: {fileID: 62291284}
   message: Shield Activated

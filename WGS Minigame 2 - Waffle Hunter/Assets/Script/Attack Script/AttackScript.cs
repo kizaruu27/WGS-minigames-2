@@ -6,7 +6,6 @@ public class AttackScript : MonoBehaviour
 {   
     public float desiredCooldown;
     public float cooldown;
-
     public float rayDistance;
     public float rayHeight;
     public LayerMask enemyMask;
@@ -48,6 +47,7 @@ public class AttackScript : MonoBehaviour
         {
             if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
             {
+                yield return new WaitForSeconds(.5f);
                 Debug.Log("Hit Player");
                 hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
             }

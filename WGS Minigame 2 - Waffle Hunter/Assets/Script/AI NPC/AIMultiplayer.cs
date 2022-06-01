@@ -9,7 +9,6 @@ public class AIMultiplayer : MonoBehaviour
     public Transform[] waypoint;
     public LayerMask playerMask;
     public Animator anim;
-    public ScriptableValue waffleValue;
     public float range;
     int currentWaypointIndex;
     public float currentWaitingTime;
@@ -20,6 +19,7 @@ public class AIMultiplayer : MonoBehaviour
     public float attackRange, turnSpeed;
     bool playerInrange;
     float fireRate, nextFire;
+    public AIAttack aiAttack;
 
 
     // Start is called before the first frame update
@@ -93,14 +93,11 @@ public class AIMultiplayer : MonoBehaviour
         {
             if (Time.time > nextFire)
             {
-
                 anim.SetTrigger("Attack");
-                waffleValue.value--;
                 nextFire = Time.time + fireRate;
-                print("Attack Player");
+                // aiAttack.AttackInPlayer();
             }
         }
-
     }
 
     void LockOnTarget()

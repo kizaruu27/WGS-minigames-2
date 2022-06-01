@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 21517515}
   - component: {fileID: 21517514}
   m_Layer: 5
-  m_Name: Create Button
+  m_Name: Btn_JoinLobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,16 +206,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1662380063}
-        m_TargetAssemblyTypeName: Launcher, Assembly-CSharp
-        m_MethodName: OpenRoomCreate
-        m_Mode: 1
+      - m_Target: {fileID: 1662380064}
+        m_TargetAssemblyTypeName: Zetcode_LoadSceneClick, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: WGS2_Lobby
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &21517515
@@ -2937,7 +2937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1103636146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3563,7 +3563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CREATE ROOM
+  m_Text: Join to Lobby
 --- !u!222 &1320134111
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4386,6 +4386,7 @@ GameObject:
   - component: {fileID: 1662380060}
   - component: {fileID: 1662380059}
   - component: {fileID: 1662380063}
+  - component: {fileID: 1662380064}
   m_Layer: 5
   m_Name: Menu Canvas
   m_TagString: Untagged
@@ -4510,6 +4511,18 @@ MonoBehaviour:
   levelToPlay: Game Prototype
   startButton: {fileID: 55725699}
   roomTestButton: {fileID: 705017398}
+--- !u!114 &1662380064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662380058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26394b4c5fb2b4d80a650f62bf01f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1679927181
 GameObject:
   m_ObjectHideFlags: 0

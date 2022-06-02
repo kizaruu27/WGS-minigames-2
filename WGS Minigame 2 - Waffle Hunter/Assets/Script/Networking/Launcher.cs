@@ -50,7 +50,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         // loadingText.text = "Connecting To Network...";
         // PhotonNetwork.ConnectUsingSettings();
 
-        Debug.Log(PhotonNetwork.NickName);
+        Debug.Log("Player Nickname: " + PlayerPrefs.GetString("LocalPlayerNickname"));
         menuButtons.SetActive(true);
 
 

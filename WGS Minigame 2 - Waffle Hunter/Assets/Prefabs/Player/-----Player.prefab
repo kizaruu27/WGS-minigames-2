@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768041758}
   m_Layer: 0
-  m_Name: Win UI
+  m_Name: MenuUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,8 +1101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832f039969c5c041b37a6d1a5f42933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waffle: 3
+  waffle: 0
   waffleTextUI: {fileID: 251783842}
+  MenuUI: {fileID: 768041757}
 --- !u!114 &505371250
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class WaffleHandler : MonoBehaviour
 {
-    public float waffle;
+    public float waffle; //ini waffle
     ShieldHandler handler;
     Animator _anim;
 
     [Header("UI Component")]
     [SerializeField] Text waffleTextUI;
+    [SerializeField] GameObject MenuUI;
 
     private void Awake()
     {
@@ -20,7 +21,18 @@ public class WaffleHandler : MonoBehaviour
 
     private void Start()
     {
+        waffle = 0;
         waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+    }
+
+
+    private void Update() 
+    {
+        if (waffle >= 10)
+        {
+            Time.timeScale = 0;
+            MenuUI.SetActive(true);
+        }
     }
 
 

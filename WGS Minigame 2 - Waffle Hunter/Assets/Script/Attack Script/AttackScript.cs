@@ -29,6 +29,7 @@ public class AttackScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && cooldown <= 0)
         {
             StartCoroutine(Attack());
+            Invoke("ActivateController", 1.1f);
         }
 
     }
@@ -57,15 +58,16 @@ public class AttackScript : MonoBehaviour
                 hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
             }
         }
-
-        yield return new WaitForSeconds(1.1f);
-
-        GetComponent<PlayerController>().enabled = true;
         
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
+    }
+
+    void ActivateController()
+    {
+        GetComponent<PlayerController>().enabled = true;
     }
 }

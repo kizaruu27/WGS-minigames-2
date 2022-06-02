@@ -33,6 +33,7 @@ public class WaffleHandler : MonoBehaviour
                 DecreaseWaffle();
 
                 Debug.Log("Kena Player");
+                
             }
         }
 
@@ -42,7 +43,7 @@ public class WaffleHandler : MonoBehaviour
         }
     }
 
-    public void IncreaseWaffle()
+    void IncreaseWaffle()
     {
         waffle++;
         waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
@@ -52,6 +53,14 @@ public class WaffleHandler : MonoBehaviour
     {
         waffle--;
         _anim.SetTrigger("Hit");
-        //GetComponent<PlayerController>().enabled = false;
+
+        GetComponent<PlayerController>().enabled = false;
+
+        Invoke("ActivateController", 1.5f);
+    }
+
+    void ActivateController()
+    {
+        GetComponent<PlayerController>().enabled = true;
     }
 }

@@ -36,8 +36,6 @@ public class WaffleHunterSpawner : MonoBehaviour
 
         view.RPC("SpawnPointWaffle", RpcTarget.OthersBuffered, itemSpawnIndex);
 
-        Debug.Log("ini index:" + itemSpawnIndex);
-
         // int playerSpawnIndex = Random.Range(0, playerSpawnPoints.Length);
 
         // if (itemSpawnIndex == playerSpawnIndex)

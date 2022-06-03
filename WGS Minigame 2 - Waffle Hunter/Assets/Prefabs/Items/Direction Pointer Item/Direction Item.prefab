@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6910242231404529008}
   - component: {fileID: 6910242231404529009}
   - component: {fileID: 3485037075353420885}
+  - component: {fileID: 7104745552966763859}
   m_Layer: 0
   m_Name: Direction Item
   m_TagString: Direction
@@ -114,6 +115,19 @@ MonoBehaviour:
   textTimer: {fileID: 6733143454238049037}
   message: Direction Item!
   time: 4
+--- !u!114 &7104745552966763859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6910242231404529010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4c4bcfdcc37204fa051654757aab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 15
 --- !u!1001 &8472213801273954251
 PrefabInstance:
   m_ObjectHideFlags: 0

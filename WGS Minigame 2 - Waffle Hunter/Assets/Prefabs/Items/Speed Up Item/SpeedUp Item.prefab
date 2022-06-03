@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6324394031248520942}
   - component: {fileID: 6324394031248520943}
   - component: {fileID: 1756187997458107605}
+  - component: {fileID: 5296263628779077990}
   m_Layer: 0
   m_Name: SpeedUp Item
   m_TagString: SpeedChange
@@ -132,6 +133,19 @@ MonoBehaviour:
   textTimer: {fileID: 4237531182931021940}
   message: Speed Up!
   time: 4
+--- !u!114 &5296263628779077990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6324394031248520936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4c4bcfdcc37204fa051654757aab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 15
 --- !u!1001 &1309716209616100530
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -715,6 +715,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!1 &183131885
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +763,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!4 &208937090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3500643284267298281, guid: 19cd47f2bf8f242409f84fde854071a7, type: 3}
@@ -1521,6 +1523,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!1 &527535751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,6 +2069,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!1 &835173339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,6 +2389,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!1 &958992024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2437,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!43 &984862038
 Mesh:
   m_ObjectHideFlags: 0
@@ -3559,6 +3565,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!1 &1299691162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,6 +3613,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!1 &1336929112
 GameObject:
   m_ObjectHideFlags: 0
@@ -3720,6 +3728,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!1 &1388786440
 GameObject:
   m_ObjectHideFlags: 0
@@ -4128,6 +4137,7 @@ MonoBehaviour:
   - {fileID: 6324394031248520936, guid: af6fcb6a7bd3af44d8d22fe5e6a805e6, type: 3}
   - {fileID: 6910242231404529010, guid: 20bc39359ae39da459217c4f2028fbbd, type: 3}
   - {fileID: 521608904124456592, guid: a551042aaa3ebe34ca363d7c5c53d93f, type: 3}
+  spawnTime: 15
 --- !u!4 &1515712429 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3500643285040898758, guid: 19cd47f2bf8f242409f84fde854071a7, type: 3}

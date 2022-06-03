@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 521608904124456595}
   - component: {fileID: 521608904124456606}
   - component: {fileID: 521608904124456607}
+  - component: {fileID: 5870968878264251510}
   m_Layer: 0
   m_Name: Shield Item
   m_TagString: Shield
@@ -127,6 +128,19 @@ MonoBehaviour:
   textTimer: {fileID: 3449360753578928257}
   message: Shield Activated
   time: 4
+--- !u!114 &5870968878264251510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521608904124456592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4c4bcfdcc37204fa051654757aab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 15
 --- !u!1001 &521608903398351943
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,66 +1,62 @@
 using System;
-using System.Threading.Tasks;
+using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Networking;
 using RunMinigames.Interface;
-using RunMinigames.Models.Http;
+using SimpleJSON;
 
 namespace RunMinigames.Services.Http
 {
-    public class HttpClient
+    public class HttpClientV2
     {
-        private readonly ISerializationOption _serializationOption;
+        private ISerializationOption _serializationOption;
         private string _url, _token;
 
-        public HttpClient(string url, ISerializationOption serializationOption, string token)
+        public HttpClientV2(string url, ISerializationOption serializationOption, [Optional] string token)
         {
             _url = url;
             _serializationOption = serializationOption;
             _token = token;
         }
 
-        public HttpClient(string url, ISerializationOption serializationOption)
+        public IEnumerator Get(string endpoint, Action<JSONNode> res, [Optional] Action<float> reqProgress)
         {
-            _url = url;
-            _serializationOption = serializationOption;
+            using var req = UnityWebRequest.Get(_url + endpoint);
+            req.SetRequestHeader("Content-Type", _serializationOption.ContentType);
+            if (_token != null) req.SetRequestHeader("Authorization", _token);
+
+            yield return req.SendWebRequest();
+
+            CheckRequest(req, res);
         }
 
-        public async Task<MHttpResponse<TModel>> Get<TModel>(string endpoint) =>
-            await Request<TModel>(UnityWebRequest.Get(_url + endpoint));
-
-        public async Task<MHttpResponse<TModel>> Post<TModel>(string endpoint, WWWForm form) =>
-            await Request<TModel>(UnityWebRequest.Post(_url + endpoint, form));
-
-        private async Task<MHttpResponse<TModel>> Request<TModel>(UnityWebRequest www)
+        public IEnumerator Post(string endpoint, WWWForm form, Action<JSONNode> res, [Optional] Action<float> reqProgress)
         {
-            var isLoading = false;
-            var isSuccess = false;
-            var downloadProgress = 0f;
+            using var req = UnityWebRequest.Post(_url + endpoint, form);
+            req.SetRequestHeader("Content-Type", _serializationOption.ContentType);
+            if (_token != null) req.SetRequestHeader("Authorization", _token);
 
-            www.SetRequestHeader("Content-Type", _serializationOption.ContentType);
+            yield return req.SendWebRequest();
 
-            if (_token != null)
-                www.SetRequestHeader("Authorization", _token);
+            CheckRequest(req, res);
+        }
 
-            var operation = www.SendWebRequest();
-
-            isLoading = operation.isDone;
-
-            while (!operation.isDone)
+        void CheckRequest(UnityWebRequest req, Action<JSONNode> res)
+        {
+            switch (req.result)
             {
-                await Task.Yield();
-                downloadProgress = www.downloadProgress * 100;
+                case UnityWebRequest.Result.ConnectionError:
+                case UnityWebRequest.Result.DataProcessingError:
+                    Debug.LogError(" Error: " + req.error);
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.LogError(" HTTP Error: " + req.error);
+                    break;
+                case UnityWebRequest.Result.Success:
+                    res?.Invoke(JSON.Parse(req.downloadHandler.text));
+                    break;
             }
-
-            if (www.result != UnityWebRequest.Result.Success)
-                Debug.LogError($"Failed: {www.error}");
-
-            var result = _serializationOption.Deserialize<TModel>(www.downloadHandler.text);
-
-            isSuccess = www.result == UnityWebRequest.Result.Success;
-
-            return new MHttpResponse<TModel>(result, isLoading, isSuccess, downloadProgress);
         }
-
     }
 }

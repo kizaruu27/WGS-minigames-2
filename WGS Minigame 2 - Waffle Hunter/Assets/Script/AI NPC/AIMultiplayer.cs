@@ -39,8 +39,7 @@ public class AIMultiplayer : MonoBehaviour
         fireRate = 1;
         nextFire = Time.time;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         UpdateTarget();

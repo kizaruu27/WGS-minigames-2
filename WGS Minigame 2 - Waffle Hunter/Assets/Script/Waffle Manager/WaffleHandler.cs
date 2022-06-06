@@ -64,11 +64,12 @@ public class WaffleHandler : MonoBehaviour
     public void DecreaseWaffle()
     {
         waffle--;
-        // _anim.SetTrigger("Hit");
+        if (waffle <= 0)
+        {
+            waffle = 0;
+        }
 
-        // GetComponent<PlayerController>().enabled = false;
-
-        // Invoke("ActivateController", 1.5f);
+        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
     }
 
     void ActivateController()

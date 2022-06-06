@@ -6,10 +6,18 @@ public class AIAttack : MonoBehaviour
 {
     public ScriptableValue waffleValue;
     public AIMultiplayer aiMultipayer;
+    WaffleHandler waffleHandler;
 
-    public void AttackInPlayer(){
-        waffleValue.value--;
+    private void Awake() 
+    {
+        waffleHandler = FindObjectOfType<WaffleHandler>();
+    }
+
+    public void AttackInPlayer()
+    {
         print("Attack Player");
+        waffleHandler.DecreaseWaffle();
+
     }
 
     public void OutAttackRange(){

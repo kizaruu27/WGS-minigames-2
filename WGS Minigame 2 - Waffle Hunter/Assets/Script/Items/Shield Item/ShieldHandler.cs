@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ShieldHandler : MonoBehaviour
 {
-
     public GameObject shield;
     public float shieldTime;
     public bool shieldActivated;
@@ -15,11 +14,22 @@ public class ShieldHandler : MonoBehaviour
         shieldActivated = false;
     }
 
+    private void Update() 
+    {
+        if (shieldActivated)
+        {
+            StartCoroutine(ActivateShield());
+        }   
+        else
+        {
+            DeactivateShield();
+        } 
+    }
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Shield")
         {
-            StartCoroutine(ActivateShield());
             shieldActivated = true;
         }
     }
@@ -30,12 +40,11 @@ public class ShieldHandler : MonoBehaviour
 
         yield return new WaitForSeconds(shieldTime);
 
-        DeactivateShield();
+        shieldActivated = false;
     }
 
     void DeactivateShield()
     {
         shield.SetActive(false);
-        shieldActivated = false;
     }
 }

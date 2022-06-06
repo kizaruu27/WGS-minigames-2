@@ -3792,6 +3792,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6475824906890061097, guid: 4a52be450bbcd834698d1ac00233121c, type: 3}
+      propertyPath: rayHeight
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475824906890061097, guid: 4a52be450bbcd834698d1ac00233121c, type: 3}
+      propertyPath: rayDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475824906890061097, guid: 4a52be450bbcd834698d1ac00233121c, type: 3}
+      propertyPath: playerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 6475824907148517330, guid: 4a52be450bbcd834698d1ac00233121c, type: 3}
       propertyPath: m_Name
       value: NPC

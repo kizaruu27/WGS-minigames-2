@@ -1087,8 +1087,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1338635114}
-  shieldTime: 3
-  shieldActivated: 1
+  shieldTime: 5
+  shieldActivated: 0
 --- !u!114 &505371246
 MonoBehaviour:
   m_ObjectHideFlags: 0

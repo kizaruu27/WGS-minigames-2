@@ -110,11 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f4d7d2d78242848b1b11c35c73a7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UITimer: {fileID: 5974023797087285959}
+  UITimer: {fileID: 411515929101834718}
   textMessage: {fileID: 8091599032830178283}
   textTimer: {fileID: 6733143454238049037}
   message: Direction Item!
   time: 4
+  isActive: 0
 --- !u!114 &7104745552966763859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2843081353099394316, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3488019760912027249, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
       propertyPath: m_Pivot.x
@@ -227,16 +228,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Timer Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8081329229739791893, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+--- !u!1 &411515929101834718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8081329229739791893, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+  m_PrefabInstance: {fileID: 8472213801273954251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5040855018478813626 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3488019760912027249, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
-  m_PrefabInstance: {fileID: 8472213801273954251}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5974023797087285959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2843081353099394316, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
   m_PrefabInstance: {fileID: 8472213801273954251}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &8091599032830178283 stripped

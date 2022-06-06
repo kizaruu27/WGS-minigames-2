@@ -110,7 +110,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 4
+  m_Speed: 6
   m_Acceleration: 7
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -829,5 +829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8dc9da5e5ab7342977254acdc6f2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waffleValue: {fileID: 11400000, guid: b84adfe16542c8943b991c4906067086, type: 2}
   aiMultipayer: {fileID: 6475824907148517341}
+  rayHeight: 0
+  rayDistance: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0

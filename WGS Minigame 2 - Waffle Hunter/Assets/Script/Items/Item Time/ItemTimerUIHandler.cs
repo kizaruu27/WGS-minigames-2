@@ -10,15 +10,15 @@ public class ItemTimerUIHandler : MonoBehaviour
     [SerializeField] Text textMessage, textTimer;
     [SerializeField] string message;
     [SerializeField] float time;
-    bool isActive;
+    public bool isActive;
 
 
     void Update()
     {
-        if (isActive)
-        {
-            ActivateUITimer();
-        }
+       if (isActive)
+       {
+           ActivateUITimer();
+       }
 
         if (time <= 0)
         {
@@ -26,23 +26,42 @@ public class ItemTimerUIHandler : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.tag == "Player")
+        if (col.tag ==  "Direction")
         {
-           isActive = true;
+            isActive = true;
+            time = GetComponent<DirectionHolder>().itemTime;
+            message = "Direction Activated";
+        }
+
+        if (col.tag == "Shield")
+        {
+            isActive = true;
+            time = GetComponent<ShieldHandler>().shieldTime;
+            message = "Shield Activated";
+        }
+
+        if (col.tag == "SpeedChange")
+        {
+            isActive = true;
+            time = col.GetComponent<SpeedUpItem>().itemTime;
+            message = "Speed Up!";
         }
     }
 
     void ActivateUITimer()
     {
-        time -= Time.deltaTime;
 
+        UITimer.SetActive(true);
+    
+        time -= Time.deltaTime;
         float seconds = Mathf.FloorToInt(time % 60);
+        textTimer.text = seconds.ToString();
+        
 
         UITimer.SetActive(true);
         textMessage.text = message;
-        textTimer.text = seconds.ToString();
     }
 
     void DeactivateTimer()

@@ -10,8 +10,6 @@ public class AIAttack : MonoBehaviour
 
     public void AttackInPlayer()
     {
-        print("Attack Player");
-
         Ray ray = new Ray (new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
         RaycastHit hit;
 
@@ -20,10 +18,13 @@ public class AIAttack : MonoBehaviour
             if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
             {
                 hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+                print("Attack Player");
             }
             else
             {
                 hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
+                print("Player Shielded");
+
             }
         }
 

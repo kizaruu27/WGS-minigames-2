@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f4d7d2d78242848b1b11c35c73a7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UITimer: {fileID: 3844293531975524798}
+  UITimer: {fileID: 7064931661886130855}
   textMessage: {fileID: 1726409278670577810}
   textTimer: {fileID: 4237531182931021940}
   message: Speed Up!
@@ -153,6 +153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6324394031248520931}
     m_Modifications:
+    - target: {fileID: 2843081353099394316, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3488019760912027249, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -241,16 +245,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Timer Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8081329229739791893, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+--- !u!1 &7064931661886130855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8081329229739791893, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
+  m_PrefabInstance: {fileID: 1309716209616100530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2471038627258913475 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3488019760912027249, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
-  m_PrefabInstance: {fileID: 1309716209616100530}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3844293531975524798 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2843081353099394316, guid: 78da0cbb944ccc94982c4b63efe715f1, type: 3}
   m_PrefabInstance: {fileID: 1309716209616100530}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1726409278670577810 stripped

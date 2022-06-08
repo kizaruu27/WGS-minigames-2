@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [Header("Joypad Variable")]
     //[SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private FixedJoystick _joystick;
+    [SerializeField] GameObject attackButton;
     [SerializeField] private Animator _animator;
 
     //[SerializeField] private float _moveSpeed;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _joystick.gameObject.SetActive(CheckPlatform.isAndroid || CheckPlatform.isIos);
+        attackButton.SetActive(CheckPlatform.isAndroid || CheckPlatform.isMac);
     }
 
     private void Start()

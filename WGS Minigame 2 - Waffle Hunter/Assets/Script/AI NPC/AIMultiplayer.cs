@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AIMultiplayer : MonoBehaviour
 {
-    UnityEngine.AI.NavMeshAgent agent;
+    NavMeshAgent agent;
     public Transform player;
     public Transform[] waypoint;
     public LayerMask playerMask;
@@ -25,12 +26,15 @@ public class AIMultiplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        // player = GameObject.FindWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         anim = GetComponentInChildren<Animator>();
 
+        UpdateWaypoint();
+    }
 
+    private void UpdateWaypoint()
+    {
         currentWaitingTime = 0;
         maxWaitingTime = 0;
         currentWaypointIndex = -1;
@@ -39,7 +43,7 @@ public class AIMultiplayer : MonoBehaviour
         fireRate = 1;
         nextFire = Time.time;
     }
-    
+
     void Update()
     {
         UpdateTarget();
@@ -94,7 +98,6 @@ public class AIMultiplayer : MonoBehaviour
             {
                 anim.SetTrigger("Attack");
                 nextFire = Time.time + fireRate;
-                // aiAttack.AttackInPlayer();
             }
         }
     }

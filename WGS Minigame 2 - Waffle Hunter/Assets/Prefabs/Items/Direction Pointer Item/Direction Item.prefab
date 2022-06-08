@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 15
+  particle: {fileID: 6253654099947472624, guid: 2a6617f23f0400c49b0d711105de393d, type: 3}
 --- !u!1001 &8472213801273954251
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1172,6 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38f147aa55521e4386c913257e56f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _controller: {fileID: 7370492479322699817}
   playerSpeed: 5
   rotationSpeed: 10
   jumpHeight: 1
@@ -1179,6 +1180,7 @@ MonoBehaviour:
   _joystick: {fileID: 2971676872741211411}
   attackButton: {fileID: 1458792810728178457}
   _animator: {fileID: 7370492479928713823}
+  anim: {fileID: 7370492479928713823}
 --- !u!114 &7370492479322700246
 MonoBehaviour:
   m_ObjectHideFlags: 0

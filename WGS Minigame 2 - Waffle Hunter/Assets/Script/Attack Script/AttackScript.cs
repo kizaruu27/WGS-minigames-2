@@ -11,8 +11,6 @@ public class AttackScript : MonoBehaviour
     public LayerMask enemyMask;
     public bool canAttack;
 
-
-
     Animator _anim;
 
     private void Awake()
@@ -30,7 +28,7 @@ public class AttackScript : MonoBehaviour
             canAttack = true;
         }
 
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0 && !CheckPlatform.isAndroid)
+        if (Input.GetMouseButtonDown(0) && cooldown <= 0 && !CheckPlatform.isAndroid && !CheckPlatform.isMac)
         {
             PlayerAttack();
         }

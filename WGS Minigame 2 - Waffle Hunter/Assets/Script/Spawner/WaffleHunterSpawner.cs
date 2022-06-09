@@ -53,7 +53,7 @@ public class WaffleHunterSpawner : MonoBehaviour
         // Instantiate(Item, ItemSpawnPoints[itemSpawnIndex].position, transform.rotation);
         // Instantiate(Player, playerSpawnPoints[playerSpawnIndex].position, transform.rotation);
 
-        Instantiate(Item, ItemSpawnPoints[itemSpawnIndex].position, transform.rotation);
+        // Instantiate(Item, ItemSpawnPoints[itemSpawnIndex].position, transform.rotation);
     }
 
     // Update is called once per frame

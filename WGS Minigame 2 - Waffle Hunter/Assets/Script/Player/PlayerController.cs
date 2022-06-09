@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     bool _isGrounded;
     [SerializeField][Range(0, 1)] float jumpHeight = 1.0f;
     [SerializeField] float gravity = -9.8f;
-    
+
 
     [Header("Joypad Variable")]
     //[SerializeField] private Rigidbody _rigidbody;
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        _joystick.gameObject.SetActive(CheckPlatform.isAndroid || CheckPlatform.isIos);
+        //! _joystick.gameObject.SetActive(CheckPlatform.isAndroid || CheckPlatform.isIos);
     }
 
     private void Start()
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
             anim.SetBool("isWalking", true);
-            
+
             /*
             transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
             anim.SetBool("isRunning", true);
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
     void Movement()
     {
         //Player Gravity
@@ -110,11 +110,11 @@ public class PlayerController : MonoBehaviour
             Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
-            anim.SetBool("isRunning", true);
+            //! anim.SetBool("isRunning", true);
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            //! anim.SetBool("isRunning", false);
         }
 
         //Jump();
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravity * Time.deltaTime;
         _controller.Move(playerVelocity * Time.deltaTime);
     }
-    
+
 
     void Jump()
     {

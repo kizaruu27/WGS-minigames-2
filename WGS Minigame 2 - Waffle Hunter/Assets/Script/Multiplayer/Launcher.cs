@@ -50,7 +50,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         // loadingText.text = "Connecting To Network...";
         // PhotonNetwork.ConnectUsingSettings();
 
-        Debug.Log("Player Nickname: " + PlayerPrefs.GetString("LocalPlayerNickname"));
+        SetNickname();
         menuButtons.SetActive(true);
 
 
@@ -79,32 +79,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
 
         loadingText.text = "Joining Lobby...";
-    }
-
-    public override void OnJoinedLobby()
-    {
-        //! it has provided on WGS2_Login scene
-
-        //base.OnJoinedLobby();
-        CloseMenu();
-        menuButtons.SetActive(true);
-
-        PhotonNetwork.NickName = Random.Range(0, 1000).ToString();
-
-        if (!hasSetNick)
-        {
-            CloseMenu();
-            nameInputScreen.SetActive(true);
-
-            if (PlayerPrefs.HasKey("playerName"))
-            {
-                nameInput.text = PlayerPrefs.GetString("playerName");
-            }
-        }
-        else
-        {
-            PhotonNetwork.NickName = PlayerPrefs.GetString("playerName");
-        }
     }
 
     public void OpenRoomCreate()
@@ -259,17 +233,9 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void SetNickname()
     {
-        if (!string.IsNullOrEmpty(nameInput.text))
-        {
-            PhotonNetwork.NickName = nameInput.text;
-
-            PlayerPrefs.SetString("playerName", nameInput.text);
-
-            CloseMenu();
-            menuButtons.SetActive(true);
-
-            hasSetNick = true;
-        }
+        PhotonNetwork.NickName = "player " + Random.Range(1, 4);
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.ConnectUsingSettings();
     }
 
     public void StartGame()

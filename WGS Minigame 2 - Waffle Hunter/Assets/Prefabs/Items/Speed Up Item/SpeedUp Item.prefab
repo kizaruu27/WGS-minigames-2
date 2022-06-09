@@ -133,6 +133,7 @@ MonoBehaviour:
   textTimer: {fileID: 4237531182931021940}
   message: Speed Up!
   time: 4
+  isActive: 0
 --- !u!114 &5296263628779077990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 15
+  particle: {fileID: 6253654099947472624, guid: 5cb136156bccf72468f63a25aaef2401, type: 3}
 --- !u!1001 &1309716209616100530
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyGameobject : MonoBehaviour
 {
     [SerializeField] float destroyTime;
+    [SerializeField] GameObject particle;
 
     private void Start()
     {
@@ -14,5 +15,13 @@ public class DestroyGameobject : MonoBehaviour
     public void DestroyObject()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.tag == "Player")
+        {
+            Instantiate(particle, transform.position, Quaternion.identity);
+        }
     }
 }

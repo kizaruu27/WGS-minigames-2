@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Variable")]
-    CharacterController _controller;
+    [SerializeField] CharacterController _controller;
     [SerializeField] public float playerSpeed = 5f;
     [SerializeField] float rotationSpeed = 10f;
 
@@ -20,25 +20,22 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Joypad Variable")]
-    //[SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private FixedJoystick _joystick;
+    [SerializeField] GameObject attackButton;
     [SerializeField] private Animator _animator;
 
-    //[SerializeField] private float _moveSpeed;
 
-    //Animation variable
-    Animator anim;
-    bool touchGround;
+    [Header("Animation Componenet")]
+    [SerializeField] Animator anim;
 
     private void Awake()
     {
-        //! _joystick.gameObject.SetActive(CheckPlatform.isAndroid || CheckPlatform.isIos);
+        _joystick.gameObject.SetActive(CheckPlatform.isAndroid || CheckPlatform.isIos);
+        attackButton.SetActive(CheckPlatform.isAndroid || CheckPlatform.isMac);
     }
 
     private void Start()
     {
-        _controller = GetComponent<CharacterController>();
-        anim = GetComponentInChildren<Animator>();
         followCamera = Camera.main;
     }
 
@@ -66,19 +63,12 @@ public class PlayerController : MonoBehaviour
 
         _controller.Move(movementDirection * playerSpeed * Time.deltaTime);
 
-        //_rigidbody.velocity = new Vector3(_joystick.Horizontal * _moveSpeed, _rigidbody.velocity.y, _joystick.Vertical * _moveSpeed);
-
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
             Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
             anim.SetBool("isWalking", true);
-
-            /*
-            transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
-            anim.SetBool("isRunning", true);
-            */
         }
         else
         {
@@ -117,24 +107,8 @@ public class PlayerController : MonoBehaviour
             //! anim.SetBool("isRunning", false);
         }
 
-        //Jump();
-
         playerVelocity.y += gravity * Time.deltaTime;
         _controller.Move(playerVelocity * Time.deltaTime);
     }
 
-
-    void Jump()
-    {
-        //Player Jump
-        if (Input.GetButton("Jump") && _isGrounded)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
-            //anim.SetBool("isJumping", true);
-        }
-        else
-        {
-            //anim.SetBool("isJumping", false);
-        }
-    }
 }

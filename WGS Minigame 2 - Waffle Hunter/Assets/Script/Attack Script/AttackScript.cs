@@ -9,6 +9,7 @@ public class AttackScript : MonoBehaviour
     public float rayDistance;
     public float rayHeight;
     public LayerMask enemyMask;
+    public bool canAttack;
 
     Animator _anim;
 
@@ -24,20 +25,30 @@ public class AttackScript : MonoBehaviour
         if (cooldown <= 0)
         {
             cooldown = 0;
+            canAttack = true;
         }
 
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0)
+        if (Input.GetMouseButtonDown(0) && cooldown <= 0 && !CheckPlatform.isAndroid && !CheckPlatform.isMac)
+        {
+            PlayerAttack();
+        }
+
+    }
+
+    public void PlayerAttack()
+    {
+        if (canAttack)
         {
             StartCoroutine(Attack());
             Invoke("ActivateController", 1.1f);
         }
-
     }
 
     IEnumerator Attack()
     {
         Debug.Log("Attack");
         cooldown = desiredCooldown;
+        canAttack = false;
         _anim.SetTrigger("Attack");
         GetComponent<PlayerController>().enabled = false;
 

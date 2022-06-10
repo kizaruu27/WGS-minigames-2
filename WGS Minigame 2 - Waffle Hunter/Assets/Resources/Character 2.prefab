@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 332306587102621675}
+  playerSpeed: 2
 --- !u!143 &332306587102621675
 CharacterController:
   m_ObjectHideFlags: 0

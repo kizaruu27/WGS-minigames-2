@@ -41,7 +41,7 @@ namespace RunMinigames.Services.Photon
             if (!httpManager.enabled)
             {
                 Destroy(httpManager.gameObject);
-                SceneManager.LoadScene("_Multiplayer Mode");
+                SceneManager.LoadScene("WGS2_Lobby");
             }
 
         }

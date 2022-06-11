@@ -6,10 +6,14 @@ using Photon.Pun;
 public class PlayerControllerV2 : MonoBehaviour
 {
     public CharacterController controller;
-    [SerializeField][Range(0, 10)] float playerSpeed = 2.0f;
+    public Animator anim;
+     [Range(0, 10)] public float playerSpeed = 2.0f;
 
     [Header("Mobile Input")]
     [SerializeField] private FixedJoystick Joystick;
+
+    Vector3 playerVelocity;
+    float gravity = -9.8f;
 
     PhotonView pv;
 
@@ -41,13 +45,25 @@ public class PlayerControllerV2 : MonoBehaviour
 
     public void PlayerControllerMove()
     {
+        if (controller.isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0;
+        }
+
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
+            anim.SetBool("isRunning", true);
         }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
+        playerVelocity.y += gravity * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
     }
 
     public void JoystickMove()

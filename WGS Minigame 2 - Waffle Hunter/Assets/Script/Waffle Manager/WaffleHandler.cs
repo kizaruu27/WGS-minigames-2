@@ -7,7 +7,6 @@ public class WaffleHandler : MonoBehaviour
 {
     public float waffle; //ini waffle
     ShieldHandler handler;
-    Animator _anim;
 
     [Header("UI Component")]
     [SerializeField] Text waffleTextUI;
@@ -16,13 +15,12 @@ public class WaffleHandler : MonoBehaviour
     private void Awake()
     {
         handler = GetComponent<ShieldHandler>();
-        _anim = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
         //waffle = 0;
-        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+        //waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
     }
 
 
@@ -31,24 +29,13 @@ public class WaffleHandler : MonoBehaviour
         if (waffle >= 10)
         {
             Time.timeScale = 0;
-            MenuUI.SetActive(true);
+            //MenuUI.SetActive(true);
         }
     }
 
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.tag == "Player")
-        {
-            if (handler.shieldActivated != true)
-            {
-                DecreaseWaffle();
-
-                Debug.Log("Kena Player");
-                
-            }
-        }
-
         if (other.tag == "Waffle")
         {
             IncreaseWaffle();
@@ -58,7 +45,7 @@ public class WaffleHandler : MonoBehaviour
     void IncreaseWaffle()
     {
         waffle++;
-        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+        //waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
     }
 
     public void DecreaseWaffle()
@@ -69,7 +56,7 @@ public class WaffleHandler : MonoBehaviour
             waffle = 0;
         }
 
-        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+       //waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
     }
 
     void ActivateController()

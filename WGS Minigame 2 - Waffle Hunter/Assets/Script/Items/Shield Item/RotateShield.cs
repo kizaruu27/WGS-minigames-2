@@ -9,7 +9,7 @@ public class RotateShield : MonoBehaviour
     
     void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y + 1.2f, player.position.z);
+       // transform.position = new Vector3(player.position.x, player.position.y + 1.2f, player.position.z);
         transform.Rotate(Vector3.up * rotationSpeed);
     }
 }

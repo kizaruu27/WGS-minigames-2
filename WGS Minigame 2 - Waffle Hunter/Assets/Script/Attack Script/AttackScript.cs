@@ -50,7 +50,7 @@ public class AttackScript : MonoBehaviour
         cooldown = desiredCooldown;
         canAttack = false;
         _anim.SetTrigger("Attack");
-        GetComponent<PlayerController>().enabled = false;
+        GetComponent<PlayerControllerV2>().enabled = false;
 
 
         Ray ray = new Ray (new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
@@ -79,6 +79,6 @@ public class AttackScript : MonoBehaviour
 
     void ActivateController()
     {
-        GetComponent<PlayerController>().enabled = true;
+        GetComponent<PlayerControllerV2>().enabled = true;
     }
 }

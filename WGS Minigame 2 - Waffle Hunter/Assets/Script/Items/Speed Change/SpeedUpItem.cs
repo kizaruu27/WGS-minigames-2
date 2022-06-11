@@ -20,13 +20,13 @@ public class SpeedUpItem : MonoBehaviour
 
     IEnumerator SpeedUpPlayer(Collider col)
     {
-        col.GetComponent<PlayerController>().playerSpeed += speedUp;
+        col.GetComponent<PlayerControllerV2>().playerSpeed = speedUp;
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
 
         yield return new WaitForSeconds(itemTime);
 
-        col.GetComponent<PlayerController>().playerSpeed = defaultSpeed;
+        col.GetComponent<PlayerControllerV2>().playerSpeed = defaultSpeed;
         Destroy(gameObject);
     }
 }

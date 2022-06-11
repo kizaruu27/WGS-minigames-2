@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class SlowDownObstacle : MonoBehaviour
 {
+    [SerializeField] float defaultSpeed = 5f;
+    [SerializeField] float slowSpeed = 3f;
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
         {
-            PlayerController player = col.GetComponent<PlayerController>();
-            player.playerSpeed = 3f;
+            PlayerControllerV2 player = col.GetComponent<PlayerControllerV2>();
+            player.playerSpeed = slowSpeed;
         }
     }
 
@@ -17,7 +20,7 @@ public class SlowDownObstacle : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            col.GetComponent<PlayerController>().playerSpeed = 5;
+            col.GetComponent<PlayerControllerV2>().playerSpeed = defaultSpeed;
         }
     }
 

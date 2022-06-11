@@ -5,7 +5,6 @@ using UnityEngine;
 public class DirectionHolder : MonoBehaviour
 {
     public GameObject Direction;
-    public Transform directionSpawnPoint;
     public float itemTime;
     public bool isShowing;
 

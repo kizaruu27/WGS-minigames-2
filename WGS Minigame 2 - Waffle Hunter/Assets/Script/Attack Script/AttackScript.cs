@@ -40,7 +40,7 @@ public class AttackScript : MonoBehaviour
         if (canAttack)
         {
             StartCoroutine(Attack());
-            Invoke("ActivateController", 1.1f);
+            Invoke("ActivateController", 1.5f);
         }
     }
 

@@ -11,6 +11,9 @@ public class WaffleHandler : MonoBehaviour
     public float waffle; //ini waffle
     ShieldHandler handler;
 
+    [Header("Validation")]
+    public bool isWin;
+
     [Header("UI Component")]
     [SerializeField] Text waffleTextUI;
     [SerializeField] GameObject MenuUI;
@@ -32,6 +35,8 @@ public class WaffleHandler : MonoBehaviour
         {
             waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
         }
+
+        isWin = false;
     }
 
 
@@ -40,6 +45,7 @@ public class WaffleHandler : MonoBehaviour
         if (waffle >= 10)
         {
             Time.timeScale = 0;
+            isWin = true;
             //MenuUI.SetActive(true);
         }
     }

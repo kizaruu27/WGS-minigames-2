@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject previewCamera;
-    public GameObject _canvas;
     PhotonView view;
+
+    [SerializeField] GameObject Joystick;
+    [SerializeField] GameObject AttackButton;
 
     private void Awake()
     {
         view = GetComponent<PhotonView>();
-        _canvas.SetActive(CheckPlatform.isMobile || CheckPlatform.isIos || CheckPlatform.isAndroid);
+
+        Joystick.SetActive(view.IsMine && CheckPlatform.isAndroid || CheckPlatform.isIos || CheckPlatform.isMobile);
+        AttackButton.SetActive(view.IsMine && CheckPlatform.isAndroid || CheckPlatform.isIos || CheckPlatform.isMobile);
     }
 
     // Start is called before the first frame update

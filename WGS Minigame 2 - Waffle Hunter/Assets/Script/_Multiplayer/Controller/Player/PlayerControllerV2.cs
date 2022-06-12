@@ -29,15 +29,16 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void Update()
     {
-        if (controller.isGrounded && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0;
-        }
-        playerVelocity.y += gravity * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
-
         if (pv.IsMine)
         {
+            if (controller.isGrounded && playerVelocity.y < 0)
+            {
+                playerVelocity.y = 0;
+            }
+
+            playerVelocity.y += gravity * Time.deltaTime;
+            controller.Move(playerVelocity * Time.deltaTime);
+
             if (CheckPlatform.isWeb || CheckPlatform.isWindowsUnity || CheckPlatform.isWindows)
             {
                 PlayerControllerMove();

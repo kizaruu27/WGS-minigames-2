@@ -1359,7 +1359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440015458}
   m_Layer: 0
-  m_Name: SpawanPoints
+  m_Name: SpawanPlayerPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

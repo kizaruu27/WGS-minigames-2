@@ -171,6 +171,7 @@ MonoBehaviour:
   waffle: 3
   waffleTextUI: {fileID: 0}
   MenuUI: {fileID: 0}
+  waffleMessage: {fileID: 0}
 --- !u!114 &6259696134214851393
 MonoBehaviour:
   m_ObjectHideFlags: 0

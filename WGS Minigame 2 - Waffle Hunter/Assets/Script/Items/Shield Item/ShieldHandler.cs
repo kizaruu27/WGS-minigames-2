@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class ShieldHandler : MonoBehaviour
 {
@@ -36,11 +37,15 @@ public class ShieldHandler : MonoBehaviour
 
     IEnumerator ActivateShield()
     {
-        shield.SetActive(true);
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            shield.SetActive(true);
 
-        yield return new WaitForSeconds(shieldTime);
+            yield return new WaitForSeconds(shieldTime);
 
-        shieldActivated = false;
+            shieldActivated = false;
+        }
+
     }
 
     void DeactivateShield()

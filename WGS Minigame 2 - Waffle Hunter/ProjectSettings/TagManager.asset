@@ -17,11 +17,10 @@ TagManager:
   - Joystick
   - AttactButton
   - Waffle Text
-  - Item Text
-  - Item Timer
   - Timer UI
   - Item Message
   - Item Time
+  - Waffle Message
   layers:
   - Default
   - TransparentFX

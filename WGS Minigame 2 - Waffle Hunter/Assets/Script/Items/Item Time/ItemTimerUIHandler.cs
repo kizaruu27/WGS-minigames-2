@@ -33,7 +33,7 @@ public class ItemTimerUIHandler : MonoBehaviour
        {
            ActivateUITimer();
        }
-       if (time <= 0)
+       if (time <= 1)
        {
             DeactivateTimer();
        }

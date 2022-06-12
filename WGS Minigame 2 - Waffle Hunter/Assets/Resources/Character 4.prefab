@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 960375065673379142}
   - component: {fileID: 7425509994139571761}
   - component: {fileID: 3285321990789729070}
+  - component: {fileID: 8743024345128765070}
   m_Layer: 6
   m_Name: Character 4
   m_TagString: Player
@@ -220,6 +221,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   canAttack: 0
+  AttactButton: {fileID: 0}
+--- !u!114 &8743024345128765070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332306587102621672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f4d7d2d78242848b1b11c35c73a7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UITimer: {fileID: 0}
+  textMessage: {fileID: 0}
+  textTimer: {fileID: 0}
+  message: 
+  time: 0
+  isActive: 0
 --- !u!1 &332306587755318437
 GameObject:
   m_ObjectHideFlags: 0

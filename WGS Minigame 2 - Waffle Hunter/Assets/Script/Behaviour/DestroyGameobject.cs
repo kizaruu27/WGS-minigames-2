@@ -9,12 +9,7 @@ public class DestroyGameobject : MonoBehaviour
 
     private void Start()
     {
-        Invoke("DestroyObject", destroyTime);
-    }
-
-    public void DestroyObject()
-    {
-        Destroy(gameObject);
+        Destroy(gameObject, destroyTime);
     }
 
     private void OnTriggerEnter(Collider other) 

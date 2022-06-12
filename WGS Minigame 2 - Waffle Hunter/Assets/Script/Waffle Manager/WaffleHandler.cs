@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class WaffleHandler : MonoBehaviour
 {
+    PhotonView pv;
+
     public float waffle; //ini waffle
     ShieldHandler handler;
 
@@ -15,12 +18,18 @@ public class WaffleHandler : MonoBehaviour
     private void Awake()
     {
         handler = GetComponent<ShieldHandler>();
+        pv = GetComponent<PhotonView>();
     }
 
     private void Start()
     {
         //waffle = 0;
-        //waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+        waffleTextUI = GameObject.FindGameObjectWithTag("Waffle Text").GetComponent<Text>();
+
+        if (pv.IsMine)
+        {
+            waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+        }
     }
 
 
@@ -44,23 +53,24 @@ public class WaffleHandler : MonoBehaviour
 
     void IncreaseWaffle()
     {
-        waffle++;
-        //waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+        if (pv.IsMine)
+        {
+            waffle++;
+            waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+        }
     }
 
     public void DecreaseWaffle()
     {
-        waffle--;
-        if (waffle <= 0)
+        if (pv.IsMine)
         {
-            waffle = 0;
+            waffle--;
+            if (waffle <= 0)
+            {
+                waffle = 0;
+            }
+
+            waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
         }
-
-       //waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
-    }
-
-    void ActivateController()
-    {
-        GetComponent<PlayerController>().enabled = true;
     }
 }

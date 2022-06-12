@@ -8,24 +8,39 @@ public class SpawnWaffleManager : MonoBehaviour
     public Transform[] spawnPosition;
 
 
+    private void Start()
+    {
+        Instantiate(waffle, spawnPosition[Random.Range(0, spawnPosition.Length)].position, Quaternion.identity);
+    }
+
+
     // Update is called once per frame
     void Update()
     {
-        AddWaffleScript addWaffle;
-        addWaffle = FindObjectOfType<AddWaffleScript>();
+        WaffleBehaviour waffle;
+        waffle = FindObjectOfType<WaffleBehaviour>();
         
-        if (addWaffle.waffleCollected)
+        if (waffle.waffleCollected)
         {
-            StartCoroutine(spawnWaffle());
+            int randomIndexSpawn = Random.Range(0, spawnPosition.Length);
+            int currentIndex = randomIndexSpawn + 1;
+
+            if (currentIndex > spawnPosition.Length)
+            {
+                currentIndex = 0;
+            }
+
+
+            StartCoroutine(spawnWaffle(currentIndex));
         }
     }
 
-    IEnumerator spawnWaffle()
+    IEnumerator spawnWaffle(int index)
     {
-        Instantiate(waffle, spawnPosition[Random.Range(0, spawnPosition.Length)].position, Quaternion.identity);
+        Instantiate(waffle, spawnPosition[index].position, Quaternion.identity);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
-        FindObjectOfType<AddWaffleScript>().waffleCollected = false;
+        FindObjectOfType<WaffleBehaviour>().waffleCollected = false;
     }
 }

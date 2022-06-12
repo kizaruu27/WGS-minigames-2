@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6253654099947472637}
   - component: {fileID: 6253654099947472638}
   - component: {fileID: 6253654099947472639}
-  - component: {fileID: 5871184012444449821}
+  - component: {fileID: -1550214389346162582}
   m_Layer: 0
-  m_Name: DirectionParticle
+  m_Name: WaffleParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4817,7 +4817,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f74e4e340a51b2a479b04331ad502d67, type: 2}
+  - {fileID: 2100000, guid: 9630d1532c4e7e74e87159230c680760, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4863,7 +4863,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &5871184012444449821
+--- !u!114 &-1550214389346162582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -16,6 +16,7 @@ TagManager:
   - CMvcam
   - Joystick
   - AttactButton
+  - Waffle Text
   layers:
   - Default
   - TransparentFX

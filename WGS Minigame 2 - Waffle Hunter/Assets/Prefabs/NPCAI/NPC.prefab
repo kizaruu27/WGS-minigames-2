@@ -159,7 +159,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   playerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -181,6 +180,18 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e8261537e23fc78458bfecb7d7c402dd, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8261537e23fc78458bfecb7d7c402dd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4509532
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8261537e23fc78458bfecb7d7c402dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4509532
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e8261537e23fc78458bfecb7d7c402dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4509532
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8261537e23fc78458bfecb7d7c402dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -830,8 +841,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiMultipayer: {fileID: 6475824907148517341}
-  rayHeight: 0
-  rayDistance: 0
+  rayHeight: -0.5
+  rayDistance: 2
   playerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64

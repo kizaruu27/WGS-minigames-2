@@ -7,7 +7,7 @@ public class PlayerControllerV2 : MonoBehaviour
 {
     public CharacterController controller;
     public Animator anim;
-     [Range(0, 10)] public float playerSpeed = 2.0f;
+    [Range(0, 10)] public float playerSpeed = 2.0f;
 
     [Header("Mobile Input")]
     [SerializeField] private FixedJoystick Joystick;
@@ -29,6 +29,13 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void Update()
     {
+        if (controller.isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0;
+        }
+        playerVelocity.y += gravity * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+
         if (pv.IsMine)
         {
             if (CheckPlatform.isWeb || CheckPlatform.isWindowsUnity || CheckPlatform.isWindows)
@@ -43,13 +50,9 @@ public class PlayerControllerV2 : MonoBehaviour
         }
     }
 
+    //! for WebGL and Desktop
     public void PlayerControllerMove()
     {
-        if (controller.isGrounded && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0;
-        }
-
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         controller.Move(move * Time.deltaTime * playerSpeed);
 
@@ -62,13 +65,25 @@ public class PlayerControllerV2 : MonoBehaviour
         {
             anim.SetBool("isRunning", false);
         }
-        playerVelocity.y += gravity * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
     }
 
+    //! for mobile platform
     public void JoystickMove()
     {
-        Vector2 move = Joystick.Direction * playerSpeed * Time.deltaTime;
-        controller.Move(transform.right * move.x + transform.forward * move.y);
+        float _horizontal = Joystick.Horizontal;
+        float _vertical = Joystick.Vertical;
+
+        Vector3 move = new Vector3(_horizontal, 0, _vertical);
+        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
     }
 }

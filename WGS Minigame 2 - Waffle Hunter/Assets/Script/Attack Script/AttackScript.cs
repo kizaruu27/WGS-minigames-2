@@ -1,22 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackScript : MonoBehaviour
-{   
+{
     public float desiredCooldown;
     public float cooldown;
     public float rayDistance;
     public float rayHeight;
     public LayerMask enemyMask;
     public bool canAttack;
+    public Button AttactButton;
 
     Animator _anim;
 
     private void Awake()
     {
         _anim = GetComponentInChildren<Animator>();
+
     }
+    private void Start() =>
+        AttactButton = GameObject.FindGameObjectWithTag("AttactButton").GetComponent<Button>();
 
     void Update()
     {
@@ -28,11 +33,22 @@ public class AttackScript : MonoBehaviour
             canAttack = true;
         }
 
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0 && !CheckPlatform.isAndroid && !CheckPlatform.isMac)
+        if (Input.GetMouseButtonDown(0) && cooldown <= 0 && !CheckPlatform.isIos && !CheckPlatform.isAndroid && !CheckPlatform.isMobile)
         {
             PlayerAttack();
         }
 
+        if (CheckPlatform.isIos || CheckPlatform.isAndroid || CheckPlatform.isMobile)
+            AttactButton.onClick.AddListener(AttactForMobile);
+    }
+
+    public void AttactForMobile()
+    {
+        if (canAttack)
+        {
+            StartCoroutine(Attack());
+            Invoke("ActivateController", 1.5f);
+        }
     }
 
     public void PlayerAttack()
@@ -53,7 +69,7 @@ public class AttackScript : MonoBehaviour
         GetComponent<PlayerControllerV2>().enabled = false;
 
 
-        Ray ray = new Ray (new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
+        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, rayDistance, enemyMask))
         {
@@ -69,7 +85,7 @@ public class AttackScript : MonoBehaviour
                 hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
             }
         }
-        
+
     }
 
     private void OnDrawGizmosSelected()

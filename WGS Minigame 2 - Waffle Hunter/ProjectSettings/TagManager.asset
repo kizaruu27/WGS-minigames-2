@@ -15,6 +15,7 @@ TagManager:
   - Shield
   - CMvcam
   - Joystick
+  - AttactButton
   layers:
   - Default
   - TransparentFX

@@ -45,7 +45,7 @@ public class ItemTimerUIHandler : MonoBehaviour
        {
            ActivateUITimer();
        }
-       if (time <= 1)
+       if (time <= 0)
        {
             DeactivateTimer();
        }
@@ -87,11 +87,11 @@ public class ItemTimerUIHandler : MonoBehaviour
         
             time -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(time % 60);
-            textTimer.text = seconds.ToString();
+           // textTimer.text = seconds.ToString();
             
 
             //UITimer.SetActive(true);
-            textMessage.text = message;
+           // textMessage.text = message;
         }
     }
 

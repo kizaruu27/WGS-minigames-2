@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832f039969c5c041b37a6d1a5f42933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waffle: 3
+  waffle: 0
   isWin: 0
   waffleTextUI: {fileID: 0}
   MenuUI: {fileID: 0}
@@ -241,6 +241,9 @@ MonoBehaviour:
   textTimer: {fileID: 0}
   message: 
   time: 0
+  SpeedUpIndicator: {fileID: 0}
+  ShieldIndicator: {fileID: 0}
+  DirectionIndicator: {fileID: 0}
   isActive: 0
 --- !u!1 &332306587755318437
 GameObject:

@@ -11,6 +11,12 @@ public class ItemTimerUIHandler : MonoBehaviour
     [SerializeField] Text textMessage, textTimer;
     [SerializeField] string message;
     [SerializeField] float time;
+
+    [Header("Indicator Elements")]
+    [SerializeField] ItemsIndicatorHandler SpeedUpIndicator;
+    [SerializeField] ItemsIndicatorHandler ShieldIndicator;
+    [SerializeField] ItemsIndicatorHandler DirectionIndicator;
+
     public bool isActive;
 
     PhotonView pv;
@@ -22,9 +28,15 @@ public class ItemTimerUIHandler : MonoBehaviour
 
     private void Start() 
     {
+        //timer UI component
         UITimer = GameObject.FindGameObjectWithTag("Timer UI");
         textMessage = GameObject.FindGameObjectWithTag("Item Message").GetComponent<Text>();
         textTimer = GameObject.FindGameObjectWithTag("Item Time").GetComponent<Text>();   
+
+        //indicator UI
+        SpeedUpIndicator = GameObject.FindGameObjectWithTag("Speed indicator").GetComponent<ItemsIndicatorHandler>();
+        ShieldIndicator = GameObject.FindGameObjectWithTag("Shield Indicator").GetComponent<ItemsIndicatorHandler>();
+        DirectionIndicator = GameObject.FindGameObjectWithTag("Direction Indicator").GetComponent<ItemsIndicatorHandler>();
     }
 
     void Update()
@@ -47,6 +59,7 @@ public class ItemTimerUIHandler : MonoBehaviour
             isActive = true;
             time = GetComponent<DirectionHolder>().itemTime;
             message = "Direction Activated";
+            DirectionIndicator.activateIndicator();
         }
 
         if (col.tag == "Shield")
@@ -54,6 +67,7 @@ public class ItemTimerUIHandler : MonoBehaviour
             isActive = true;
             time = GetComponent<ShieldHandler>().shieldTime;
             message = "Shield Activated";
+            ShieldIndicator.activateIndicator();
         }
 
         if (col.tag == "SpeedChange")
@@ -61,6 +75,7 @@ public class ItemTimerUIHandler : MonoBehaviour
             isActive = true;
             time = col.GetComponent<SpeedUpItem>().itemTime;
             message = "Speed Up!";
+            SpeedUpIndicator.activateIndicator();
         }
     }
 
@@ -89,6 +104,11 @@ public class ItemTimerUIHandler : MonoBehaviour
             textMessage.text = null;
             textTimer.text = null;
             isActive = false;
+            
+            //deactivate indicator
+            DirectionIndicator.deactivateIndicator();
+            SpeedUpIndicator.deactivateIndicator();
+            ShieldIndicator.deactivateIndicator();
         }
     }
 }

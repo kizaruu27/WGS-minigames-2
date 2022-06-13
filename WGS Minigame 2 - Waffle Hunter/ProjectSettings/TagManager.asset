@@ -21,6 +21,9 @@ TagManager:
   - Item Message
   - Item Time
   - Waffle Message
+  - Speed indicator
+  - Shield Indicator
+  - Direction Indicator
   layers:
   - Default
   - TransparentFX

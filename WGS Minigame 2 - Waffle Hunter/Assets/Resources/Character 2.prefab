@@ -169,8 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waffle: 0
+  isWin: 0
   waffleTextUI: {fileID: 0}
   MenuUI: {fileID: 0}
+  waffleMessage: {fileID: 0}
 --- !u!114 &3733546518747765158
 MonoBehaviour:
   m_ObjectHideFlags: 0

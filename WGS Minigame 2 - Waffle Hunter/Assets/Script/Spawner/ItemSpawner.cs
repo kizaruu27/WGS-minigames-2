@@ -19,21 +19,22 @@ public class ItemSpawner : MonoBehaviour
         //StartCoroutine(SpawnItems());
         //DestroyItem();
 
-        StartCoroutine(SpawnItems());
+        if (view.IsMine)
+        {
+            view.RPC("SpawnItems", RpcTarget.AllBuffered);
+        }
+
     }
 
-
+    [PunRPC]
     IEnumerator SpawnItems()
     {
         int spawnIndex = Random.Range(0, Items.Length);
-        view.RPC("SpawnToAll", RpcTarget.AllBuffered, spawnIndex);
+        // view.RPC("SpawnToAll", RpcTarget.AllBuffered, spawnIndex);
+        Instantiate(Items[spawnIndex].gameObject, transform.position, Quaternion.identity);
 
         yield return new WaitForSeconds(spawnTime);
 
         StartCoroutine(SpawnItems());
     }
-
-    [PunRPC]
-    void SpawnToAll(int spawnIndex) =>
-        Instantiate(Items[spawnIndex].gameObject, transform.position, Quaternion.identity);
 }

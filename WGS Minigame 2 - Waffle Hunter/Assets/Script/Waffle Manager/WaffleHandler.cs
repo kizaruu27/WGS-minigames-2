@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class WaffleHandler : MonoBehaviour
+public class WaffleHandler : MonoBehaviour, IDemageable
 {
     PhotonView pv;
 
@@ -40,7 +40,7 @@ public class WaffleHandler : MonoBehaviour
     }
 
 
-    private void Update() 
+    private void Update()
     {
         if (waffle >= 10)
         {
@@ -51,7 +51,7 @@ public class WaffleHandler : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Waffle")
         {
@@ -83,6 +83,19 @@ public class WaffleHandler : MonoBehaviour
 
             waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
         }
+    }
+
+    public void GotAttact()
+    {
+        Debug.Log("other palyer got damage");
+
+        waffle--;
+        if (waffle <= 0)
+        {
+            waffle = 0;
+        }
+
+        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
     }
 
     void DisableWaffleMessage()

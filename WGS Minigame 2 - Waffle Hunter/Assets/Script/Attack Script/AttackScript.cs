@@ -73,11 +73,17 @@ public class AttackScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, rayDistance, enemyMask))
         {
+
             if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
             {
                 yield return new WaitForSeconds(.5f);
-                Debug.Log("Hit Player");
-                hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+                Debug.Log("Hit Player: " + hit.collider.gameObject.name);
+                // Debug.Log("Hit Player");
+                // hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+
+                // ! attact another player
+                if (hit.collider.TryGetComponent(out IDemageable otherPlayer))
+                    otherPlayer.GotAttact();
             }
             else
             {

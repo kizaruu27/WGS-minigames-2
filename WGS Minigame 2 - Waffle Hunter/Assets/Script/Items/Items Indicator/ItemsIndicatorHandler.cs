@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class ItemsIndicatorHandler : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class ItemsIndicatorHandler : MonoBehaviour
     [SerializeField] float itemTime;
     [SerializeField] float currentTime;
     [SerializeField] bool isActive;
+
+    PhotonView pv;
+
+    private void Awake() {
+        pv = GetComponent<PhotonView>();
+    }
 
 
     private void Start()
@@ -39,6 +46,7 @@ public class ItemsIndicatorHandler : MonoBehaviour
     {
         isActive = true;
         indicator.SetActive(true);
+
     }
 
     public void deactivateIndicator()
@@ -51,7 +59,7 @@ public class ItemsIndicatorHandler : MonoBehaviour
     {
         itemTime -= Time.deltaTime;
         float seconds = Mathf.FloorToInt(itemTime % 60);
-        timer.text = seconds.ToString();
+        timer.text = seconds.ToString();   
     }
 
     void StopCalculating()

@@ -241,6 +241,9 @@ MonoBehaviour:
   textTimer: {fileID: 0}
   message: 
   time: 0
+  SpeedUpIndicator: {fileID: 0}
+  ShieldIndicator: {fileID: 0}
+  DirectionIndicator: {fileID: 0}
   isActive: 0
 --- !u!1 &332306587755318437
 GameObject:

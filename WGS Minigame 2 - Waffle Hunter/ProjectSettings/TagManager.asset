@@ -24,6 +24,7 @@ TagManager:
   - Speed indicator
   - Shield Indicator
   - Direction Indicator
+  - Notification
   layers:
   - Default
   - TransparentFX

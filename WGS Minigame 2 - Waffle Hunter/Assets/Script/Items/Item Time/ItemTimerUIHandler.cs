@@ -17,6 +17,13 @@ public class ItemTimerUIHandler : MonoBehaviour
     [SerializeField] ItemsIndicatorHandler ShieldIndicator;
     [SerializeField] ItemsIndicatorHandler DirectionIndicator;
 
+    [Header("Notification ELements")]
+    [SerializeField] UIAnimationHandler uIAnimationHandler;
+
+    [Header("Message Elements")]
+    [SerializeField] Text messageText;
+    Text messageNotification;
+
     public bool isActive;
 
     PhotonView pv;
@@ -60,7 +67,8 @@ public class ItemTimerUIHandler : MonoBehaviour
             time = GetComponent<DirectionHolder>().itemTime;
             message = "Direction Acquired!";
             DirectionIndicator.activateIndicator();
-            GetComponent<PlayerUIHitInfo>().CallUINotif(message);
+            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
+            CallUINotif(message);
         }
 
         if (col.tag == "Shield")
@@ -69,7 +77,8 @@ public class ItemTimerUIHandler : MonoBehaviour
             time = GetComponent<ShieldHandler>().shieldTime;
             message = "Shield Acquired!";
             ShieldIndicator.activateIndicator();
-            GetComponent<PlayerUIHitInfo>().CallUINotif(message);
+            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
+            CallUINotif(message);
         }
 
         if (col.tag == "SpeedChange")
@@ -78,7 +87,8 @@ public class ItemTimerUIHandler : MonoBehaviour
             time = col.GetComponent<SpeedUpItem>().itemTime;
             message = "Speed Up!";
             SpeedUpIndicator.activateIndicator();
-            GetComponent<PlayerUIHitInfo>().CallUINotif(message);
+            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
+            CallUINotif(message);
         }
     }
 
@@ -88,6 +98,7 @@ public class ItemTimerUIHandler : MonoBehaviour
         {
             time -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(time % 60);
+            messageNotification.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + 2, transform.position.z));
         }
     }
 
@@ -105,6 +116,20 @@ public class ItemTimerUIHandler : MonoBehaviour
             DirectionIndicator.deactivateIndicator();
             SpeedUpIndicator.deactivateIndicator();
             ShieldIndicator.deactivateIndicator();
+        }
+    }
+
+
+    [PunRPC]
+    void CallUINotif(string notif)
+    {
+        if (pv.IsMine)
+        {
+            isActive = true;
+            messageText.text = notif;
+            messageNotification = Instantiate(messageText, FindObjectOfType<Canvas>().transform).GetComponent<Text>();
+
+            Destroy(messageText, 0.5f);
         }
     }
 }

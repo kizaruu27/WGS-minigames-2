@@ -25,6 +25,7 @@ TagManager:
   - Shield Indicator
   - Direction Indicator
   - Notification
+  - Notification Text
   layers:
   - Default
   - TransparentFX

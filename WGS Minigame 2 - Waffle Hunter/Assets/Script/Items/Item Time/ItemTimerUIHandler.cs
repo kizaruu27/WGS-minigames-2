@@ -19,6 +19,7 @@ public class ItemTimerUIHandler : MonoBehaviour
 
     [Header("Notification ELements")]
     [SerializeField] UIAnimationHandler uIAnimationHandler;
+    [SerializeField] Text notificationText;
 
     [Header("Message Elements")]
     [SerializeField] Text messageText;
@@ -44,6 +45,8 @@ public class ItemTimerUIHandler : MonoBehaviour
         SpeedUpIndicator = GameObject.FindGameObjectWithTag("Speed indicator").GetComponent<ItemsIndicatorHandler>();
         ShieldIndicator = GameObject.FindGameObjectWithTag("Shield Indicator").GetComponent<ItemsIndicatorHandler>();
         DirectionIndicator = GameObject.FindGameObjectWithTag("Direction Indicator").GetComponent<ItemsIndicatorHandler>();
+        uIAnimationHandler = GameObject.FindGameObjectWithTag("Notification").GetComponent<UIAnimationHandler>();
+        notificationText = GameObject.FindGameObjectWithTag("Notification Text").GetComponent<Text>();
     }
 
     void Update()
@@ -67,8 +70,8 @@ public class ItemTimerUIHandler : MonoBehaviour
             time = GetComponent<DirectionHolder>().itemTime;
             message = "Direction Acquired!";
             DirectionIndicator.activateIndicator();
-            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
             CallUINotif(message);
+            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
         }
 
         if (col.tag == "Shield")
@@ -77,8 +80,8 @@ public class ItemTimerUIHandler : MonoBehaviour
             time = GetComponent<ShieldHandler>().shieldTime;
             message = "Shield Acquired!";
             ShieldIndicator.activateIndicator();
-            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
             CallUINotif(message);
+            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
         }
 
         if (col.tag == "SpeedChange")
@@ -87,8 +90,9 @@ public class ItemTimerUIHandler : MonoBehaviour
             time = col.GetComponent<SpeedUpItem>().itemTime;
             message = "Speed Up!";
             SpeedUpIndicator.activateIndicator();
-            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
             CallUINotif(message);
+            // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
+          
         }
     }
 
@@ -98,7 +102,7 @@ public class ItemTimerUIHandler : MonoBehaviour
         {
             time -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(time % 60);
-            messageNotification.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + 2, transform.position.z));
+            notificationText.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + 2, transform.position.z));
         }
     }
 
@@ -120,16 +124,12 @@ public class ItemTimerUIHandler : MonoBehaviour
     }
 
 
-    [PunRPC]
     void CallUINotif(string notif)
     {
         if (pv.IsMine)
         {
-            isActive = true;
-            messageText.text = notif;
-            messageNotification = Instantiate(messageText, FindObjectOfType<Canvas>().transform).GetComponent<Text>();
-
-            Destroy(messageText, 0.5f);
+            uIAnimationHandler.PlayNotifAnimation();
+            notificationText.text = notif;
         }
     }
 }

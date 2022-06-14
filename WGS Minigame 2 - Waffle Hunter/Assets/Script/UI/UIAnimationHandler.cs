@@ -8,6 +8,6 @@ public class UIAnimationHandler : MonoBehaviour
 
     public void PlayNotifAnimation()
     {
-        anim.Play("FadeAnimation");
+        anim.SetTrigger("Play");
     }
 }

@@ -58,16 +58,18 @@ public class ItemTimerUIHandler : MonoBehaviour
         {
             isActive = true;
             time = GetComponent<DirectionHolder>().itemTime;
-            message = "Direction Activated";
+            message = "Direction Acquired!";
             DirectionIndicator.activateIndicator();
+            GetComponent<PlayerUIHitInfo>().CallUINotif(message);
         }
 
         if (col.tag == "Shield")
         {
             isActive = true;
             time = GetComponent<ShieldHandler>().shieldTime;
-            message = "Shield Activated";
+            message = "Shield Acquired!";
             ShieldIndicator.activateIndicator();
+            GetComponent<PlayerUIHitInfo>().CallUINotif(message);
         }
 
         if (col.tag == "SpeedChange")
@@ -76,6 +78,7 @@ public class ItemTimerUIHandler : MonoBehaviour
             time = col.GetComponent<SpeedUpItem>().itemTime;
             message = "Speed Up!";
             SpeedUpIndicator.activateIndicator();
+            GetComponent<PlayerUIHitInfo>().CallUINotif(message);
         }
     }
 
@@ -83,15 +86,8 @@ public class ItemTimerUIHandler : MonoBehaviour
     {
         if (pv.IsMine)
         {
-            //UITimer.SetActive(true);
-        
             time -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(time % 60);
-           // textTimer.text = seconds.ToString();
-            
-
-            //UITimer.SetActive(true);
-           // textMessage.text = message;
         }
     }
 

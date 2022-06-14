@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 7425509994139571761}
   - component: {fileID: 3285321990789729070}
   - component: {fileID: 8743024345128765070}
+  - component: {fileID: 5445518741540378023}
   m_Layer: 6
   m_Name: Character 4
   m_TagString: Player
@@ -169,8 +170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waffle: 3
+  isWin: 0
   waffleTextUI: {fileID: 0}
   MenuUI: {fileID: 0}
+  waffleMessage: {fileID: 0}
 --- !u!114 &960375065673379142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +242,24 @@ MonoBehaviour:
   textTimer: {fileID: 0}
   message: 
   time: 0
+  SpeedUpIndicator: {fileID: 0}
+  ShieldIndicator: {fileID: 0}
+  DirectionIndicator: {fileID: 0}
+  isActive: 0
+--- !u!114 &5445518741540378023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332306587102621672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd36416eb461b094c9975a6fe71557d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrefab: {fileID: 8744779195704895025, guid: 45c7836c73b1e4644bfa876cd86c5bd8, type: 3}
+  yPos: 2
   isActive: 0
 --- !u!1 &332306587755318437
 GameObject:

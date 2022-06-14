@@ -17,6 +17,7 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     [Header("UI Component")]
     [SerializeField] Text waffleTextUI;
     [SerializeField] GameObject MenuUI;
+    [SerializeField] UIAnimationHandler uIAnimationHandler;
     [SerializeField] Text waffleMessage;
 
     private void Awake()
@@ -28,8 +29,9 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     private void Start()
     {
         //waffle = 0;
+        uIAnimationHandler = GameObject.FindGameObjectWithTag("Notification").GetComponent<UIAnimationHandler>();
         waffleTextUI = GameObject.FindGameObjectWithTag("Waffle Text").GetComponent<Text>();
-        waffleMessage = GameObject.FindGameObjectWithTag("Waffle Message").GetComponent<Text>();
+        waffleMessage = GameObject.FindGameObjectWithTag("Notification Text").GetComponent<Text>();
 
         if (pv.IsMine)
         {
@@ -58,11 +60,6 @@ public class WaffleHandler : MonoBehaviour, IDemageable
             // IncreaseWaffle();
             pv.RPC("RPC_IncreaseWaffle", RpcTarget.All);
         }
-    }
-
-    void DisableWaffleMessage()
-    {
-        waffleMessage.text = null;
     }
 
     void IncreaseWaffle()
@@ -115,8 +112,7 @@ public class WaffleHandler : MonoBehaviour, IDemageable
 
         waffle++;
         waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
-        waffleMessage.text = "Waffle Collected!";
-
-        Invoke("DisableWaffleMessage", 1);
+        uIAnimationHandler.PlayNotifAnimation();
+        waffleMessage.text = "Waffle +1";
     }
 }

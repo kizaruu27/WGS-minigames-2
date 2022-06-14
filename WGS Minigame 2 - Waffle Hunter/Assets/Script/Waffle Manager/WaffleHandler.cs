@@ -55,15 +55,21 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     {
         if (other.tag == "Waffle")
         {
-            IncreaseWaffle();
+            // IncreaseWaffle();
+            pv.RPC("RPC_IncreaseWaffle", RpcTarget.All);
         }
+    }
+
+    void DisableWaffleMessage()
+    {
+        waffleMessage.text = null;
     }
 
     void IncreaseWaffle()
     {
         if (pv.IsMine)
         {
-            waffle++;
+            // waffle++;
             waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
             waffleMessage.text = "Waffle Collected!";
 
@@ -80,14 +86,18 @@ public class WaffleHandler : MonoBehaviour, IDemageable
             {
                 waffle = 0;
             }
-
             waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
         }
     }
 
-    public void GotAttact()
+    public void GotAttact() => pv.RPC("RPC_GotAttact", RpcTarget.All);
+
+    [PunRPC]
+    void RPC_GotAttact()
     {
-        Debug.Log("other palyer got damage");
+        if (!pv.IsMine) return;
+
+        Debug.Log("other palyer got damage:  " + PhotonNetwork.LocalPlayer.NickName);
 
         waffle--;
         if (waffle <= 0)
@@ -98,8 +108,15 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
     }
 
-    void DisableWaffleMessage()
+    [PunRPC]
+    void RPC_IncreaseWaffle()
     {
-        waffleMessage.text = null;
+        if (!pv.IsMine) return;
+
+        waffle++;
+        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+        waffleMessage.text = "Waffle Collected!";
+
+        Invoke("DisableWaffleMessage", 1);
     }
 }

@@ -172,6 +172,7 @@ MonoBehaviour:
   isWin: 0
   waffleTextUI: {fileID: 0}
   MenuUI: {fileID: 0}
+  uIAnimationHandler: {fileID: 0}
   waffleMessage: {fileID: 0}
 --- !u!114 &5312468743498984747
 MonoBehaviour:
@@ -194,6 +195,7 @@ MonoBehaviour:
     m_Bits: 64
   canAttack: 0
   AttactButton: {fileID: 0}
+  hitParticle: {fileID: 3094703130625203678, guid: c4c8210b47316b94198c05660026d1f0, type: 3}
 --- !u!114 &5227579905257294674
 MonoBehaviour:
   m_ObjectHideFlags: 0

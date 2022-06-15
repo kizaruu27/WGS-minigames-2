@@ -13,6 +13,9 @@ public class AttackScript : MonoBehaviour
     public bool canAttack;
     public Button AttactButton;
 
+    [Header("Particle Effect Component")]
+    [SerializeField] GameObject hitParticle;
+
     Animator _anim;
 
     private void Awake()
@@ -83,6 +86,7 @@ public class AttackScript : MonoBehaviour
 
                 // ! attact another player
                 if (hit.collider.TryGetComponent(out IDemageable otherPlayer))
+                    Instantiate(hitParticle, hit.transform.position, Quaternion.identity);
                     otherPlayer.GotAttact();
             }
             else

@@ -225,6 +225,7 @@ MonoBehaviour:
     m_Bits: 64
   canAttack: 0
   AttactButton: {fileID: 0}
+  hitParticle: {fileID: 3094703130625203678, guid: c4c8210b47316b94198c05660026d1f0, type: 3}
 --- !u!114 &6845334930791375088
 MonoBehaviour:
   m_ObjectHideFlags: 0

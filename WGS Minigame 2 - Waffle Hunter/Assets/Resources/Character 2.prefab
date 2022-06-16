@@ -172,6 +172,7 @@ MonoBehaviour:
   isWin: 0
   waffleTextUI: {fileID: 0}
   MenuUI: {fileID: 0}
+  uIAnimationHandler: {fileID: 0}
   waffleMessage: {fileID: 0}
 --- !u!114 &3733546518747765158
 MonoBehaviour:

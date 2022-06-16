@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class SpawnWaffleManager : MonoBehaviour
 {
     public GameObject waffle;
     public Transform[] spawnPosition;
 
+    PhotonView view;
 
+    private void Awake() => view = GetComponent<PhotonView>();
     private void Start()
     {
-        Instantiate(waffle, spawnPosition[Random.Range(0, spawnPosition.Length)].position, Quaternion.identity);
+        if (view.IsMine)
+        {
+            int spawnPoint = Random.Range(0, spawnPosition.Length);
+            Instantiate(waffle, spawnPosition[spawnPoint].position, Quaternion.identity);
+        }
     }
 
 
@@ -19,28 +26,42 @@ public class SpawnWaffleManager : MonoBehaviour
     {
         WaffleBehaviour waffle;
         waffle = FindObjectOfType<WaffleBehaviour>();
-        
-        if (waffle.waffleCollected)
-        {
-            int randomIndexSpawn = Random.Range(0, spawnPosition.Length);
-            int currentIndex = randomIndexSpawn + 1;
 
-            if (currentIndex > spawnPosition.Length)
-            {
-                currentIndex = 0;
-            }
+        Debug.Log(waffle.waffleCollected);
 
+        // if (waffle.waffleCollected)
+        // {
+        //     int randomIndexSpawn = Random.Range(0, spawnPosition.Length);
+        //     int currentIndex = randomIndexSpawn + 1;
 
-            StartCoroutine(spawnWaffle(currentIndex));
-        }
+        //     if (currentIndex > spawnPosition.Length)
+        //     {
+        //         currentIndex = 0;
+        //     }
+
+        //     if (view.IsMine)
+        //     {
+        //         StartCoroutine(spawnWaffle(currentIndex));
+        //     }
+        // }
     }
 
     IEnumerator spawnWaffle(int index)
     {
-        Instantiate(waffle, spawnPosition[index].position, Quaternion.identity);
+        view.RPC("RPC_InstantiateWaffle", RpcTarget.OthersBuffered, index);
 
         yield return new WaitForSeconds(.5f);
 
         FindObjectOfType<WaffleBehaviour>().waffleCollected = false;
     }
+
+    [PunRPC]
+    void RPC_InstantiateWaffle(int index)
+    {
+        if (!view.IsMine) return;
+
+        Instantiate(waffle, spawnPosition[index].position, Quaternion.identity);
+    }
+
+
 }

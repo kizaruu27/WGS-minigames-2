@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class SpawnWaffleManager : MonoBehaviour
 {
     public GameObject waffle;
     public Transform[] spawnPosition;
 
+    PhotonView view;
 
     private void Start()
     {
-        Instantiate(waffle, spawnPosition[Random.Range(0, spawnPosition.Length)].position, Quaternion.identity);
+        view = GetComponent<PhotonView>();
+
+        if (view.IsMine)
+        {
+            int spawnPoint = Random.Range(0, spawnPosition.Length);
+            // Instantiate(waffle, spawnPosition[spawnPoint].position, Quaternion.identity);
+            view.RPC("RPC_InstantiateWaffle", RpcTarget.AllBuffered, spawnPoint);
+        }
     }
 
 
@@ -19,7 +28,9 @@ public class SpawnWaffleManager : MonoBehaviour
     {
         WaffleBehaviour waffle;
         waffle = FindObjectOfType<WaffleBehaviour>();
-        
+
+        Debug.Log(waffle.waffleCollected);
+
         if (waffle.waffleCollected)
         {
             int randomIndexSpawn = Random.Range(0, spawnPosition.Length);
@@ -30,17 +41,31 @@ public class SpawnWaffleManager : MonoBehaviour
                 currentIndex = 0;
             }
 
-
-            StartCoroutine(spawnWaffle(currentIndex));
+            if (view.IsMine)
+            {
+                // StartCoroutine(spawnWaffle(currentIndex));
+                view.RPC("RPC_InstantiateWaffle", RpcTarget.AllBuffered, randomIndexSpawn);
+            }
         }
     }
 
     IEnumerator spawnWaffle(int index)
     {
-        Instantiate(waffle, spawnPosition[index].position, Quaternion.identity);
+        view.RPC("RPC_InstantiateWaffle", RpcTarget.OthersBuffered, index);
 
         yield return new WaitForSeconds(.5f);
-
         FindObjectOfType<WaffleBehaviour>().waffleCollected = false;
     }
+
+    [PunRPC]
+    IEnumerator RPC_InstantiateWaffle(int index)
+    {
+        // if (!view.IsMine) return;
+
+        Instantiate(waffle, spawnPosition[index].position, Quaternion.identity);
+        yield return new WaitForSeconds(.5f);
+        FindObjectOfType<WaffleBehaviour>().waffleCollected = false;
+    }
+
+
 }

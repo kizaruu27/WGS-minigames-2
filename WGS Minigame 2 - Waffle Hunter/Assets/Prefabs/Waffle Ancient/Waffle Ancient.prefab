@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2367619921800891255}
   - component: {fileID: 2367619921800891242}
   - component: {fileID: 2367619921800891254}
+  - component: {fileID: -409243960227846782}
   m_Layer: 0
   m_Name: Waffle Ancient
   m_TagString: Waffle
@@ -127,3 +128,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waffleCollected: 0
   particleEffect: {fileID: 6253654099947472624, guid: c3e4e6fe9f3849a45b876ccfb0232fc6, type: 3}
+--- !u!114 &-409243960227846782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2367619921800891249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

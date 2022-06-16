@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredCooldown: 3
   cooldown: 0
-  rayDistance: 3.81
+  rayDistance: 3.86
   rayHeight: -0.91
   enemyMask:
     serializedVersion: 2

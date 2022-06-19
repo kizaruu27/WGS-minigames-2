@@ -1,31 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using Photon.Pun;
 
 public class GameFlowManager : MonoBehaviour
 {
     [SerializeField] GameObject PauseUI;
     [SerializeField] GameObject WinUI;
+    [SerializeField] GameObject[] disableOnFinish;
+
 
     [SerializeField] InGameTimer timer;
     WaffleHandler waffleHandler;
+
+    bool _isDone;
+
+    PhotonView pv;
+
+    private void Awake()
+    {
+        pv = GetComponent<PhotonView>();
+    }
 
     private void Start()
     {
         Time.timeScale = 1;
         waffleHandler = FindObjectOfType<WaffleHandler>();
     }
-    
+
 
     void Update()
     {
-        Pause();
+        // Pause();
 
-        if (waffleHandler.isWin || timer.timer == 0)
+        pv.RPC("RPC_GameIsDone", RpcTarget.AllBuffered, waffleHandler.isWin || timer.timer == 0);
+
+        if (_isDone)
         {
+            DisableGO();
             WinUI.SetActive(true);
         }
-
     }
 
     private void Pause()
@@ -43,6 +56,15 @@ public class GameFlowManager : MonoBehaviour
     }
 
 
+    public void DisableGO()
+    {
+        foreach (var go in disableOnFinish) go.SetActive(false);
+    }
 
 
+    [PunRPC]
+    public void RPC_GameIsDone(bool isDone)
+    {
+        _isDone = isDone;
+    }
 }

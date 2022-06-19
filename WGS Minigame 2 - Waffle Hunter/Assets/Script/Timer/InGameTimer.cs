@@ -5,9 +5,15 @@ using UnityEngine.UI;
 
 public class InGameTimer : MonoBehaviour
 {
+    public static InGameTimer instance;
     public float timer;
     public Text timerText;
-    public GameObject GameOverUI;
+    // public GameObject GameOverUI;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -28,7 +34,7 @@ public class InGameTimer : MonoBehaviour
         {
             timer = 0;
             timerText.text = "00:00";
-            GameOverUI.SetActive(true);
+            // GameOverUI.SetActive(true);
             Time.timeScale = 0;
         }
     }

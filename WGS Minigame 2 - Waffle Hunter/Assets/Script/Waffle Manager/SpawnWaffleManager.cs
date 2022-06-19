@@ -29,8 +29,6 @@ public class SpawnWaffleManager : MonoBehaviour
         WaffleBehaviour waffle;
         waffle = FindObjectOfType<WaffleBehaviour>();
 
-        Debug.Log(waffle.waffleCollected);
-
         if (waffle.waffleCollected)
         {
             int randomIndexSpawn = Random.Range(0, spawnPosition.Length);

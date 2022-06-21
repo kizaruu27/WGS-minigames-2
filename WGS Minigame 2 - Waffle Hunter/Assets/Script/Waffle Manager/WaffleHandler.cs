@@ -53,7 +53,7 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         {
             Time.timeScale = 0;
             isWin = true;
-            //MenuUI.SetActive(true);
+            // MenuUI.SetActive(true);
         }
 
         GameIsDone();
@@ -64,8 +64,8 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     {
         if (other.tag == "Waffle")
         {
-            // IncreaseWaffle();
-            pv.RPC("RPC_IncreaseWaffle", RpcTarget.All);
+            IncreaseWaffle();
+            // pv.RPC("RPC_IncreaseWaffle", RpcTarget.All);
         }
     }
 
@@ -73,11 +73,12 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     {
         if (pv.IsMine)
         {
-            // waffle++;
+            waffle++;
             waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+            uIAnimationHandler.PlayNotifAnimation();
             waffleMessage.text = "Waffle Collected!";
 
-            Invoke("DisableWaffleMessage", 1);
+            // Invoke("DisableWaffleMessage", 1);
         }
     }
 
@@ -125,16 +126,5 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         }
 
         waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
-    }
-
-    [PunRPC]
-    void RPC_IncreaseWaffle()
-    {
-        if (!pv.IsMine) return;
-
-        waffle++;
-        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
-        uIAnimationHandler.PlayNotifAnimation();
-        waffleMessage.text = "Waffle +1";
     }
 }

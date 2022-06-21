@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class DirectionHolder : MonoBehaviour
 {
@@ -8,20 +9,28 @@ public class DirectionHolder : MonoBehaviour
     public float itemTime;
     public bool isShowing;
 
+    PhotonView view;
+
+    private void Start() => view = GetComponent<PhotonView>();
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Direction")
         {
+
             ShowDirection(col);
+
             Destroy(col.gameObject, itemTime);
         }
     }
 
     public void ShowDirection(Collider col)
     {
-        isShowing = true;
-        Direction.SetActive(true);
+        if (view.IsMine)
+        {
+            isShowing = true;
+            Direction.SetActive(true);
+        }
         Invoke("hidDirection", itemTime);
         col.GetComponent<MeshRenderer>().enabled = false;
         col.GetComponent<BoxCollider>().enabled = false;

@@ -49,12 +49,20 @@ public class WaffleHandler : MonoBehaviour, IDemageable
 
     private void Update()
     {
-        if (waffle >= 10)
+        isWin = waffle >= 10;
+
+        // if (waffle >= 10)
+        // {
+        //     // Time.timeScale = 0;
+        //     // MenuUI.SetActive(true);
+        // }
+
+        if (isWin)
         {
-            Time.timeScale = 0;
-            isWin = true;
-            // MenuUI.SetActive(true);
+            pv.RPC(nameof(Test), RpcTarget.All);
         }
+
+
 
         GameIsDone();
     }
@@ -98,7 +106,7 @@ public class WaffleHandler : MonoBehaviour, IDemageable
 
     public void GameIsDone()
     {
-        if (InGameTimer.instance.duration == 0 && pv.IsMine)
+        if (InGameTimer.instance.duration == 0 || GameFlowManager.instance.isDone && pv.IsMine)
         {
             pv.RPC(nameof(RPC_SendToPodium), RpcTarget.All, PhotonNetwork.LocalPlayer.ActorNumber - 1, waffle, PhotonNetwork.LocalPlayer.NickName);
         }
@@ -126,5 +134,11 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         }
 
         waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+    }
+
+    [PunRPC]
+    void Test()
+    {
+        Debug.Log(pv);
     }
 }

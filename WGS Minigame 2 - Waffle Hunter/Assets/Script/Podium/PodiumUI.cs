@@ -28,11 +28,8 @@ public class PodiumUI : MonoBehaviour
 
 
         WaitingPlayerToFinish();
-        PlayerDiscHighlight();
 
-        if (cachePlayerList.Count == (int)PhotonNetwork.CurrentRoom.MaxPlayers) return;
-
-
+        if (cachePlayerList.Count == (int)PhotonNetwork.CurrentRoom.PlayerCount) return;
 
     }
 
@@ -44,7 +41,7 @@ public class PodiumUI : MonoBehaviour
         {
             var rowData = Instantiate(row, transform);
 
-            rowData.SetColorItem(item.value.id == PhotonNetwork.LocalPlayer.ActorNumber - 1 || item.value.id == 0);
+            rowData.SetColorItem(item.value.id == PhotonNetwork.LocalPlayer.ActorNumber - 1);
 
             rowData.Rank.text = GenerateRankText(item.index);
             rowData.Name.text = item.value.name.Length <= 20 ? item.value.name : item.value.name.Substring(0, 20) + "...";
@@ -58,7 +55,7 @@ public class PodiumUI : MonoBehaviour
     {
         if (PhotonNetwork.CurrentRoom.MaxPlayers > cachePlayerList.Count)
         {
-            for (int i = 0; i < ((int)PhotonNetwork.CurrentRoom.MaxPlayers - finishManager.TotalPlayersDisconnect) - cachePlayerList.Count; i++)
+            for (int i = 0; i < (int)PhotonNetwork.CurrentRoom.PlayerCount - cachePlayerList.Count; i++)
             {
                 var rowData = Instantiate(row, transform);
 
@@ -69,27 +66,6 @@ public class PodiumUI : MonoBehaviour
                 cachePlayerList.Add(rowData);
             }
         }
-    }
-
-    public void PlayerDiscHighlight()
-    {
-        int PDC = finishManager.TotalPlayersDisconnect;
-        if (PDC > 0)
-        {
-            for (int i = 0; i < PDC; i++)
-            {
-                var rowData = Instantiate(row, transform).GetComponent<PodiumStandingItem>();
-
-                rowData.SetHighlightPlayerDC();
-
-                rowData.Rank.text = "";
-                rowData.Name.text = "Disconnected";
-                rowData.Score.text = "";
-
-                cachePlayerList.Add(rowData);
-            }
-        }
-
     }
 
 

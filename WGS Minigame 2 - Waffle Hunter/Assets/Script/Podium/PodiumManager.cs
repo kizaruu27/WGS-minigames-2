@@ -25,13 +25,6 @@ public class PodiumManager : MonoBehaviour
         pv = GetComponent<PhotonView>();
     }
 
-    public int TotalPlayersDisconnect { get; set; }
-
-    private void Update()
-    {
-        Debug.Log(playerFinishList.Count);
-    }
-
     public void InitializePlayer(int id, string name, float score)
     {
         var playerFinish = new MPodium();
@@ -42,7 +35,7 @@ public class PodiumManager : MonoBehaviour
         playerFinishList.Add(playerFinish);
     }
 
-    public IEnumerable<MPodium> GetLeaderboardData() => playerFinishList.OrderBy(player => player.score).ThenBy(player => player.name);
+    public IEnumerable<MPodium> GetLeaderboardData() => playerFinishList.OrderByDescending(player => player.score).ThenBy(player => player.name);
 
     public void Finish(int id, float score, string name)
     {

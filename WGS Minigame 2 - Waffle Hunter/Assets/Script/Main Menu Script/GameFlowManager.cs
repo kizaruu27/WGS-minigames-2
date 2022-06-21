@@ -4,6 +4,9 @@ using Photon.Pun;
 
 public class GameFlowManager : MonoBehaviour
 {
+
+    public static GameFlowManager instance;
+
     [SerializeField] GameObject PauseUI;
     [SerializeField] GameObject WinUI;
     [SerializeField] GameObject[] disableOnFinish;
@@ -12,13 +15,14 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] InGameTimer timer;
     WaffleHandler waffleHandler;
 
-    bool _isDone;
+    public bool isDone;
 
     PhotonView pv;
 
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
+        instance = this;
     }
 
     private void Start()
@@ -32,13 +36,9 @@ public class GameFlowManager : MonoBehaviour
     {
         // Pause();
 
-        pv.RPC("RPC_GameIsDone", RpcTarget.AllBuffered, waffleHandler.isWin || timer.duration == 0);
+        Debug.Log("Apakah sudah done : " + isDone);
 
-        if (_isDone)
-        {
-            DisableGO();
-            WinUI.SetActive(true);
-        }
+        pv.RPC(nameof(RPC_GameIsDone), RpcTarget.AllBuffered, waffleHandler.isWin || timer.duration == 0);
     }
 
     private void Pause()
@@ -65,7 +65,12 @@ public class GameFlowManager : MonoBehaviour
     [PunRPC]
     public void RPC_GameIsDone(bool isDone)
     {
-        Debug.Log(isDone);
-        _isDone = isDone;
+        this.isDone = isDone;
+
+        if (isDone)
+        {
+            DisableGO();
+            WinUI.SetActive(true);
+        }
     }
 }

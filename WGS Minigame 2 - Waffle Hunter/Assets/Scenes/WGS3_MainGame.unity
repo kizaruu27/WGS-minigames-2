@@ -6676,6 +6676,7 @@ MonoBehaviour:
   - {fileID: 1958459711}
   - {fileID: 1862996587}
   timer: {fileID: 1862996591}
+  _isDone: 0
 --- !u!114 &1651096611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7274,7 +7275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66e0cf5c101ea848a9f64aee5f88d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 420
+  duration: 120
   timerText: {fileID: 1862996589}
   timerIsPlay: 0
 --- !u!114 &1862996592

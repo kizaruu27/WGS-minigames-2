@@ -115,8 +115,6 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     [PunRPC]
     void RPC_SendToPodium(int id, float score, string nickname)
     {
-        Debug.Log(id + ". " + nickname + " : " + score);
-
         pm.Finish(id, score, nickname);
     }
 

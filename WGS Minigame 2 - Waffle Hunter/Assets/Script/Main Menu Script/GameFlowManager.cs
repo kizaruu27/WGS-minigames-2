@@ -36,8 +36,6 @@ public class GameFlowManager : MonoBehaviour
     {
         // Pause();
 
-        Debug.Log("Apakah sudah done : " + isDone);
-
         pv.RPC(nameof(RPC_GameIsDone), RpcTarget.AllBuffered, waffleHandler.isWin || timer.duration == 0);
     }
 

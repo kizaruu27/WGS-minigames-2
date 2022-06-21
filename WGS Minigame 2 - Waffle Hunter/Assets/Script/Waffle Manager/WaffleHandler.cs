@@ -97,13 +97,19 @@ public class WaffleHandler : MonoBehaviour, IDemageable
 
     public void GameIsDone()
     {
-        if (InGameTimer.instance.timer == 0 && pv.IsMine)
+        if (InGameTimer.instance.duration == 0 && pv.IsMine)
         {
-            pv.RPC(nameof(RPC_SendToPodium), RpcTarget.AllBuffered, PhotonNetwork.LocalPlayer.ActorNumber - 1, waffle, PhotonNetwork.LocalPlayer.NickName);
+            pv.RPC(nameof(RPC_SendToPodium), RpcTarget.All, PhotonNetwork.LocalPlayer.ActorNumber - 1, waffle, PhotonNetwork.LocalPlayer.NickName);
         }
     }
 
-    [PunRPC] void RPC_SendToPodium(int id, float score, string nickname) => pm.Finish(id, score, nickname);
+    [PunRPC]
+    void RPC_SendToPodium(int id, float score, string nickname)
+    {
+        Debug.Log(id + ". " + nickname + " : " + score);
+
+        pm.Finish(id, score, nickname);
+    }
 
     [PunRPC]
     void RPC_GotAttact()

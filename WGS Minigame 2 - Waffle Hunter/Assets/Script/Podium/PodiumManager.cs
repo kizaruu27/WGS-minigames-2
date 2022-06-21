@@ -44,19 +44,10 @@ public class PodiumManager : MonoBehaviour
 
     public IEnumerable<MPodium> GetLeaderboardData() => playerFinishList.OrderBy(player => player.score).ThenBy(player => player.name);
 
-    // PLAYER
-    public void Finish(bool isPlayerCrossFinish, int id, float score, string name)
-    {
-        if (PhotonNetwork.LocalPlayer.NickName == name)
-        {
-            if (!playerFinishList.Any(item => item.id == id)) InitializePlayer(id, name, score);
-        }
-    }
-
-    // NPC
     public void Finish(int id, float score, string name)
     {
         if (!playerFinishList.Any(item => item.id == id)) InitializePlayer(id, name, score);
+
     }
 }
 

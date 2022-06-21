@@ -75,7 +75,7 @@ namespace RunMinigames.Manager.Networking
                     PlayerPrefs.SetString("token", authToken);
                     PlayerPrefs.SetString("LocalPlayerData", res["data"].ToString());
 
-                    GetComponent<PhotonServer>().Connect(JSON.Parse(PlayerPrefs.GetString("LocalPlayerData"))["uname"]);
+                    GetComponent<PhotonServer>().Connect(JSON.Parse(PlayerPrefs.GetString("LocalPlayerData"))["full_name"]);
                     // GetComponent<PhotonServer>().Connect("player coba");
                 }
             }));

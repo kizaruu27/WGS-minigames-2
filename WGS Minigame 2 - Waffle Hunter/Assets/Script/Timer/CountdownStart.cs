@@ -34,8 +34,7 @@ public class CountdownStart : MonoBehaviour
 
         gameObject.SetActive(!isStart);
 
-        _inGameTimer.gameObject.SetActive(isStart);
-        _inGameTimer.enabled = isStart;
+        _inGameTimer.timerIsPlay = isStart;
     }
 
     [PunRPC]

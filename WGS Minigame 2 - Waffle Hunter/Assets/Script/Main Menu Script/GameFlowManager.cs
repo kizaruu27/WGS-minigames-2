@@ -32,7 +32,7 @@ public class GameFlowManager : MonoBehaviour
     {
         // Pause();
 
-        pv.RPC("RPC_GameIsDone", RpcTarget.AllBuffered, waffleHandler.isWin || timer.timer == 0);
+        pv.RPC("RPC_GameIsDone", RpcTarget.AllBuffered, waffleHandler.isWin || timer.duration == 0);
 
         if (_isDone)
         {
@@ -65,6 +65,7 @@ public class GameFlowManager : MonoBehaviour
     [PunRPC]
     public void RPC_GameIsDone(bool isDone)
     {
+        Debug.Log(isDone);
         _isDone = isDone;
     }
 }

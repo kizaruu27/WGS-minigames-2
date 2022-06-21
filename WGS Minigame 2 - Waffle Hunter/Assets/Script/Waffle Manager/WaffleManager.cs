@@ -28,10 +28,8 @@ public class WaffleManager : MonoBehaviour
     {
         if (waffleCollected == 10)
         {
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
             WinUI.SetActive(true);
         }
     }
-
- 
 }

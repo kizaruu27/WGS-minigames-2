@@ -29,7 +29,7 @@ public class SpawnWaffleManager : MonoBehaviour
         WaffleBehaviour waffle;
         waffle = FindObjectOfType<WaffleBehaviour>();
 
-        Debug.Log(waffle.waffleCollected);
+        // Debug.Log(waffle.waffleCollected);
 
         if (waffle.waffleCollected)
         {

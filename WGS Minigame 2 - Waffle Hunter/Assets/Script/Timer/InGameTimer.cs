@@ -38,7 +38,7 @@ public class InGameTimer : MonoBehaviour
             stringTimer = TimeCalculation();
 
             if (PhotonNetwork.IsMasterClient)
-                pv.RPC(nameof(TimeCalculation), RpcTarget.Others, stringTimer);
+                pv.RPC(nameof(TimeSync), RpcTarget.Others, stringTimer);
 
             timerText.text = stringTimer;
 

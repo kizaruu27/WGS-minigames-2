@@ -8,7 +8,7 @@ public class WaffleHandler : MonoBehaviour, IDemageable
 {
     PhotonView pv;
 
-    public float waffle; //ini waffle
+    public float waffle = 0; //ini waffle
     ShieldHandler handler;
 
     [Header("Validation")]
@@ -20,10 +20,13 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     [SerializeField] UIAnimationHandler uIAnimationHandler;
     [SerializeField] Text waffleMessage;
 
+    PodiumManager pm;
+
     private void Awake()
     {
         handler = GetComponent<ShieldHandler>();
         pv = GetComponent<PhotonView>();
+
     }
 
     private void Start()
@@ -32,6 +35,8 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         uIAnimationHandler = GameObject.FindGameObjectWithTag("Notification").GetComponent<UIAnimationHandler>();
         waffleTextUI = GameObject.FindGameObjectWithTag("Waffle Text").GetComponent<Text>();
         waffleMessage = GameObject.FindGameObjectWithTag("Notification Text").GetComponent<Text>();
+        pm = GameObject.FindGameObjectWithTag("Finish UI").GetComponent<PodiumManager>();
+
 
         if (pv.IsMine)
         {
@@ -44,12 +49,22 @@ public class WaffleHandler : MonoBehaviour, IDemageable
 
     private void Update()
     {
-        if (waffle >= 10)
+        isWin = waffle >= 10;
+
+        // if (waffle >= 10)
+        // {
+        //     // Time.timeScale = 0;
+        //     // MenuUI.SetActive(true);
+        // }
+
+        if (isWin)
         {
-            Time.timeScale = 0;
-            isWin = true;
-            // MenuUI.SetActive(true);
+            pv.RPC(nameof(Test), RpcTarget.All);
         }
+
+
+
+        GameIsDone();
     }
 
 
@@ -87,8 +102,21 @@ public class WaffleHandler : MonoBehaviour, IDemageable
             waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
         }
     }
-
     public void GotAttact() => pv.RPC("RPC_GotAttact", RpcTarget.All);
+
+    public void GameIsDone()
+    {
+        if (InGameTimer.instance.duration == 0 || GameFlowManager.instance.isDone && pv.IsMine)
+        {
+            pv.RPC(nameof(RPC_SendToPodium), RpcTarget.All, PhotonNetwork.LocalPlayer.ActorNumber - 1, waffle, PhotonNetwork.LocalPlayer.NickName);
+        }
+    }
+
+    [PunRPC]
+    void RPC_SendToPodium(int id, float score, string nickname)
+    {
+        pm.Finish(id, score, nickname);
+    }
 
     [PunRPC]
     void RPC_GotAttact()
@@ -104,5 +132,11 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         }
 
         waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+    }
+
+    [PunRPC]
+    void Test()
+    {
+        Debug.Log(pv);
     }
 }

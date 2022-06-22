@@ -43,6 +43,11 @@ MonoBehaviour:
   - RPC_IncreaseWaffle
   - CallUINotif
   - RPC_InstantiateWaffle
+  - RPC_GameIsDone
+  - RPC_SendToPodium
+  - Test
+  - TimeSync
+  - SetCountdown
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

@@ -16,6 +16,9 @@ public class AttackScript : MonoBehaviour
     [Header("Particle Effect Component")]
     [SerializeField] GameObject hitParticle;
 
+    [Header("Transition Value")]
+    public float attackTransition;
+
     Animator _anim;
 
     private void Awake()
@@ -70,31 +73,34 @@ public class AttackScript : MonoBehaviour
         canAttack = false;
         _anim.SetTrigger("Attack");
         GetComponent<PlayerControllerV2>().enabled = false;
+        yield return new WaitForSeconds(attackTransition);
+        ActivateController();
 
 
-        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, rayDistance, enemyMask))
-        {
 
-            if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
-            {
-                yield return new WaitForSeconds(.5f);
-                Debug.Log("Hit Player: " + hit.collider.gameObject.name);
-                // Debug.Log("Hit Player");
-                // hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+        // Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
+        // RaycastHit hit;
+        // if (Physics.Raycast(ray, out hit, rayDistance, enemyMask))
+        // {
 
-                // ! attact another player
-                if (hit.collider.TryGetComponent(out IDemageable otherPlayer))
-                    Instantiate(hitParticle, hit.transform.position, Quaternion.identity);
-                    otherPlayer.GotAttact();
-            }
-            else
-            {
-                Debug.Log("Shielded");
-                hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
-            }
-        }
+        //     if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
+        //     {
+                
+        //         Debug.Log("Hit Player: " + hit.collider.gameObject.name);
+        //         // Debug.Log("Hit Player");
+        //         // hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
+
+        //         // ! attact another player
+        //         if (hit.collider.TryGetComponent(out IDemageable otherPlayer))
+        //             Instantiate(hitParticle, hit.transform.position, Quaternion.identity);
+        //             otherPlayer.GotAttact();
+        //     }
+        //     else
+        //     {
+        //         Debug.Log("Shielded");
+        //         hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
+        //     }
+        // }
 
     }
 

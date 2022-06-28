@@ -75,6 +75,10 @@ public class WaffleHandler : MonoBehaviour, IDemageable
             IncreaseWaffle();
             // pv.RPC("RPC_IncreaseWaffle", RpcTarget.All);
         }
+        if (other.tag == "Hit")
+        {
+            DecreaseWaffle();
+        }
     }
 
     void IncreaseWaffle()

@@ -5290,7 +5290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475824907148517330, guid: 4a52be450bbcd834698d1ac00233121c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6475824907148517338, guid: 4a52be450bbcd834698d1ac00233121c, type: 3}
       propertyPath: m_RootOrder
@@ -7262,7 +7262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66e0cf5c101ea848a9f64aee5f88d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
+  duration: 120
   timerText: {fileID: 1862996589}
   timerIsPlay: 0
 --- !u!114 &1862996592

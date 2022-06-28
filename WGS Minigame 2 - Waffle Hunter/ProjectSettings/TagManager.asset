@@ -26,6 +26,11 @@ TagManager:
   - Direction Indicator
   - Notification
   - Notification Text
+  - PodiumItem
+  - Podium
+  - Finish UI
+  - PodiumContent
+  - Hit
   layers:
   - Default
   - TransparentFX

@@ -1286,7 +1286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2895659868538549137, guid: 17e769973f152594b9429719ba14df68, type: 3}
       propertyPath: playerScanner.detectionAngle
-      value: 241
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895659868538549137, guid: 17e769973f152594b9429719ba14df68, type: 3}
+      propertyPath: playerScanner.detectionRadius
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 2895659868538549137, guid: 17e769973f152594b9429719ba14df68, type: 3}
       propertyPath: playerScanner.distanceScanner
@@ -1346,7 +1350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475824907148517342, guid: 17e769973f152594b9429719ba14df68, type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475824907148517342, guid: 17e769973f152594b9429719ba14df68, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6475824907148517341, guid: 17e769973f152594b9429719ba14df68, type: 3}

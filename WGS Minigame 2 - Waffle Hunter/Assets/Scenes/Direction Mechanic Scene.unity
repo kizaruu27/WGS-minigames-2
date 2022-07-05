@@ -1284,6 +1284,14 @@ PrefabInstance:
       propertyPath: waypoint.Array.data[7]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2895659868538549137, guid: 17e769973f152594b9429719ba14df68, type: 3}
+      propertyPath: playerScanner.detectionAngle
+      value: 241
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895659868538549137, guid: 17e769973f152594b9429719ba14df68, type: 3}
+      propertyPath: playerScanner.distanceScanner
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6475824907148517330, guid: 17e769973f152594b9429719ba14df68, type: 3}
       propertyPath: m_Name
       value: NPC v2

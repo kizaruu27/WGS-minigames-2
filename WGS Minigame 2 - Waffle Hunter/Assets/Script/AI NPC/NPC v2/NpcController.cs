@@ -7,11 +7,10 @@ public class NpcController : MonoBehaviour
 {
     public Transform playerTarget;
     NavMeshAgent agent;
+    public TargetScanner playerScanner;
     public Transform[] waypoint;
     public LayerMask playerMask;
     public Animator anim;
-    public float distanceScanner;
-    public float attackRange;
     bool playerInrange;
     [SerializeField] int randomPointer;
 
@@ -56,12 +55,10 @@ public class NpcController : MonoBehaviour
 
 
 #if UNITY_EDITOR
+
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, distanceScanner);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        playerScanner.EditorGizmo(transform);
     }
 #endif
 }

@@ -77,7 +77,14 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         }
         if (other.tag == "Hit")
         {
-            DecreaseWaffle();
+            if (GetComponent<ShieldHandler>().shieldActivated)
+            {
+                GetComponent<ShieldHandler>().shieldActivated = false;
+            }
+            else
+            {
+                DecreaseWaffle();
+            }
         }
     }
 

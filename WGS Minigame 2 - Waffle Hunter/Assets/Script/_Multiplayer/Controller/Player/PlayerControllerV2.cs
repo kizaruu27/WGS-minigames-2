@@ -5,6 +5,9 @@ using Photon.Pun;
 
 public class PlayerControllerV2 : MonoBehaviour
 {
+    protected static PlayerControllerV2 s_Instance;
+    public static PlayerControllerV2 instance { get { return s_Instance; } }
+
     public CharacterController controller;
     public Animator anim;
     [Range(0, 10)] public float playerSpeed = 2.0f;
@@ -16,6 +19,8 @@ public class PlayerControllerV2 : MonoBehaviour
     float gravity = -9.8f;
 
     PhotonView pv;
+
+    private void Awake() => s_Instance = this;
 
     private void Start()
     {
@@ -29,6 +34,8 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void Update()
     {
+        // Debug.Log(instance.transform.name);
+
         if (pv.IsMine)
         {
             if (controller.isGrounded && playerVelocity.y < 0)

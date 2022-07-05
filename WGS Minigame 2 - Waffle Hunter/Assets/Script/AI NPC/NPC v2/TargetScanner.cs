@@ -45,6 +45,32 @@ public class TargetScanner
         return null;
     }
 
+    public PlayerControllerV2 DetectPlayer(Transform detector, bool useHeightDifference = true)
+    {
+
+        Vector3 eyePos = detector.position + Vector3.up * heightOffset;
+        Vector3 toPlayer = PlayerControllerV2.instance.transform.position - eyePos;
+        Vector3 toPlayerTop = PlayerControllerV2.instance.transform.position + Vector3.up * 1.5f - eyePos;
+
+        Vector3 toPlayerFlat = toPlayer;
+        toPlayerFlat.y = 0;
+
+        if (toPlayerFlat.sqrMagnitude <= detectionRadius * detectionRadius)
+        {
+            if (Vector3.Dot(toPlayerFlat.normalized, detector.forward) >
+                Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad))
+            {
+
+                Debug.DrawRay(eyePos, toPlayer, Color.blue);
+                Debug.DrawRay(eyePos, toPlayerTop, Color.blue);
+
+                return PlayerControllerV2.instance;
+            }
+        }
+
+        return null;
+    }
+
 
 #if UNITY_EDITOR
 
@@ -59,8 +85,8 @@ public class TargetScanner
         Gizmos.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
         Gizmos.DrawWireSphere(transform.position + Vector3.up * heightOffset, 0.2f);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, distanceScanner);
+        // Gizmos.color = Color.red;
+        // Gizmos.DrawWireSphere(transform.position, distanceScanner);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }

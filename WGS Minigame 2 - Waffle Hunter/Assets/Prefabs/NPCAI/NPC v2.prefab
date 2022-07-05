@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6475824907148517339}
   - component: {fileID: 6475824907148517336}
   - component: {fileID: 6475824907148517337}
-  - component: {fileID: 6475824907148517342}
   - component: {fileID: 6475824907148517343}
   - component: {fileID: 2895659868538549137}
+  - component: {fileID: 6475824907148517342}
   m_Layer: 0
   m_Name: NPC v2
   m_TagString: Untagged
@@ -100,28 +100,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &6475824907148517342
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6475824907148517330}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.1
-  m_Speed: 7
-  m_Acceleration: 7
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 2
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 3
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &6475824907148517343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,23 +128,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2603e1ecafde9ce40b912dbd8b0f9ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTarget: {fileID: 0}
+  agent: {fileID: 6475824907148517342}
+  anim: {fileID: 6475824906890061102}
+  P_Target: {fileID: 0}
   playerScanner:
-    heightOffset: 0
-    detectionRadius: 4.8
-    detectionAngle: 180
+    heightOffset: 1
+    detectionRadius: 6
+    detectionAngle: 300
     maxHeightDifference: 1
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 0
     distanceScanner: 0
-    attackRange: 0
+    attackRange: 2
   waypoint: []
   playerMask:
     serializedVersion: 2
     m_Bits: 64
-  anim: {fileID: 0}
+  NpcSpeed: 2
   randomPointer: 0
+--- !u!195 &6475824907148517342
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475824907148517330}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 5
+  m_Acceleration: 6
+  avoidancePriority: 50
+  m_AngularSpeed: 100
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 3
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &6475824907422150081
 PrefabInstance:
   m_ObjectHideFlags: 0

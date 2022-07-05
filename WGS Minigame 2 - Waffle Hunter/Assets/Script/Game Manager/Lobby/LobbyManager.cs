@@ -49,6 +49,9 @@ namespace RunMinigames.Manager.Lobby
         public float timeBetweenUpdates = 1.5f;
         float nextUpdateTime;
 
+        [Header("Scenes")]
+        public string[] sceneName;
+
 
 
         private void Start()
@@ -227,9 +230,9 @@ namespace RunMinigames.Manager.Lobby
             playButton.SetActive(PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount >= 1);
         }
 
-        public void OnClickPlayButton(string targetScene)
+        public void OnClickPlayButton()
         {
-            PhotonNetwork.LoadLevel(targetScene);
+            PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
         }
 
         public void OnClickDisconnect()

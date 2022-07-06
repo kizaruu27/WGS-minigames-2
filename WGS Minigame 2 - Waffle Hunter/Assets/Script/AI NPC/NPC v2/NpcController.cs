@@ -35,7 +35,12 @@ public class NpcController : MonoBehaviour
 
             if (checkPosition < playerScanner.attackRange)
             {
+                agent.isStopped = true;
                 Debug.Log("Start Attact");
+            }
+            else
+            {
+                agent.isStopped = false;
             }
         }
         else

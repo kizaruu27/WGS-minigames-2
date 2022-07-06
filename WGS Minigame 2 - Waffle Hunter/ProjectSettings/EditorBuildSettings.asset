@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/WGS3_MainGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Test Scene.unity
-    guid: cbb340aea7e42174595d69c507ec54a1
+    path: Assets/Scenes/WGS3_MainGame 2.unity
+    guid: d635752922533894a804139c1ecb8f81
   m_configObjects: {}

@@ -1641,7 +1641,7 @@ MonoBehaviour:
   timeBetweenUpdates: 1.5
   sceneName:
   - WGS3_MainGame
-  - Test Scene
+  - WGS3_MainGame 2
 --- !u!114 &830375427
 MonoBehaviour:
   m_ObjectHideFlags: 0

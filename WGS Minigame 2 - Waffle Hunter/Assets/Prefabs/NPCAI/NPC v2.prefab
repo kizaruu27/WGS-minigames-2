@@ -131,22 +131,19 @@ MonoBehaviour:
   agent: {fileID: 6475824907148517342}
   anim: {fileID: 6475824906890061102}
   P_Target: {fileID: 0}
+  timeToStopPursuit: 0
   playerScanner:
     heightOffset: 1
     detectionRadius: 6
-    detectionAngle: 300
+    detectionAngle: 220
     maxHeightDifference: 1
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 0
-    distanceScanner: 0
     attackRange: 2
   waypoint: []
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  NpcSpeed: 2
   randomPointer: 0
+  Players: []
 --- !u!195 &6475824907148517342
 NavMeshAgent:
   m_ObjectHideFlags: 0

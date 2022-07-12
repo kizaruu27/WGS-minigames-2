@@ -7,45 +7,88 @@ public class NpcController : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Animator anim;
-    public PlayerControllerV2 player { get { return P_Target; } }
-    [SerializeField] protected PlayerControllerV2 P_Target = null;
+    [SerializeField] GameObject P_Target = null;
+    public float timeToStopPursuit;
+    protected float m_TimerSinceLostTarget = 0.0f;
     public TargetScanner playerScanner;
     public Transform[] waypoint;
     [SerializeField] int randomPointer;
 
+    public List<GameObject> Players;
+
+    void Start()
+    {
+        foreach (var Player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            Players.Add(Player);
+        }
+    }
 
     private void FixedUpdate()
     {
         FindTarget();
+
+        NpcMonobehaviour(P_Target);
     }
 
-    public void FindTarget()
+    public void NpcMonobehaviour(GameObject playerTarget)
     {
-        PlayerControllerV2 target = playerScanner.DetectPlayer(transform, P_Target == null);
-
-        Debug.Log(target);
-
-        if (target != null)
+        if (playerTarget != null)
         {
-            P_Target = target;
-
-            float checkPosition = Vector3.Distance(transform.position, target.transform.position);
-
-            StartPursuit(target.transform.position);
-
-            if (checkPosition < playerScanner.attackRange)
-            {
-                agent.isStopped = true;
-                Debug.Log("Start Attact");
-            }
-            else
-            {
-                agent.isStopped = false;
-            }
+            StartPursuit(playerTarget.transform.position);
+            agent.autoBraking = true;
+            agent.stoppingDistance = playerScanner.attackRange;
         }
         else
         {
             StartCoroutine(NPCRoaming());
+            agent.autoBraking = false;
+            agent.stoppingDistance = 2;
+        }
+    }
+
+    public void FindTarget()
+    {
+        foreach (var player in Players)
+        {
+            GameObject target = playerScanner.DetectPlayer(transform, player, P_Target);
+
+            Debug.Log(target);
+
+            if (P_Target == null)
+            {
+                if (target != null)
+                {
+                    P_Target = target;
+                }
+            }
+            else
+            {
+                if (target == null)
+                {
+                    m_TimerSinceLostTarget += Time.deltaTime;
+
+                    if (m_TimerSinceLostTarget >= timeToStopPursuit)
+                    {
+                        Vector3 toTarget = P_Target.transform.position - transform.position;
+
+                        if (toTarget.sqrMagnitude > playerScanner.detectionRadius * playerScanner.detectionRadius)
+                        {
+                            //the target move out of range, reset the target
+                            P_Target = null;
+                        }
+                    }
+                }
+                else
+                {
+                    if (target != P_Target)
+                    {
+                        P_Target = target;
+                    }
+
+                    m_TimerSinceLostTarget = 0.0f;
+                }
+            }
         }
     }
 
@@ -56,7 +99,7 @@ public class NpcController : MonoBehaviour
 
     IEnumerator NPCRoaming()
     {
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.5f);
 
         if (waypoint.Length != 0)
         {
@@ -72,8 +115,26 @@ public class NpcController : MonoBehaviour
 
     public void StartPursuit(Vector3 playerTarget)
     {
-        agent.SetDestination(playerTarget);
-        anim.SetBool("NPCwalk", true);
+        float checkPosition = Vector3.Distance(transform.position, playerTarget);
+
+        if (checkPosition > playerScanner.attackRange)
+        {
+            agent.SetDestination(playerTarget);
+            anim.SetBool("NPCwalk", true);
+        }
+        else
+        {
+            LockOnTarget(playerTarget);
+            anim.SetBool("NPCwalk", false);
+        }
+    }
+
+    void LockOnTarget(Vector3 player)
+    {
+        Vector3 dir = player - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, 4f * Time.deltaTime).eulerAngles;
+        transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
 

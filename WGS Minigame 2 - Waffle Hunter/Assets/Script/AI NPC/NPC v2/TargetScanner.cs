@@ -1,4 +1,4 @@
-
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -10,21 +10,14 @@ public class TargetScanner
     public float detectionAngle = 270;
     public float maxHeightDifference = 1.0f;
     public LayerMask viewBlockerLayerMask;
-    public float distanceScanner;
     public float attackRange;
 
-
-    public GameObject DetectPlayer(Transform detector, GameObject player, bool useHeightDifference = true)
+    public GameObject DetectPlayer(Transform detector, GameObject _player, bool useHeightDifference = true)
     {
 
         Vector3 eyePos = detector.position + Vector3.up * heightOffset;
-        Vector3 toPlayer = player.transform.position - eyePos;
-        Vector3 toPlayerTop = player.transform.position + Vector3.up * 1.5f - eyePos;
-
-        if (useHeightDifference && Mathf.Abs(toPlayer.y + heightOffset) > maxHeightDifference)
-        { //if the target is too high or too low no need to try to reach it, just abandon pursuit
-            return null;
-        }
+        Vector3 toPlayer = _player.transform.position - eyePos;
+        Vector3 toPlayerTop = _player.transform.position + Vector3.up * 1.5f - eyePos;
 
         Vector3 toPlayerFlat = toPlayer;
         toPlayerFlat.y = 0;
@@ -38,15 +31,16 @@ public class TargetScanner
                 Debug.DrawRay(eyePos, toPlayer, Color.blue);
                 Debug.DrawRay(eyePos, toPlayerTop, Color.blue);
 
-                return player;
+                return _player;
             }
         }
-
         return null;
     }
 
     public PlayerControllerV2 DetectPlayer(Transform detector, bool useHeightDifference = true)
     {
+
+        if (PlayerControllerV2.instance == null) return null;
 
         Vector3 eyePos = detector.position + Vector3.up * heightOffset;
         Vector3 toPlayer = PlayerControllerV2.instance.transform.position - eyePos;

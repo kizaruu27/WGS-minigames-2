@@ -51,9 +51,7 @@ public class NpcController : MonoBehaviour
     {
         foreach (var player in Players)
         {
-            GameObject target = playerScanner.DetectPlayer(transform, player, P_Target);
-
-            Debug.Log(target);
+            GameObject target = playerScanner.DetectPlayer(transform, player);
 
             if (P_Target == null)
             {
@@ -106,7 +104,7 @@ public class NpcController : MonoBehaviour
             agent.SetDestination(waypoint[randomPointer].position);
             anim.SetBool("NPCwalk", true);
 
-            if (Vector3.Distance(this.transform.position, waypoint[randomPointer].position) <= 3)
+            if (Vector3.Distance(this.transform.position, waypoint[randomPointer].position) <= 3f)
             {
                 GetWayPoint();
             }
@@ -139,7 +137,6 @@ public class NpcController : MonoBehaviour
 
 
 #if UNITY_EDITOR
-
     private void OnDrawGizmosSelected()
     {
         playerScanner.EditorGizmo(transform);

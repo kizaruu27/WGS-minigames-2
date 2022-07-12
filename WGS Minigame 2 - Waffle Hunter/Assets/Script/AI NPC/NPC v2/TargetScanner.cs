@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+
 using UnityEngine;
 
 [System.Serializable]
@@ -8,13 +8,11 @@ public class TargetScanner
     public float detectionRadius = 10;
     [Range(0.0f, 360.0f)]
     public float detectionAngle = 270;
-    public float maxHeightDifference = 1.0f;
-    public LayerMask viewBlockerLayerMask;
+    // public float maxHeightDifference = 1.0f;
     public float attackRange;
 
-    public GameObject DetectPlayer(Transform detector, GameObject _player, bool useHeightDifference = true)
+    public GameObject DetectPlayer(Transform detector, GameObject _player)
     {
-
         Vector3 eyePos = detector.position + Vector3.up * heightOffset;
         Vector3 toPlayer = _player.transform.position - eyePos;
         Vector3 toPlayerTop = _player.transform.position + Vector3.up * 1.5f - eyePos;
@@ -39,7 +37,6 @@ public class TargetScanner
 
     public PlayerControllerV2 DetectPlayer(Transform detector, bool useHeightDifference = true)
     {
-
         if (PlayerControllerV2.instance == null) return null;
 
         Vector3 eyePos = detector.position + Vector3.up * heightOffset;
@@ -79,8 +76,6 @@ public class TargetScanner
         Gizmos.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
         Gizmos.DrawWireSphere(transform.position + Vector3.up * heightOffset, 0.2f);
 
-        // Gizmos.color = Color.red;
-        // Gizmos.DrawWireSphere(transform.position, distanceScanner);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }

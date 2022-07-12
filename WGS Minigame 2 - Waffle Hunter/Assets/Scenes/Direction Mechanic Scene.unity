@@ -3897,6 +3897,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 332306587102621674, guid: 64004ea56bed5cc4389a9ea14d69892d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332306587102621675, guid: 64004ea56bed5cc4389a9ea14d69892d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 332306587102621678, guid: 64004ea56bed5cc4389a9ea14d69892d, type: 3}
       propertyPath: m_RootOrder
       value: 14

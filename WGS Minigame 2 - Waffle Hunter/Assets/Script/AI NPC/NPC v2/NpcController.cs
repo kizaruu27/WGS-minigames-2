@@ -11,7 +11,7 @@ public class NpcController : MonoBehaviour
     public float timeToStopPursuit;
     protected float m_TimerSinceLostTarget = 0.0f;
     public TargetScanner playerScanner;
-    public Transform[] waypoint;
+    public GameObject[] waypoint;
     [SerializeField] int randomPointer;
 
     public List<GameObject> Players;
@@ -22,6 +22,8 @@ public class NpcController : MonoBehaviour
         {
             Players.Add(Player);
         }
+
+        waypoint = GameObject.FindGameObjectsWithTag("NpcWayPoint");
     }
 
     private void FixedUpdate()
@@ -101,10 +103,10 @@ public class NpcController : MonoBehaviour
 
         if (waypoint.Length != 0)
         {
-            agent.SetDestination(waypoint[randomPointer].position);
+            agent.SetDestination(waypoint[randomPointer].transform.position);
             anim.SetBool("NPCwalk", true);
 
-            if (Vector3.Distance(this.transform.position, waypoint[randomPointer].position) <= 3f)
+            if (Vector3.Distance(this.transform.position, waypoint[randomPointer].transform.position) <= 3f)
             {
                 GetWayPoint();
             }

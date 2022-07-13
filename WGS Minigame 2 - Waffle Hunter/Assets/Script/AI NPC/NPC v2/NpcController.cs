@@ -43,7 +43,7 @@ public class NpcController : MonoBehaviour
     {
         if (playerTarget != null)
         {
-            view.RPC("RPC_StartPursuit", RpcTarget.AllViaServer, playerTarget.transform.position);
+            StartPursuit(playerTarget.transform.position);
             agent.autoBraking = true;
             agent.stoppingDistance = playerScanner.attackRange;
         }
@@ -121,8 +121,7 @@ public class NpcController : MonoBehaviour
         }
     }
 
-    [PunRPC]
-    void RPC_StartPursuit(Vector3 playerTarget)
+    public void StartPursuit(Vector3 playerTarget)
     {
         float checkPosition = Vector3.Distance(transform.position, playerTarget);
 

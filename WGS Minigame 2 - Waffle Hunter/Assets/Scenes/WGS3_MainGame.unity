@@ -7436,6 +7436,7 @@ GameObject:
   - component: {fileID: 1918646228}
   - component: {fileID: 1918646229}
   - component: {fileID: 1918646231}
+  - component: {fileID: 1918646230}
   m_Layer: 0
   m_Name: -----Game Manager
   m_TagString: Untagged
@@ -7472,6 +7473,21 @@ MonoBehaviour:
   previewCamera: {fileID: 368399864}
   Joystick: {fileID: 2108504433}
   AttackButton: {fileID: 580837046}
+--- !u!114 &1918646230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918646227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0736073463849424287eaf5c8a08bfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Players: []
+  photonView: {fileID: 1918646231}
+  checkPlayer: {fileID: 1935997355}
 --- !u!114 &1918646231
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class NpcSpawner : MonoBehaviour
         {
             int spawnPoint = Random.Range(0, SpawnPoints.Length);
             PhotonNetwork.Instantiate(NpcCharacter.name, SpawnPoints[spawnPoint].position, Quaternion.identity);
-            Debug.Log($"is master client name {NpcCharacter.name}, spawn point: {spawnPoint}");
+            // Debug.Log($"is master client name {NpcCharacter.name}, spawn point: {spawnPoint}");
         }
     }
 }

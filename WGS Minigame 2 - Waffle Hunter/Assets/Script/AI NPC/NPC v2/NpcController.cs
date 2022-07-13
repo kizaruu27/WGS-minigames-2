@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class NpcController : MonoBehaviour
 {
@@ -12,32 +12,38 @@ public class NpcController : MonoBehaviour
     protected float m_TimerSinceLostTarget = 0.0f;
     public TargetScanner playerScanner;
     public GameObject[] waypoint;
-    [SerializeField] int randomPointer;
-
-    public List<GameObject> Players;
+    public int randomPointer;
+    public TargetHandler PlayerTargets;
+    PhotonView view;
 
     void Start()
     {
-        foreach (var Player in GameObject.FindGameObjectsWithTag("Player"))
-        {
-            Players.Add(Player);
-        }
+        view = GetComponent<PhotonView>();
 
+        // player target on scene 
+        PlayerTargets = FindObjectOfType<TargetHandler>();
+
+        // get way poin
         waypoint = GameObject.FindGameObjectsWithTag("NpcWayPoint");
     }
 
     private void FixedUpdate()
     {
-        FindTarget();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            // try to ditect player
+            FindTarget();
 
-        NpcMonobehaviour(P_Target);
+            // monobehaviour controller
+            NpcMonobehaviour(P_Target);
+        }
     }
 
     public void NpcMonobehaviour(GameObject playerTarget)
     {
         if (playerTarget != null)
         {
-            StartPursuit(playerTarget.transform.position);
+            view.RPC("RPC_StartPursuit", RpcTarget.AllViaServer, playerTarget.transform.position);
             agent.autoBraking = true;
             agent.stoppingDistance = playerScanner.attackRange;
         }
@@ -51,9 +57,11 @@ public class NpcController : MonoBehaviour
 
     public void FindTarget()
     {
-        foreach (var player in Players)
+        foreach (var player in PlayerTargets.Players)
         {
             GameObject target = playerScanner.DetectPlayer(transform, player);
+
+            Debug.Log("catch player: " + target);
 
             if (P_Target == null)
             {
@@ -113,7 +121,8 @@ public class NpcController : MonoBehaviour
         }
     }
 
-    public void StartPursuit(Vector3 playerTarget)
+    [PunRPC]
+    void RPC_StartPursuit(Vector3 playerTarget)
     {
         float checkPosition = Vector3.Distance(transform.position, playerTarget);
 
@@ -127,6 +136,9 @@ public class NpcController : MonoBehaviour
             LockOnTarget(playerTarget);
             anim.SetBool("NPCwalk", false);
         }
+
+        if (checkPosition < playerScanner.attackRange)
+            Debug.Log("attact player");
     }
 
     void LockOnTarget(Vector3 player)
@@ -136,7 +148,6 @@ public class NpcController : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, 4f * Time.deltaTime).eulerAngles;
         transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
-
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()

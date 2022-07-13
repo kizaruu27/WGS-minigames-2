@@ -26,8 +26,11 @@ public class AttackScript : MonoBehaviour
         _anim = GetComponentInChildren<Animator>();
 
     }
-    private void Start() =>
-        AttactButton = GameObject.FindGameObjectWithTag("AttactButton").GetComponent<Button>();
+    private void Start()
+    {
+        if (CheckPlatform.isIos || CheckPlatform.isAndroid || CheckPlatform.isMobile)
+            AttactButton = GameObject.FindGameObjectWithTag("AttactButton").GetComponent<Button>();
+    }
 
     void Update()
     {
@@ -85,7 +88,7 @@ public class AttackScript : MonoBehaviour
 
         //     if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
         //     {
-                
+
         //         Debug.Log("Hit Player: " + hit.collider.gameObject.name);
         //         // Debug.Log("Hit Player");
         //         // hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();

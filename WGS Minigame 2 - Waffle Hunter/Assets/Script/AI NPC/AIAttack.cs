@@ -10,7 +10,7 @@ public class AIAttack : MonoBehaviour
 
     public void AttackInPlayer()
     {
-        Ray ray = new Ray (new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
+        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, rayDistance, playerMask))
@@ -24,19 +24,17 @@ public class AIAttack : MonoBehaviour
             {
                 hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
                 print("Player Shielded");
-
             }
         }
-
-
     }
 
-    public void OutAttackRange(){
+    public void OutAttackRange()
+    {
         aiMultipayer.anim.SetBool("NPCwalk", true);
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawRay(new Ray (new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance)));
+        Gizmos.DrawRay(new Ray(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance)));
     }
 }

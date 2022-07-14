@@ -14,17 +14,24 @@ public class NpcController : MonoBehaviour
     public GameObject[] waypoint;
     public int randomPointer;
     public TargetHandler PlayerTargets;
+    [SerializeField] private float fireRate;
+    private float nextFire = 0.0f;
     PhotonView view;
 
     void Start()
     {
-        view = GetComponent<PhotonView>();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            view = GetComponent<PhotonView>();
 
-        // player target on scene 
-        PlayerTargets = FindObjectOfType<TargetHandler>();
+            // player target on scene 
+            PlayerTargets = FindObjectOfType<TargetHandler>();
 
-        // get way poin
-        waypoint = GameObject.FindGameObjectsWithTag("NpcWayPoint");
+            // get way poin
+            waypoint = GameObject.FindGameObjectsWithTag("NpcWayPoint");
+
+            fireRate = anim.runtimeAnimatorController.animationClips[3].length;
+        }
     }
 
     private void FixedUpdate()
@@ -45,13 +52,11 @@ public class NpcController : MonoBehaviour
         {
             StartPursuit(playerTarget.transform.position);
             agent.autoBraking = true;
-            agent.stoppingDistance = playerScanner.attackRange;
         }
         else
         {
             StartCoroutine(NPCRoaming());
             agent.autoBraking = false;
-            agent.stoppingDistance = 2;
         }
     }
 
@@ -133,19 +138,29 @@ public class NpcController : MonoBehaviour
         else
         {
             LockOnTarget(playerTarget);
-            anim.SetBool("NPCwalk", false);
         }
 
         if (checkPosition < playerScanner.attackRange)
-            Debug.Log("attact player");
+            AttactTarget();
     }
 
     void LockOnTarget(Vector3 player)
     {
         Vector3 dir = player - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, 4f * Time.deltaTime).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, 2f * Time.deltaTime).eulerAngles;
         transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
+    void AttactTarget()
+    {
+        if (Time.time > nextFire)
+        {
+            anim.SetTrigger("Attack");
+            anim.SetBool("NPCwalk", false);
+
+            nextFire = Time.time + fireRate;
+        }
     }
 
 #if UNITY_EDITOR

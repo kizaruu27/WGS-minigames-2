@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class WaffleHandler : MonoBehaviour, IDemageable
+public class WaffleHandler : MonoBehaviour
 {
     PhotonView pv;
 
@@ -73,7 +73,6 @@ public class WaffleHandler : MonoBehaviour, IDemageable
         if (other.tag == "Waffle")
         {
             IncreaseWaffle();
-            // pv.RPC("RPC_IncreaseWaffle", RpcTarget.All);
         }
         if (other.tag == "Hit")
         {
@@ -113,8 +112,6 @@ public class WaffleHandler : MonoBehaviour, IDemageable
             waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
         }
     }
-    public void GotAttact() => pv.RPC("RPC_GotAttact", RpcTarget.All);
-
     public void GameIsDone()
     {
         if (InGameTimer.instance.duration == 0 || GameFlowManager.instance.isDone && pv.IsMine)
@@ -127,22 +124,6 @@ public class WaffleHandler : MonoBehaviour, IDemageable
     void RPC_SendToPodium(int id, float score, string nickname)
     {
         pm.Finish(id, score, nickname);
-    }
-
-    [PunRPC]
-    void RPC_GotAttact()
-    {
-        if (!pv.IsMine) return;
-
-        Debug.Log("other palyer got damage:  " + PhotonNetwork.LocalPlayer.NickName);
-
-        waffle--;
-        if (waffle <= 0)
-        {
-            waffle = 0;
-        }
-
-        waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
     }
 
     [PunRPC]

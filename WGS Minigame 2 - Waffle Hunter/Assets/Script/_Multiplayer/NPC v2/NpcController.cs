@@ -30,6 +30,7 @@ public class NpcController : MonoBehaviour
             // get way poin
             waypoint = GameObject.FindGameObjectsWithTag("NpcWayPoint");
 
+            // run Attact animation duration
             fireRate = anim.runtimeAnimatorController.animationClips[3].length;
         }
     }
@@ -50,11 +51,13 @@ public class NpcController : MonoBehaviour
     {
         if (playerTarget != null)
         {
+            // pursuit all player
             StartPursuit(playerTarget.transform.position);
             agent.autoBraking = true;
         }
         else
         {
+            // start roaming
             StartCoroutine(NPCRoaming());
             agent.autoBraking = false;
         }
@@ -140,7 +143,7 @@ public class NpcController : MonoBehaviour
             LockOnTarget(playerTarget);
         }
 
-        if (checkPosition < playerScanner.attackRange)
+        if (checkPosition <= playerScanner.attackRange)
             AttactTarget();
     }
 

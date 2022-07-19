@@ -232,8 +232,8 @@ namespace RunMinigames.Manager.Lobby
 
         public void OnClickPlayButton()
         {
-            // PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
-            PhotonNetwork.LoadLevel(sceneName[1]);
+            PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
+            // PhotonNetwork.LoadLevel(sceneName[1]); -> buat testing
         }
 
         public void OnClickDisconnect()

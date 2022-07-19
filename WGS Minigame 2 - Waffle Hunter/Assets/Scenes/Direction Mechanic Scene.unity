@@ -1851,6 +1851,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 14.129782
       objectReference: {fileID: 0}
+    - target: {fileID: 6353687722158052328, guid: 17e769973f152594b9429719ba14df68, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6475824907148517330, guid: 17e769973f152594b9429719ba14df68, type: 3}
       propertyPath: m_Name
       value: NPC v2

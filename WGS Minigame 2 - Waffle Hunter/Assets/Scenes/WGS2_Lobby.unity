@@ -1640,7 +1640,7 @@ MonoBehaviour:
   contentObject: {fileID: 23453894}
   timeBetweenUpdates: 1.5
   sceneName:
-  - WGS3_MainGame
+  - WGS3_MainGame 1
   - WGS3_MainGame 2
 --- !u!114 &830375427
 MonoBehaviour:

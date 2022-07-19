@@ -34,8 +34,6 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void Update()
     {
-        // Debug.Log(instance.transform.name);
-
         if (pv.IsMine)
         {
             if (controller.isGrounded && playerVelocity.y < 0)
@@ -83,6 +81,7 @@ public class PlayerControllerV2 : MonoBehaviour
         float _vertical = Joystick.Vertical;
 
         Vector3 move = new Vector3(_horizontal, 0, _vertical);
+        move = Vector3.ClampMagnitude(move, 1f);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)

@@ -233,7 +233,7 @@ namespace RunMinigames.Manager.Lobby
         public void OnClickPlayButton()
         {
             // PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
-            PhotonNetwork.LoadLevel(sceneName[0]); /* sementara */
+            PhotonNetwork.LoadLevel(sceneName[1]);
         }
 
         public void OnClickDisconnect()

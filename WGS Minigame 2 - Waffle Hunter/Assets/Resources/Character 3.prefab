@@ -227,6 +227,7 @@ MonoBehaviour:
   shield: {fileID: 6452051017175691584}
   shieldTime: 5
   shieldActivated: 0
+  pv: {fileID: 332306587102621667}
 --- !u!114 &-6379101438927477410
 MonoBehaviour:
   m_ObjectHideFlags: 0

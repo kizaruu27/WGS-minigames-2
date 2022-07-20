@@ -172,6 +172,7 @@ MonoBehaviour:
   isWin: 0
   waffleTextUI: {fileID: 0}
   MenuUI: {fileID: 0}
+  uIAnimationHandler: {fileID: 0}
   waffleMessage: {fileID: 0}
 --- !u!114 &6259696134214851393
 MonoBehaviour:
@@ -188,6 +189,7 @@ MonoBehaviour:
   shield: {fileID: 8923181800749341740}
   shieldTime: 5
   shieldActivated: 0
+  pv: {fileID: 332306587102621667}
 --- !u!114 &7230926384756330961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +226,8 @@ MonoBehaviour:
     m_Bits: 64
   canAttack: 0
   AttactButton: {fileID: 0}
+  hitParticle: {fileID: 0}
+  attackTransition: 0
 --- !u!114 &6845334930791375088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +248,9 @@ MonoBehaviour:
   SpeedUpIndicator: {fileID: 0}
   ShieldIndicator: {fileID: 0}
   DirectionIndicator: {fileID: 0}
+  uIAnimationHandler: {fileID: 0}
+  notificationText: {fileID: 0}
+  messageText: {fileID: 0}
   isActive: 0
 --- !u!1 &332306587755318437
 GameObject:

@@ -189,6 +189,7 @@ MonoBehaviour:
   shield: {fileID: 4597308197068991759}
   shieldTime: 5
   shieldActivated: 0
+  pv: {fileID: 332306587102621667}
 --- !u!114 &7425509994139571761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ MonoBehaviour:
   canAttack: 0
   AttactButton: {fileID: 0}
   hitParticle: {fileID: 0}
+  attackTransition: 0
 --- !u!114 &8743024345128765070
 MonoBehaviour:
   m_ObjectHideFlags: 0

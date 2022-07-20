@@ -9,35 +9,44 @@ public class ShieldHandler : MonoBehaviour
     public GameObject shield;
     public float shieldTime;
     public bool shieldActivated;
+    public PhotonView pv;
 
-    private void Start() 
+    private void Start()
     {
-        shieldActivated = false;
+        // shieldActivated = false;
     }
 
-    private void Update() 
+    private void Update()
     {
-        if (shieldActivated)
+        if (pv.IsMine)
         {
-            StartCoroutine(ActivateShield());
-        }   
-        else
-        {
-            DeactivateShield();
-        } 
+            if (shieldActivated == true)
+            {
+                pv.RPC("SetActive", RpcTarget.AllViaServer, true);
+            }
+            else
+            {
+                pv.RPC("SetActive", RpcTarget.AllViaServer, false);
+            }
+        }
+
+        StartCoroutine(ActivateShield(shieldActivated));
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Shield")
+        if (pv.IsMine)
         {
-            shieldActivated = true;
+            if (col.tag == "Shield")
+            {
+                shieldActivated = true;
+            }
         }
     }
 
-    IEnumerator ActivateShield()
+    IEnumerator ActivateShield(bool act)
     {
-        if (GetComponent<PhotonView>().IsMine)
+        if (act == true)
         {
             shield.SetActive(true);
 
@@ -45,11 +54,20 @@ public class ShieldHandler : MonoBehaviour
 
             shieldActivated = false;
         }
-
+        else
+        {
+            shield.SetActive(false);
+        }
     }
 
     void DeactivateShield()
     {
         shield.SetActive(false);
+    }
+
+    [PunRPC]
+    void SetActive(bool act)
+    {
+        shieldActivated = act;
     }
 }

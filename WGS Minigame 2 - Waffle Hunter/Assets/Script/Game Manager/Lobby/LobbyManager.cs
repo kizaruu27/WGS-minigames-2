@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -16,6 +17,8 @@ namespace RunMinigames.Manager.Lobby
 
         [Header("Lobby")]
         public GameObject lobbyPanel;
+        public GameObject menuUI;
+        public GameObject searchPlayerPanel;
 
         [Header("Room")]
         public TMP_InputField roomInputField;
@@ -52,6 +55,11 @@ namespace RunMinigames.Manager.Lobby
         [Header("Scenes")]
         public string[] sceneName;
 
+        [Header("Room Index")] 
+        [SerializeField] private int roomIndex;
+
+        [SerializeField] private bool isInRoom;
+
 
 
         private void Start()
@@ -59,7 +67,75 @@ namespace RunMinigames.Manager.Lobby
             PhotonNetwork.JoinLobby();
             modalPanel.SetActive(false);
             PhotonNetwork.OfflineMode = false;
+            isInRoom = false;
+
+            StartCoroutine(loadRoom());
         }
+
+        public void onClickMatchmaking()
+        {
+            RoomOptions roomOptions = new RoomOptions();
+            roomOptions.IsVisible = true;
+            roomOptions.MaxPlayers = 4;
+            
+            Debug.Log(PhotonNetwork.CountOfPlayersInRooms);
+
+            if (PhotonNetwork.CountOfPlayersInRooms < roomOptions.MaxPlayers)
+            {
+                Debug.Log("Masuk room");
+                PhotonNetwork.JoinOrCreateRoom("Room " + roomIndex.ToString(), roomOptions, TypedLobby.Default);
+                isInRoom = true;
+            }
+            else
+            {
+                PhotonNetwork.LeaveRoom();
+                roomIndex++;
+                PhotonNetwork.JoinOrCreateRoom("Room " + roomIndex.ToString(), roomOptions, TypedLobby.Default);
+                isInRoom = true;
+            }
+        }
+        
+        public override void OnJoinedRoom()
+        {
+            loadingPanel.SetActive(false);
+            lobbyPanel.SetActive(false);
+            
+            searchPlayerPanel.SetActive(true);
+            roomName.text = PhotonNetwork.CurrentRoom.Name;
+            UpdatePlayerList();
+        }
+
+        IEnumerator loadRoom()
+        {
+            yield return new WaitForSeconds(3);
+
+            if (isInRoom)
+            {
+                yield return new WaitForSeconds(3);
+                //to room
+                GoToRoom();
+            }
+            else
+            {
+                StartCoroutine(loadRoom());
+            }
+        }
+
+        void GoToRoom()
+        {
+            if (PhotonNetwork.CurrentRoom.PlayerCount > 1)
+            {
+                // activate room panel
+                ActivateRoomPanel();
+            }
+        }
+
+        void ActivateRoomPanel()
+        {
+            roomPanel.SetActive(true);
+            searchPlayerPanel.SetActive(false);
+        }
+
 
         public void OnClickCreate()
         {
@@ -98,15 +174,7 @@ namespace RunMinigames.Manager.Lobby
             modalMessage.text = message;
         }
 
-        public override void OnJoinedRoom()
-        {
-            loadingPanel.SetActive(false);
-            lobbyPanel.SetActive(false);
-            roomPanel.SetActive(true);
-            roomName.text = PhotonNetwork.CurrentRoom.Name;
-            UpdatePlayerList();
-        }
-
+     
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
             Modal("Failed To Join Room", message);

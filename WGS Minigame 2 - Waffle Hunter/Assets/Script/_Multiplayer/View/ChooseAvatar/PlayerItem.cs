@@ -11,9 +11,6 @@ namespace RunMinigames.View.ChooseAvatar
     public class PlayerItem : MonoBehaviourPunCallbacks
     {
         public TextMeshProUGUI playerName;
-        public Image backgroundImage;
-        public Color highlightColor;
-        public GameObject leftArrowButton;
         public GameObject rightArrowButton;
 
         ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
@@ -33,12 +30,7 @@ namespace RunMinigames.View.ChooseAvatar
             PhotonNetwork.LocalPlayer.CustomProperties = playerProperties;
             PhotonNetwork.SetPlayerCustomProperties(playerProperties);
         }
-
-        private void Start()
-        {
-            backgroundImage = GetComponent<Image>();
-        }
-
+        
         public void SetPlayerInfo(Player _player)
         {
             playerName.text = _player.NickName;
@@ -48,8 +40,6 @@ namespace RunMinigames.View.ChooseAvatar
 
         public void ApplyLocalChanges()
         {
-            backgroundImage.color = highlightColor;
-            leftArrowButton.SetActive(true);
             rightArrowButton.SetActive(true);
         }
 

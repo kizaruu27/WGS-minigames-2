@@ -55,6 +55,9 @@ MonoBehaviour:
   - RPC_StartPursuit
   - SetActive
   - RPC_ActivateShield
+  - RPC_AddReadyState
+  - CheckNetworkLag
+  - RPC_SetReadyState
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

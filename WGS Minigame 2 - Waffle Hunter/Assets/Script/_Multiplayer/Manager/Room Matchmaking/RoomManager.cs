@@ -1,16 +1,17 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
-
+using RunMinigames.View.PlayerAvatar;
 namespace RunMinigames.Manager.Room
 {
     public class RoomManager : MonoBehaviourPunCallbacks
     {
         public static RoomManager instance;
-        bool GameStart = false;
+        bool WaitingRoom = true;
         public Button readyButton;
 
         [Header("Timer Components")]
@@ -29,7 +30,14 @@ namespace RunMinigames.Manager.Room
         [Header("Scenes")]
         public string[] sceneName;
 
-        private void Awake() => instance = this;
+        [Header("PlayerList")]
+        public List<Player> playerslist = new List<Player>();
+
+        private void Awake()
+        {
+            instance = this;
+            WaitingRoom = true;
+        }
 
         void SetText(double _timer)
         {
@@ -38,7 +46,18 @@ namespace RunMinigames.Manager.Room
 
         private void Update()
         {
-            if (GameStart == false)
+            WaitingRoomControl();
+
+        }
+
+        public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            photonView.RPC("RPC_SetReadyState", RpcTarget.AllBufferedViaServer, false);
+        }
+
+        public void WaitingRoomControl()
+        {
+            if (WaitingRoom == true)
             {
                 StartCountDown();
 
@@ -54,11 +73,7 @@ namespace RunMinigames.Manager.Room
                         SetStartTime();
                     }
 
-                    if (playerReadyCount >= PhotonNetwork.CurrentRoom.PlayerCount)
-                    {
-                        playerReadyCount = 0;
-                    }
-                    else if (PhotonNetwork.CurrentRoom.PlayerCount > 1 && playerReadyCount == PhotonNetwork.CurrentRoom.PlayerCount)
+                    if (PhotonNetwork.CurrentRoom.PlayerCount > 1 && playerReadyCount == PhotonNetwork.CurrentRoom.PlayerCount)
                         StartGame();
                 }
                 else
@@ -115,12 +130,13 @@ namespace RunMinigames.Manager.Room
                     StartGame();
             }
         }
+
         public void StartGame()
         {
             if (!PhotonNetwork.IsMasterClient)
                 return;
             PhotonNetwork.CurrentRoom.IsOpen = false;
-            GameStart = true;
+            WaitingRoom = false;
             PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
         }
 
@@ -138,11 +154,11 @@ namespace RunMinigames.Manager.Room
         {
             if (add)
             {
-                RoomManager.instance.playerReadyCount++;
+                playerReadyCount++;
             }
             else
             {
-                RoomManager.instance.playerReadyCount--;
+                playerReadyCount = 0;
             }
         }
     }

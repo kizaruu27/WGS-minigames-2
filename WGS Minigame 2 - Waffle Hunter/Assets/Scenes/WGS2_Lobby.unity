@@ -1092,7 +1092,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &542592037
 GameObject:
@@ -2308,6 +2308,7 @@ RectTransform:
   - {fileID: 1197750944}
   - {fileID: 2073993675}
   - {fileID: 1832513869}
+  - {fileID: 1522020811}
   m_Father: {fileID: 1149783270}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2346,7 +2347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &830375426
 MonoBehaviour:
@@ -2366,6 +2367,7 @@ MonoBehaviour:
   roomPanel: {fileID: 814467219}
   roomName: {fileID: 1248914888}
   RoomManager: {fileID: 1522020809}
+  readyButton: {fileID: 2073993676}
   playerItemsList: []
   playerAvatarPrefab: {fileID: 5606969700763393367, guid: 0d7435a2e7ed10d41a27fad20b9cbc1a, type: 3}
   playerAvatarParent: {fileID: 680824036}
@@ -2994,7 +2996,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160193827
 GameObject:
@@ -4144,7 +4146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1522020810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4174,12 +4176,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522020809}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 990.0999, y: 521.6103, z: -41.660767}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 966.03015, y: 474.86496, z: -81.04221}
+  m_LocalScale: {x: 1.9452885, y: 1.9452885, z: 1.9452885}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 814467220}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1522020812
 MonoBehaviour:

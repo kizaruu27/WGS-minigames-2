@@ -10,7 +10,6 @@ namespace RunMinigames.View.PlayerAvatar
     public class PlayerAvatar : MonoBehaviourPunCallbacks
     {
         [Header("Player Component")]
-        public Button test;
         public TextMeshProUGUI playerName;
         public Image playerAvatar;
         public Sprite[] avatars;
@@ -28,16 +27,9 @@ namespace RunMinigames.View.PlayerAvatar
 
         private void Awake()
         {
-            avatarIndex = Random.Range(0, avatars.Length);
-            PlayerPrefs.SetInt("playerAvatar", avatarIndex);
-
-            playerProperties["playerAvatar"] = Random.Range(0, avatars.Length);
+            playerProperties["playerAvatar"] = PlayerPrefs.GetInt("playerAvatar");
             PhotonNetwork.LocalPlayer.CustomProperties = playerProperties;
             PhotonNetwork.SetPlayerCustomProperties(playerProperties);
-
-            // playerProperties["statusReady"] = false;
-            // PhotonNetwork.LocalPlayer.CustomProperties = playerProperties;
-            // PhotonNetwork.SetPlayerCustomProperties(playerProperties);
         }
 
         public void OnClickShowDisplayAvatar()

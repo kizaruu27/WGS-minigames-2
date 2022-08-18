@@ -25,8 +25,7 @@ namespace RunMinigames.Manager.Lobby
         public GameObject roomPanel;
         public TextMeshProUGUI roomName;
         List<RoomItem> roomItemList = new List<RoomItem>();
-        public GameObject RoomManager;
-
+        public Button readyButton;
 
         [Header("Player")]
         public List<PlayerAvatar> playerItemsList = new List<PlayerAvatar>();
@@ -100,8 +99,6 @@ namespace RunMinigames.Manager.Lobby
 
             // Invoke("loadRoom", 3);
             loadRoom();
-
-            RoomManager.SetActive(true);
         }
 
         void loadRoom()
@@ -136,21 +133,17 @@ namespace RunMinigames.Manager.Lobby
             }
         }
 
-        public override void OnRoomListUpdate(List<RoomInfo> roomList)
-        {
-
-        }
-
         public void OnClickLeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
-            RoomManager.SetActive(false);
         }
 
         public override void OnLeftRoom()
         {
             roomPanel.SetActive(false);
             // lobbyPanel.SetActive(true);
+
+            readyButton.interactable = true;
         }
 
         public override void OnConnectedToMaster()

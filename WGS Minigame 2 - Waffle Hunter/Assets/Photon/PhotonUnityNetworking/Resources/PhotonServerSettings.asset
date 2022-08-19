@@ -58,6 +58,7 @@ MonoBehaviour:
   - RPC_AddReadyState
   - CheckNetworkLag
   - RPC_SetReadyState
+  - RPC_SendSpawnIndex
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

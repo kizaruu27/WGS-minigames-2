@@ -99,6 +99,8 @@ namespace RunMinigames.Manager.Lobby
 
             // Invoke("loadRoom", 3);
             loadRoom();
+
+            RoomManager.instance.GetCurrentRoomPlayers();
         }
 
         void loadRoom()
@@ -117,7 +119,6 @@ namespace RunMinigames.Manager.Lobby
             modalTitle.text = title;
             modalMessage.text = message;
         }
-
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
@@ -144,6 +145,8 @@ namespace RunMinigames.Manager.Lobby
             // lobbyPanel.SetActive(true);
 
             readyButton.interactable = true;
+
+            RoomManager.instance.GetCurrentRoomPlayers();
         }
 
         public override void OnConnectedToMaster()

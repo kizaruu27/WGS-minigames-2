@@ -11,6 +11,7 @@ namespace RunMinigames.Manager.MasterClientMonitor
         {
             ChangeHost();
         }
+
         public void ChangeHost()
         {
             if (PhotonNetwork.IsMasterClient)
@@ -25,12 +26,11 @@ namespace RunMinigames.Manager.MasterClientMonitor
             else if (PhotonNetwork.LocalPlayer == PhotonNetwork.MasterClient.GetNext())
             {
                 lastSavedTimeStamp += Time.deltaTime;
+
+                if (PhotonNetwork.Time - lastSavedTimeStamp > 2)
                 {
-                    if (PhotonNetwork.Time - lastSavedTimeStamp > 2)
-                    {
-                        lastSavedTimeStamp = 0;
-                        PhotonNetwork.SetMasterClient(PhotonNetwork.MasterClient.GetNext());
-                    }
+                    lastSavedTimeStamp = 0;
+                    PhotonNetwork.SetMasterClient(PhotonNetwork.MasterClient.GetNext());
                 }
             }
         }

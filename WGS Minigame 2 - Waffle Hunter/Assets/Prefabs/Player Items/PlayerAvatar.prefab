@@ -303,13 +303,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcad606becee6e4e847ef584e9ff31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 0}
   playerName: {fileID: 999143115222618030}
   playerAvatar: {fileID: 999143115478984229}
   avatars:
-  - {fileID: 21300000, guid: d7defa15f3b4334428b6a52254770eba, type: 3}
-  - {fileID: 21300000, guid: 56770167479b49844a30cc23011919eb, type: 3}
   - {fileID: 21300000, guid: b9b0487ba8e825b469087b8e59ac1114, type: 3}
+  - {fileID: 21300000, guid: 56770167479b49844a30cc23011919eb, type: 3}
+  - {fileID: 21300000, guid: d7defa15f3b4334428b6a52254770eba, type: 3}
   avatarIndex: 0
   statusReady: {fileID: 8695880747334878275}
   objectButton: {fileID: 999143115974930383}
@@ -694,7 +693,7 @@ GameObject:
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8438495863681659920
 RectTransform:
   m_ObjectHideFlags: 0

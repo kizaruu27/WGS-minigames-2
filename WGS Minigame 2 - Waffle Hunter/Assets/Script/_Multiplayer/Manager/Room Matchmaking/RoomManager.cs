@@ -11,7 +11,7 @@ namespace RunMinigames.Manager.Room
     public class RoomManager : MonoBehaviourPunCallbacks
     {
         public static RoomManager instance;
-        bool WaitingRoom = true;
+        bool PlayGame = false;
         public Button readyButton;
 
         [Header("Timer Components")]
@@ -31,12 +31,13 @@ namespace RunMinigames.Manager.Room
         public string[] sceneName;
 
         [Header("PlayerList")]
-        public List<Player> playerslist = new List<Player>();
+        public List<string> playerslist = new List<string>();
 
         private void Awake()
         {
             instance = this;
-            WaitingRoom = true;
+            PlayGame = false;
+            GetCurrentRoomPlayers();
         }
 
         void SetText(double _timer)
@@ -47,21 +48,37 @@ namespace RunMinigames.Manager.Room
         private void Update()
         {
             WaitingRoomControl();
+        }
 
+        public void GetCurrentRoomPlayers()
+        {
+            playerslist.Clear();
+
+            foreach (Player player in PhotonNetwork.PlayerList)
+            {
+                playerslist.Add(player.NickName);
+            }
+        }
+
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            GetCurrentRoomPlayers();
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
             photonView.RPC("RPC_SetReadyState", RpcTarget.AllBufferedViaServer, false);
+
+            GetCurrentRoomPlayers();
         }
 
         public void WaitingRoomControl()
         {
-            if (WaitingRoom == true)
+            if (PlayGame != true)
             {
                 StartCountDown();
 
-                if (PhotonNetwork.LocalPlayer.IsMasterClient)
+                if (PhotonNetwork.IsMasterClient)
                 {
                     if (PhotonNetwork.CurrentRoom.PlayerCount < 2)
                     {
@@ -121,13 +138,28 @@ namespace RunMinigames.Manager.Room
             Timer = CooldownTime - (PhotonNetwork.Time - startTime);
             SetText(Timer);
 
+            SetPlayerSpawnIndex();
+
             if (Timer < 0)
             {
                 SetText(0);
                 startTimer = false;
+                PlayGame = true;
 
                 if (PhotonNetwork.IsMasterClient)
-                    StartGame();
+                    Invoke("StartGame", 1);
+            }
+        }
+
+        public void SetPlayerSpawnIndex()
+        {
+            for (int i = 0; i < playerslist.Count; i++)
+            {
+                if (playerslist[i] == PhotonNetwork.LocalPlayer.NickName)
+                {
+                    int playerIndex = playerslist.IndexOf(playerslist[i]);
+                    PlayerPrefs.SetInt("positionIndex", playerIndex);
+                }
             }
         }
 
@@ -136,7 +168,7 @@ namespace RunMinigames.Manager.Room
             if (!PhotonNetwork.IsMasterClient)
                 return;
             PhotonNetwork.CurrentRoom.IsOpen = false;
-            WaitingRoom = false;
+            PlayGame = true;
             PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
         }
 
@@ -159,6 +191,7 @@ namespace RunMinigames.Manager.Room
             else
             {
                 playerReadyCount = 0;
+                readyButton.interactable = true;
             }
         }
     }

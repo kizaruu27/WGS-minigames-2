@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -251,7 +251,7 @@ RectTransform:
   m_Children:
   - {fileID: 1248914887}
   m_Father: {fileID: 814467220}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1501,12 +1501,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680824035}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 814467220}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2302,8 +2302,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 117597578}
-  - {fileID: 680824036}
   - {fileID: 46107091}
+  - {fileID: 680824036}
   - {fileID: 1795443065}
   - {fileID: 1197750944}
   - {fileID: 2073993675}
@@ -2366,7 +2366,6 @@ MonoBehaviour:
   searchPlayerPanel: {fileID: 220479025}
   roomPanel: {fileID: 814467219}
   roomName: {fileID: 1248914888}
-  RoomManager: {fileID: 1522020809}
   readyButton: {fileID: 2073993676}
   playerItemsList: []
   playerAvatarPrefab: {fileID: 5606969700763393367, guid: 0d7435a2e7ed10d41a27fad20b9cbc1a, type: 3}
@@ -4177,7 +4176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522020809}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 966.03015, y: 474.86496, z: -81.04221}
+  m_LocalPosition: {x: 966.03, y: 474.86496, z: -81.04221}
   m_LocalScale: {x: 1.9452885, y: 1.9452885, z: 1.9452885}
   m_Children: []
   m_Father: {fileID: 814467220}

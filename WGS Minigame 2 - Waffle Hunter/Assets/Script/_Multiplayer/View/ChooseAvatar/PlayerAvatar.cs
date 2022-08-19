@@ -30,6 +30,12 @@ namespace RunMinigames.View.PlayerAvatar
             playerProperties["playerAvatar"] = PlayerPrefs.GetInt("playerAvatar");
             PhotonNetwork.LocalPlayer.CustomProperties = playerProperties;
             PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+
+            statusReady.SetActive(true);
+
+            playerProperties["statusReady"] = false;
+            PhotonNetwork.LocalPlayer.CustomProperties = playerProperties;
+            PhotonNetwork.SetPlayerCustomProperties(playerProperties);
         }
 
         public void OnClickShowDisplayAvatar()
@@ -47,9 +53,9 @@ namespace RunMinigames.View.PlayerAvatar
         {
             avatarIndex = _AvIndex;
 
-            playerProperties["playerAvatar"] = (int)_AvIndex;
-
             PlayerPrefs.SetInt("playerAvatar", avatarIndex);
+
+            playerProperties["playerAvatar"] = (int)_AvIndex;
             PhotonNetwork.LocalPlayer.CustomProperties = playerProperties;
             PhotonNetwork.SetPlayerCustomProperties(playerProperties);
 

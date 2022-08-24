@@ -5233,7 +5233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271308695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.13, y: 0, z: -28.25}
+  m_LocalPosition: {x: -21.49, y: 0, z: -27.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1457645909}
@@ -5599,10 +5599,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefabs:
+  - {fileID: 332306587102621672, guid: b860c750949091841846efcb40e8fd24, type: 3}
   - {fileID: 332306587102621672, guid: 24138cfa371afc44cacb085d96387490, type: 3}
   - {fileID: 332306587102621672, guid: 64004ea56bed5cc4389a9ea14d69892d, type: 3}
-  - {fileID: 332306587102621672, guid: b860c750949091841846efcb40e8fd24, type: 3}
-  - {fileID: 332306587102621672, guid: 9e3528f91e0ab85438ff844709b11ddf, type: 3}
   SpawnPoints:
   - {fileID: 1481046733}
   - {fileID: 729258476}
@@ -7467,12 +7466,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1918646227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f90e057f277557743b9964485150f0fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 71fc8cd20755df248ac5ecef9c531354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewCamera: {fileID: 368399864}
-  Joystick: {fileID: 2108504433}
-  AttackButton: {fileID: 580837046}
 --- !u!114 &1918646230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22701,11 +22697,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &2108504433 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8744425009868427910, guid: beecfdca6d91f574196a50d3fd8ee71c, type: 3}
-  m_PrefabInstance: {fileID: 414874424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2108504434 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8744425009868427911, guid: beecfdca6d91f574196a50d3fd8ee71c, type: 3}

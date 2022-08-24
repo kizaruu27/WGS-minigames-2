@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
-using RunMinigames.View.PlayerAvatar;
+
 namespace RunMinigames.Manager.Room
 {
     public class RoomManager : MonoBehaviourPunCallbacks
     {
         public static RoomManager instance;
-        bool PlayGame = false;
+        bool GameStart = false;
         public Button readyButton;
 
         [Header("Timer Components")]
@@ -23,6 +23,7 @@ namespace RunMinigames.Manager.Room
         ExitGames.Client.Photon.Hashtable CustomeValue = new ExitGames.Client.Photon.Hashtable();
         public int playerReadyCount;
 
+
         [Header("Choose Avatar Components")]
         public GameObject DisplayAvaParent;
         public ToggleGroup AvaToggleGroup;
@@ -31,12 +32,12 @@ namespace RunMinigames.Manager.Room
         public string[] sceneName;
 
         [Header("PlayerList")]
-        public List<string> playerslist = new List<string>();
+        public List<string> playersList = new List<string>();
 
         private void Awake()
         {
             instance = this;
-            PlayGame = false;
+            GameStart = false;
             GetCurrentRoomPlayers();
         }
 
@@ -48,16 +49,6 @@ namespace RunMinigames.Manager.Room
         private void Update()
         {
             WaitingRoomControl();
-        }
-
-        public void GetCurrentRoomPlayers()
-        {
-            playerslist.Clear();
-
-            foreach (Player player in PhotonNetwork.PlayerList)
-            {
-                playerslist.Add(player.NickName);
-            }
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -74,7 +65,7 @@ namespace RunMinigames.Manager.Room
 
         public void WaitingRoomControl()
         {
-            if (PlayGame != true)
+            if (GameStart != true)
             {
                 StartCountDown();
 
@@ -98,6 +89,18 @@ namespace RunMinigames.Manager.Room
                     SetStartTimeClient();
                 }
             }
+        }
+
+        public void GetCurrentRoomPlayers()
+        {
+            playersList.Clear();
+
+            foreach (Player player in PhotonNetwork.PlayerList)
+            {
+                playersList.Add(player.NickName);
+            }
+
+            SetPlayerSpawnIndex();
         }
 
         void SetStartTime()
@@ -138,26 +141,22 @@ namespace RunMinigames.Manager.Room
             Timer = CooldownTime - (PhotonNetwork.Time - startTime);
             SetText(Timer);
 
-            SetPlayerSpawnIndex();
-
             if (Timer < 0)
             {
                 SetText(0);
                 startTimer = false;
-                PlayGame = true;
 
-                if (PhotonNetwork.IsMasterClient)
-                    Invoke("StartGame", 1);
+                StartGame();
             }
         }
 
         public void SetPlayerSpawnIndex()
         {
-            for (int i = 0; i < playerslist.Count; i++)
+            for (int i = 0; i < playersList.Count; i++)
             {
-                if (playerslist[i] == PhotonNetwork.LocalPlayer.NickName)
+                if (playersList[i] == PhotonNetwork.LocalPlayer.NickName)
                 {
-                    int playerIndex = playerslist.IndexOf(playerslist[i]);
+                    int playerIndex = playersList.IndexOf(playersList[i]);
                     PlayerPrefs.SetInt("positionIndex", playerIndex);
                 }
             }
@@ -165,11 +164,13 @@ namespace RunMinigames.Manager.Room
 
         public void StartGame()
         {
-            if (!PhotonNetwork.IsMasterClient)
-                return;
-            PhotonNetwork.CurrentRoom.IsOpen = false;
-            PlayGame = true;
-            PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
+            GameStart = true;
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
+            }
         }
 
         public void SetPlayerReady()

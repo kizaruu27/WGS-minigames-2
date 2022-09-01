@@ -40,7 +40,7 @@ public class WaffleHandler : MonoBehaviour
 
         if (pv.IsMine)
         {
-            waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+            waffleTextUI.text = waffle.ToString();
         }
 
         isWin = false;
@@ -92,7 +92,7 @@ public class WaffleHandler : MonoBehaviour
         if (pv.IsMine)
         {
             waffle++;
-            waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+            waffleTextUI.text = waffle.ToString();
             uIAnimationHandler.PlayNotifAnimation();
             waffleMessage.text = "Waffle Collected!";
 
@@ -109,7 +109,7 @@ public class WaffleHandler : MonoBehaviour
             {
                 waffle = 0;
             }
-            waffleTextUI.text = "Waffle Collected: " + waffle.ToString();
+            waffleTextUI.text = waffle.ToString();
         }
     }
     public void GameIsDone()

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="" />
+    <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Waffle Manager/WaffleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Waffle Manager/WaffleHandler.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,6 +87,7 @@
       <workItem from="1659336909934" duration="552000" />
       <workItem from="1660793990284" duration="680000" />
       <workItem from="1660805331195" duration="683000" />
+      <workItem from="1662002161698" duration="451000" />
     </task>
     <servers />
   </component>

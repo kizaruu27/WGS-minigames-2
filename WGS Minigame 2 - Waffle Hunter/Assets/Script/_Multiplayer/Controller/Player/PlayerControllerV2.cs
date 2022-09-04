@@ -25,11 +25,12 @@ public class PlayerControllerV2 : MonoBehaviour
     private void Start()
     {
         pv = GetComponent<PhotonView>();
-
-        if (CheckPlatform.isMobile || CheckPlatform.isIos || CheckPlatform.isAndroid)
-        {
-            Joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FixedJoystick>();
-        }
+        Joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FixedJoystick>();
+        // Joystick.gameObject.SetActive(true);
+        // if (CheckPlatform.isMobile || CheckPlatform.isIos || CheckPlatform.isAndroid)
+        // {
+        //     
+        // }
     }
 
     void Update()
@@ -49,10 +50,10 @@ public class PlayerControllerV2 : MonoBehaviour
                 PlayerControllerMove();
             }
 
-            if (CheckPlatform.isMobile || CheckPlatform.isIos || CheckPlatform.isAndroid)
-            {
-                JoystickMove();
-            }
+            // if (CheckPlatform.isMobile || CheckPlatform.isIos || CheckPlatform.isAndroid)
+            // {
+            // }
+            JoystickMove();
         }
     }
 

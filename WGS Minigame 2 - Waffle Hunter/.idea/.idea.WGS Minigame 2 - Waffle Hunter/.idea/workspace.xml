@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/_Multiplayer/Controller/Player/PlayerControllerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/_Multiplayer/Controller/Player/PlayerControllerV2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Waffle Manager/WaffleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Waffle Manager/WaffleHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +90,9 @@
       <workItem from="1660793990284" duration="680000" />
       <workItem from="1660805331195" duration="683000" />
       <workItem from="1662002161698" duration="1045000" />
-      <workItem from="1662312454016" duration="167000" />
+      <workItem from="1662312454016" duration="733000" />
+      <workItem from="1662517087385" duration="721000" />
+      <workItem from="1662524673940" duration="1072000" />
     </task>
     <servers />
   </component>

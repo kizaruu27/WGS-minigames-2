@@ -8,12 +8,12 @@ public class PodiumUI : MonoBehaviour
     public static PodiumUI instance;
 
     [Header("Components")]
-    public PodiumManager finishManager;
+    public ScoreManager scoreManager;
     public PodiumStandingItem row;
 
     [Header("Player List")]
 
-    IEnumerable<MPodium> PlayerFinish;
+    IEnumerable<MPlayerScore> PlayerFinish;
     List<PodiumStandingItem> cachePlayerList = new List<PodiumStandingItem>();
 
     private void Awake()
@@ -35,17 +35,17 @@ public class PodiumUI : MonoBehaviour
 
     public void ShowPlayerList()
     {
-        PlayerFinish = finishManager.GetLeaderboardData();
+        PlayerFinish = scoreManager.GetPlayerDataScore();
 
         foreach (var item in PlayerFinish.Select((value, index) => new { index, value }))
         {
             var rowData = Instantiate(row, transform);
 
-            rowData.SetColorItem(item.value.id == PhotonNetwork.LocalPlayer.ActorNumber - 1);
+            rowData.SetColorItem(item.value.PActorNumber == PhotonNetwork.LocalPlayer.ActorNumber);
 
             rowData.Rank.text = GenerateRankText(item.index);
-            rowData.Name.text = item.value.name.Length <= 20 ? item.value.name : item.value.name.Substring(0, 20) + "...";
-            rowData.Score.text = item.value.score.ToString();
+            rowData.Name.text = item.value.PlayerName.Length <= 20 ? item.value.PlayerName : item.value.PlayerName.Substring(0, 20) + "...";
+            rowData.Score.text = item.value.PlayerScore.ToString();
 
             cachePlayerList.Add(rowData);
         }

@@ -32,6 +32,8 @@ TagManager:
   - PodiumContent
   - Hit
   - NpcWayPoint
+  - PlayerAvatar
+  - Score Manager
   layers:
   - Default
   - TransparentFX

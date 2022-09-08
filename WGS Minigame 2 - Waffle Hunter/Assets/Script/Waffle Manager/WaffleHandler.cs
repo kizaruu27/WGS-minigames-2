@@ -20,12 +20,15 @@ public class WaffleHandler : MonoBehaviour
     [SerializeField] UIAnimationHandler uIAnimationHandler;
     [SerializeField] Text waffleMessage;
 
-    PodiumManager pm;
+    // PodiumManager pm;
+    ScoreManager scoreManager;
 
     private void Awake()
     {
         handler = GetComponent<ShieldHandler>();
         pv = GetComponent<PhotonView>();
+
+        scoreManager = GameObject.FindGameObjectWithTag("Score Manager").GetComponent<ScoreManager>();
 
     }
 
@@ -35,13 +38,16 @@ public class WaffleHandler : MonoBehaviour
         uIAnimationHandler = GameObject.FindGameObjectWithTag("Notification").GetComponent<UIAnimationHandler>();
         waffleTextUI = GameObject.FindGameObjectWithTag("Waffle Text").GetComponent<Text>();
         waffleMessage = GameObject.FindGameObjectWithTag("Notification Text").GetComponent<Text>();
-        pm = GameObject.FindGameObjectWithTag("Finish UI").GetComponent<PodiumManager>();
+        // pm = GameObject.FindGameObjectWithTag("Finish UI").GetComponent<PodiumManager>();
 
+
+        pv.RPC("RPC_SetPlayersData", RpcTarget.AllBuffered, PhotonNetwork.LocalPlayer.ActorNumber, PhotonNetwork.LocalPlayer.NickName, waffle);
 
         if (pv.IsMine)
         {
             waffleTextUI.text = waffle.ToString();
         }
+
 
         isWin = false;
     }
@@ -62,9 +68,14 @@ public class WaffleHandler : MonoBehaviour
             pv.RPC(nameof(Test), RpcTarget.All);
         }
 
-
-
         GameIsDone();
+    }
+
+    private void FixedUpdate()
+    {
+
+        // pv.RPC("RPC_SetPlayerScore", RpcTarget.AllBuffered, PhotonNetwork.LocalPlayer.ActorNumber - 1, waffle);
+
     }
 
 
@@ -85,6 +96,9 @@ public class WaffleHandler : MonoBehaviour
                 DecreaseWaffle();
             }
         }
+
+        if (pv.IsMine)
+            pv.RPC("RPC_SetPlayerScore", RpcTarget.AllBuffered, PhotonNetwork.LocalPlayer.ActorNumber, waffle);
     }
 
     void IncreaseWaffle()
@@ -123,12 +137,24 @@ public class WaffleHandler : MonoBehaviour
     [PunRPC]
     void RPC_SendToPodium(int id, float score, string nickname)
     {
-        pm.Finish(id, score, nickname);
+        // pm.Finish(id, score, nickname);
     }
 
     [PunRPC]
     void Test()
     {
         Debug.Log(pv);
+    }
+
+    [PunRPC]
+    void RPC_SetPlayersData(int _playerId, string _playerName, float _playerScore)
+    {
+        scoreManager.AddPlayerData(_playerId, _playerName, _playerScore);
+    }
+
+    [PunRPC]
+    void RPC_SetPlayerScore(int _playerId, float _playerScore)
+    {
+        scoreManager.SetPlayerScore(_playerId, _playerScore);
     }
 }

@@ -170,6 +170,7 @@ namespace RunMinigames.Manager.Room
             {
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
+                // PhotonNetwork.LoadLevel(sceneName[0]);
             }
         }
 

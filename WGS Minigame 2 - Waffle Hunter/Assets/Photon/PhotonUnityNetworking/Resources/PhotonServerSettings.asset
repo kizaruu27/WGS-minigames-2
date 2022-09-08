@@ -59,6 +59,8 @@ MonoBehaviour:
   - CheckNetworkLag
   - RPC_SetReadyState
   - RPC_SendSpawnIndex
+  - RPC_SetPlayersData
+  - RPC_SetPlayerScore
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

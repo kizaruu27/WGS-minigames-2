@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
+// -> For NPC Target
 public class TargetHandler : MonoBehaviour
 {
     [Header("Player Target List")]

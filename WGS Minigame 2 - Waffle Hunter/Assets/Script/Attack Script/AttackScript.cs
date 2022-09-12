@@ -7,9 +7,6 @@ public class AttackScript : MonoBehaviour
 {
     public float desiredCooldown;
     public float cooldown;
-    public float rayDistance;
-    public float rayHeight;
-    public LayerMask enemyMask;
     public bool canAttack;
     public Button AttactButton;
 
@@ -28,8 +25,7 @@ public class AttackScript : MonoBehaviour
     }
     private void Start()
     {
-        if (CheckPlatform.isIos || CheckPlatform.isAndroid || CheckPlatform.isMobile)
-            AttactButton = GameObject.FindGameObjectWithTag("AttactButton").GetComponent<Button>();
+        AttactButton = GameObject.FindGameObjectWithTag("AttactButton").GetComponent<Button>();
     }
 
     void Update()
@@ -41,26 +37,10 @@ public class AttackScript : MonoBehaviour
             cooldown = 0;
             canAttack = true;
         }
-
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0 && !CheckPlatform.isIos && !CheckPlatform.isAndroid && !CheckPlatform.isMobile)
-        {
-            PlayerAttack();
-        }
-
-        if (CheckPlatform.isIos || CheckPlatform.isAndroid || CheckPlatform.isMobile)
-            AttactButton.onClick.AddListener(AttactForMobile);
+        AttactButton.onClick.AddListener(AttactForMobile);
     }
 
     public void AttactForMobile()
-    {
-        if (canAttack)
-        {
-            StartCoroutine(Attack());
-            Invoke("ActivateController", 1.5f);
-        }
-    }
-
-    public void PlayerAttack()
     {
         if (canAttack)
         {
@@ -78,38 +58,6 @@ public class AttackScript : MonoBehaviour
         GetComponent<PlayerControllerV2>().enabled = false;
         yield return new WaitForSeconds(attackTransition);
         ActivateController();
-
-
-
-        // Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
-        // RaycastHit hit;
-        // if (Physics.Raycast(ray, out hit, rayDistance, enemyMask))
-        // {
-
-        //     if (!hit.transform.GetComponent<ShieldHandler>().shieldActivated)
-        //     {
-
-        //         Debug.Log("Hit Player: " + hit.collider.gameObject.name);
-        //         // Debug.Log("Hit Player");
-        //         // hit.transform.GetComponent<WaffleHandler>().DecreaseWaffle();
-
-        //         // ! attact another player
-        //         if (hit.collider.TryGetComponent(out IDemageable otherPlayer))
-        //             Instantiate(hitParticle, hit.transform.position, Quaternion.identity);
-        //             otherPlayer.GotAttact();
-        //     }
-        //     else
-        //     {
-        //         Debug.Log("Shielded");
-        //         hit.transform.GetComponent<ShieldHandler>().shieldActivated = false;
-        //     }
-        // }
-
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - rayHeight, transform.position.z), transform.TransformDirection(Vector3.forward * rayDistance));
     }
 
     void ActivateController()

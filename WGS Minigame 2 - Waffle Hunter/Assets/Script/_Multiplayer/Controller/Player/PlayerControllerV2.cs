@@ -45,14 +45,11 @@ public class PlayerControllerV2 : MonoBehaviour
             playerVelocity.y += gravity * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
 
-            if (CheckPlatform.isWeb || CheckPlatform.isWindowsUnity || CheckPlatform.isWindows)
-            {
-                PlayerControllerMove();
-            }
-
-            // if (CheckPlatform.isMobile || CheckPlatform.isIos || CheckPlatform.isAndroid)
+            // if (CheckPlatform.isWeb || CheckPlatform.isWindowsUnity || CheckPlatform.isWindows)
             // {
+            //     PlayerControllerMove();
             // }
+            //
             JoystickMove();
         }
     }

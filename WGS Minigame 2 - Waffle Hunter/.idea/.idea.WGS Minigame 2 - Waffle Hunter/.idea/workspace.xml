@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Attack Script/AttackScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Attack Script/AttackScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS1_Login.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS1_Login.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS2_Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS2_Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/_Multiplayer/Controller/Player/PlayerControllerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/_Multiplayer/Controller/Player/PlayerControllerV2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
@@ -21,17 +27,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "rider.run.widget.enabled.cache": "false",
-    "settings.editor.selected.configurable": "discord-project",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;discord-project&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../Build/Waffle Hunter.exe" />
@@ -94,6 +100,7 @@
       <workItem from="1662517087385" duration="721000" />
       <workItem from="1662524673940" duration="1072000" />
       <workItem from="1662952709531" duration="1267000" />
+      <workItem from="1663049476646" duration="2141000" />
     </task>
     <servers />
   </component>

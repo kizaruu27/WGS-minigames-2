@@ -65,6 +65,7 @@ public class PlayerControllerV2 : MonoBehaviour
         {
             gameObject.transform.forward = move;
             anim.SetBool("isRunning", true);
+           
         }
         else
         {
@@ -86,6 +87,10 @@ public class PlayerControllerV2 : MonoBehaviour
         {
             gameObject.transform.forward = move;
             anim.SetBool("isRunning", true);
+            if (!PlayerAudioManager.instance.audioSource.isPlaying)
+            {
+                PlayerAudioManager.instance.PlayFootstepAudio();
+            }
         }
         else
         {

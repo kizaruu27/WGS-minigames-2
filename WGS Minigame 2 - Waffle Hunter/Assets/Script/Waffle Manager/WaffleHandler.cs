@@ -105,6 +105,7 @@ public class WaffleHandler : MonoBehaviour
     {
         if (pv.IsMine)
         {
+            ObjectAudioManager.instance.PlayWaffleAudio();
             waffle++;
             waffleTextUI.text = waffle.ToString();
             uIAnimationHandler.PlayNotifAnimation();

@@ -28,6 +28,7 @@ public class DirectionHolder : MonoBehaviour
     {
         if (view.IsMine)
         {
+            ObjectAudioManager.instance.PlayDirectionAudio();
             isShowing = true;
             Direction.SetActive(true);
         }

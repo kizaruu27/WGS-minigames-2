@@ -20,6 +20,7 @@ public class SpeedUpItem : MonoBehaviour
 
     IEnumerator SpeedUpPlayer(Collider col)
     {
+        ObjectAudioManager.instance.PlaySpeedAudio();
         col.GetComponent<PlayerControllerV2>().playerSpeed = speedUp;
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;

@@ -40,6 +40,7 @@ public class ShieldHandler : MonoBehaviour
             if (col.tag == "Shield")
             {
                 shieldActivated = true;
+                ObjectAudioManager.instance.PlayShieldAudio();
             }
         }
     }

@@ -18,6 +18,8 @@ public class PlayerControllerV2 : MonoBehaviour
     Vector3 playerVelocity;
     float gravity = -9.8f;
 
+    public bool canMove;
+
     PhotonView pv;
 
     private void Awake() => s_Instance = this;
@@ -79,22 +81,25 @@ public class PlayerControllerV2 : MonoBehaviour
         float _horizontal = Joystick.Horizontal;
         float _vertical = Joystick.Vertical;
 
-        Vector3 move = new Vector3(_horizontal, 0, _vertical);
-        move = Vector3.ClampMagnitude(move, 1f);
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        if (canMove)
+        {
+            Vector3 move = new Vector3(_horizontal, 0, _vertical);
+            move = Vector3.ClampMagnitude(move, 1f);
+            controller.Move(move * Time.deltaTime * playerSpeed);
 
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-            anim.SetBool("isRunning", true);
-            if (!PlayerAudioManager.instance.audioSource.isPlaying)
+            if (move != Vector3.zero)
             {
-                PlayerAudioManager.instance.PlayFootstepAudio();
+                gameObject.transform.forward = move;
+                anim.SetBool("isRunning", true);
+                if (!PlayerAudioManager.instance.audioSource.isPlaying)
+                {
+                    PlayerAudioManager.instance.PlayFootstepAudio();
+                }
             }
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
+            else
+            {
+                anim.SetBool("isRunning", false);
+            }
         }
     }
 }

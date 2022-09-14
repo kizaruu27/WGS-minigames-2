@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS1_Login.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS1_Login.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Items/Speed Change/SpeedUpItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Items/Speed Change/SpeedUpItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/Audio/ObjectAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/Audio/ObjectAudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Items/Direction Arrow/DirectionHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Items/Direction Arrow/DirectionHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Timer/CountdownStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Timer/CountdownStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Util/CheckPlayerConnected.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Util/CheckPlayerConnected.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/_Multiplayer/Controller/Player/PlayerControllerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/_Multiplayer/Controller/Player/PlayerControllerV2.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,8 @@
       <workItem from="1662517087385" duration="721000" />
       <workItem from="1662524673940" duration="1072000" />
       <workItem from="1662952709531" duration="1267000" />
-      <workItem from="1663049476646" duration="3886000" />
+      <workItem from="1663049476646" duration="5201000" />
+      <workItem from="1663129069176" duration="3309000" />
     </task>
     <servers />
   </component>

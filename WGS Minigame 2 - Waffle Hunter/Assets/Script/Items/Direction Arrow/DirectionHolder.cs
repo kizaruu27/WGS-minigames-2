@@ -19,7 +19,6 @@ public class DirectionHolder : MonoBehaviour
         {
 
             ShowDirection(col);
-
             Destroy(col.gameObject, itemTime);
         }
     }

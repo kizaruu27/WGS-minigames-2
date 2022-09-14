@@ -13,7 +13,6 @@ namespace RunMinigames.Manager.Networking
 {
     public class HttpManager : MonoBehaviour
     {
-
 #if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")]
         private static extern string GetToken();

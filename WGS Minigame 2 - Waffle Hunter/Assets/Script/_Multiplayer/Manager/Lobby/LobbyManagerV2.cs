@@ -13,29 +13,22 @@ namespace RunMinigames.Manager.Lobby
     {
         public static LobbyManagerV2 instance;
 
-        [Header("Canvas")]
-        [SerializeField] Canvas canvas;
-
         [Header("Lobby")]
-        // public GameObject lobbyPanel;
-        public GameObject menuUI;
         public GameObject searchPlayerPanel;
 
         [Header("Room")]
         public GameObject roomPanel;
         public TextMeshProUGUI roomName;
         List<RoomItem> roomItemList = new List<RoomItem>();
-        public Button readyButton;
 
         [Header("Player")]
         public List<PlayerAvatar> playerItemsList = new List<PlayerAvatar>();
-        public PlayerAvatar playerAvatarPrefab;
-        public Transform playerAvatarParent;
+        public PlayerAvatar playerItemPrefab;
+        public Transform playerItemParent;
 
         [Header("Modal")]
         public TextMeshProUGUI modalTitle;
         public TextMeshProUGUI modalMessage;
-        public Button closeModal;
         public GameObject modalPanel;
 
         [Header("Loading")]
@@ -67,6 +60,8 @@ namespace RunMinigames.Manager.Lobby
             modalPanel.SetActive(false);
         }
 
+
+        #region Matchmaking
         public void onClickMatchmaking()
         {
             RoomOptions roomOptions = new RoomOptions();
@@ -91,7 +86,6 @@ namespace RunMinigames.Manager.Lobby
         public override void OnJoinedRoom()
         {
             loadingPanel.SetActive(false);
-            // lobbyPanel.SetActive(false);
 
             searchPlayerPanel.SetActive(true);
             roomName.text = PhotonNetwork.CurrentRoom.Name;
@@ -112,6 +106,14 @@ namespace RunMinigames.Manager.Lobby
             }
         }
 
+        void ActivateRoom()
+        {
+            roomPanel.SetActive(true);
+            searchPlayerPanel.SetActive(false);
+        }
+        #endregion
+
+
         public void Modal(string title, string message)
         {
             modalPanel.SetActive(true);
@@ -119,6 +121,7 @@ namespace RunMinigames.Manager.Lobby
             modalTitle.text = title;
             modalMessage.text = message;
         }
+
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
@@ -134,6 +137,11 @@ namespace RunMinigames.Manager.Lobby
             }
         }
 
+        public override void OnRoomListUpdate(List<RoomInfo> roomList)
+        {
+
+        }
+
         public void OnClickLeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
@@ -142,9 +150,6 @@ namespace RunMinigames.Manager.Lobby
         public override void OnLeftRoom()
         {
             roomPanel.SetActive(false);
-            // lobbyPanel.SetActive(true);
-
-            readyButton.interactable = true;
 
             RoomManager.instance.GetCurrentRoomPlayers();
         }
@@ -169,7 +174,7 @@ namespace RunMinigames.Manager.Lobby
 
             foreach (KeyValuePair<int, Player> player in PhotonNetwork.CurrentRoom.Players)
             {
-                PlayerAvatar newPlayerItem = Instantiate(playerAvatarPrefab, playerAvatarParent);  // call the player item
+                PlayerAvatar newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);  // call the player item
                 newPlayerItem.SetPlayerInfo(player.Value);
 
                 if (player.Value == PhotonNetwork.LocalPlayer)

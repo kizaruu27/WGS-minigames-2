@@ -6471,7 +6471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5606969700763393367, guid: 0d7435a2e7ed10d41a27fad20b9cbc1a, type: 3}
+      - m_Target: {fileID: 5606969700763393367, guid: 4caf73a68dfec1a42a37b85cfdc46dd5, type: 3}
         m_TargetAssemblyTypeName: RunMinigames.View.PlayerAvatar.PlayerAvatar, Assembly-CSharp
         m_MethodName: PlayerReady
         m_Mode: 1

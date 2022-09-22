@@ -69,6 +69,7 @@ MonoBehaviour:
   anim: {fileID: 5174884602546467041}
   playerSpeed: 5
   Joystick: {fileID: 0}
+  canMove: 0
 --- !u!143 &332306587102621675
 CharacterController:
   m_ObjectHideFlags: 0

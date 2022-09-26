@@ -32,7 +32,7 @@ public class DirectionHolder : MonoBehaviour
             Direction.SetActive(true);
         }
         Invoke("hidDirection", itemTime);
-        col.GetComponent<MeshRenderer>().enabled = false;
+        col.GetComponentInChildren<MeshRenderer>().enabled = false;
         col.GetComponent<BoxCollider>().enabled = false;
     }
 

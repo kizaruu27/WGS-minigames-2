@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS2_Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS2_Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WGS3_MainGame 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Gold.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Gold.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Orange.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Yellow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Direction Pointer Item/Direction Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Direction Pointer Item/Direction Item.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Speed Up Item/SpeedUp Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Speed Up Item/SpeedUp Item.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Waffle Ancient/Waffle Ancient.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Waffle Ancient/Waffle Ancient.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Direction Mechanic Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Direction Mechanic Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Items/Direction Arrow/DirectionHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Items/Direction Arrow/DirectionHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Items/Speed Change/SpeedUpItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Items/Speed Change/SpeedUpItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +105,7 @@
       <workItem from="1663049476646" duration="5201000" />
       <workItem from="1663129069176" duration="3309000" />
       <workItem from="1663912498243" duration="278000" />
+      <workItem from="1664162757551" duration="2797000" />
     </task>
     <servers />
   </component>

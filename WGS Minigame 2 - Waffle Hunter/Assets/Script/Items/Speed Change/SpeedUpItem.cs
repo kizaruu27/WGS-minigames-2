@@ -10,6 +10,9 @@ public class SpeedUpItem : MonoBehaviour
 
     public float itemTime;
 
+    [Header("Item Mesh")] 
+    [SerializeField] private GameObject itemMesh;
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
@@ -20,10 +23,11 @@ public class SpeedUpItem : MonoBehaviour
 
     IEnumerator SpeedUpPlayer(Collider col)
     {
+        itemMesh.SetActive(false);
         ObjectAudioManager.instance.PlaySpeedAudio();
         col.GetComponent<PlayerControllerV2>().playerSpeed = speedUp;
         GetComponent<CapsuleCollider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        
 
         yield return new WaitForSeconds(itemTime);
 

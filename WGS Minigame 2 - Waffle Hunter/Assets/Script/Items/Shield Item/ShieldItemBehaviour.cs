@@ -14,7 +14,7 @@ public class ShieldItemBehaviour : MonoBehaviour
 
     IEnumerator DestroyItem(Collider col)
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponent<SphereCollider>().enabled = false;
 
         yield return new WaitForSeconds(col.GetComponent<ShieldHandler>().shieldTime);

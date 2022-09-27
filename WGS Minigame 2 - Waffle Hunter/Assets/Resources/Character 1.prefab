@@ -464,6 +464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pointer Direction
       objectReference: {fileID: 0}
+    - target: {fileID: 914066823861508574, guid: 011c0f1d6b08fb949aa7e733df6cda1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8119172184939107635, guid: 011c0f1d6b08fb949aa7e733df6cda1e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -474,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8119172184939107635, guid: 011c0f1d6b08fb949aa7e733df6cda1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.635
       objectReference: {fileID: 0}
     - target: {fileID: 8119172184939107635, guid: 011c0f1d6b08fb949aa7e733df6cda1e, type: 3}
       propertyPath: m_LocalPosition.z

@@ -3,7 +3,7 @@ using Photon.Pun;
 using System.Linq;
 using System.Collections.Generic;
 
-public class PodiumUI : MonoBehaviour
+public class PodiumUI : MonoBehaviourPunCallbacks
 {
     public static PodiumUI instance;
 
@@ -89,10 +89,15 @@ public class PodiumUI : MonoBehaviour
         };
     }
 
-    public void OnClickBackToMenu()
+    public void OnClickExitRoom()
     {
         PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
         PhotonNetwork.LeaveRoom();
-        PhotonNetwork.LoadLevel(2);
+    }
+
+    public override void OnLeftRoom()
+    {
+        Debug.LogError("Left room");
+        PhotonNetwork.LoadLevel("WGS2_Lobby");
     }
 }

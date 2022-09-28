@@ -34,6 +34,7 @@ TagManager:
   - NpcWayPoint
   - PlayerAvatar
   - Score Manager
+  - NPC
   layers:
   - Default
   - TransparentFX

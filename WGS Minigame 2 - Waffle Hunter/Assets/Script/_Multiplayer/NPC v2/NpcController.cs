@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class NpcController : MonoBehaviour
 {
-    [SerializeField] NavMeshAgent agent;
+    public NavMeshAgent agent;
     [SerializeField] Animator anim;
     [SerializeField] GameObject P_Target = null;
     public float timeToStopPursuit;

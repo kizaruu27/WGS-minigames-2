@@ -34,12 +34,12 @@ public class ItemTimerUIHandler : MonoBehaviour
         pv = GetComponent<PhotonView>();
     }
 
-    private void Start() 
+    private void Start()
     {
         //timer UI component
         UITimer = GameObject.FindGameObjectWithTag("Timer UI");
         textMessage = GameObject.FindGameObjectWithTag("Item Message").GetComponent<Text>();
-        textTimer = GameObject.FindGameObjectWithTag("Item Time").GetComponent<Text>();   
+        textTimer = GameObject.FindGameObjectWithTag("Item Time").GetComponent<Text>();
 
         //indicator UI
         SpeedUpIndicator = GameObject.FindGameObjectWithTag("Speed indicator").GetComponent<ItemsIndicatorHandler>();
@@ -51,20 +51,20 @@ public class ItemTimerUIHandler : MonoBehaviour
 
     void Update()
     {
-       if (isActive)
-       {
-           ActivateUITimer();
-       }
-       if (time <= 0)
-       {
+        if (isActive)
+        {
+            ActivateUITimer();
+        }
+        if (time <= 0)
+        {
             DeactivateTimer();
-       }
+        }
 
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag ==  "Direction")
+        if (col.tag == "Direction")
         {
             isActive = true;
             time = GetComponent<DirectionHolder>().itemTime;
@@ -92,7 +92,7 @@ public class ItemTimerUIHandler : MonoBehaviour
             SpeedUpIndicator.activateIndicator();
             CallUINotif(message);
             // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
-          
+
         }
     }
 
@@ -115,7 +115,7 @@ public class ItemTimerUIHandler : MonoBehaviour
             textMessage.text = null;
             textTimer.text = null;
             isActive = false;
-            
+
             //deactivate indicator
             DirectionIndicator.deactivateIndicator();
             SpeedUpIndicator.deactivateIndicator();

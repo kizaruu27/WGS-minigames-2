@@ -31,7 +31,7 @@ public class SpawnWaffleManager : MonoBehaviour
 
         // Debug.Log(waffle.waffleCollected);
 
-        if (waffle.waffleCollected == true)
+        if (waffle.waffleCollected == true && waffle != null)
         {
             int randomIndexSpawn = Random.Range(0, spawnPosition.Length);
             int currentIndex = randomIndexSpawn + 1;

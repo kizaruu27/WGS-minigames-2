@@ -5956,11 +5956,17 @@ MonoBehaviour:
   PauseUI: {fileID: 0}
   WinUI: {fileID: 1108200347}
   disableOnFinish:
-  - {fileID: 1452942540}
-  - {fileID: 490885320}
-  - {fileID: 177405827}
+  - {fileID: 456186180}
+  - {fileID: 459970035}
+  - {fileID: 364457071}
   - {fileID: 522141956}
   - {fileID: 1329703901}
+  - {fileID: 1443592428}
+  - {fileID: 653506271}
+  - {fileID: 875116877}
+  - {fileID: 522141956}
+  _players: []
+  _NPC: {fileID: 0}
   timer: {fileID: 1329703902}
   isDone: 0
 --- !u!4 &443241353
@@ -17982,7 +17988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66e0cf5c101ea848a9f64aee5f88d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 60
+  duration: 5
   timerText: {fileID: 1329703903}
   timerIsPlay: 0
 --- !u!114 &1329703903
@@ -19806,6 +19812,11 @@ PrefabInstance:
 --- !u!224 &1443592427 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8744425009868427911, guid: beecfdca6d91f574196a50d3fd8ee71c, type: 3}
+  m_PrefabInstance: {fileID: 1443592426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1443592428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8744425009868427910, guid: beecfdca6d91f574196a50d3fd8ee71c, type: 3}
   m_PrefabInstance: {fileID: 1443592426}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1452135876

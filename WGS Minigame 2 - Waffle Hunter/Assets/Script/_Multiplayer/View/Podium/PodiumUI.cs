@@ -26,11 +26,12 @@ public class PodiumUI : MonoBehaviourPunCallbacks
         RemovePlayerListCache();
         ShowPlayerList();
 
+        if (!GameFlowManager.instance.isDone)
+        {
+            WaitingPlayerToFinish();
 
-        WaitingPlayerToFinish();
-
-        if (cachePlayerList.Count == (int)PhotonNetwork.CurrentRoom.PlayerCount) return;
-
+            if (cachePlayerList.Count == (int)PhotonNetwork.CurrentRoom.PlayerCount) return;
+        }
     }
 
     public void ShowPlayerList()

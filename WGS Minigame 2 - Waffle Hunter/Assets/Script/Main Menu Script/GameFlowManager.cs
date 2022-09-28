@@ -11,7 +11,6 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] GameObject WinUI;
     [SerializeField] GameObject[] disableOnFinish;
 
-
     [SerializeField] InGameTimer timer;
     WaffleHandler waffleHandler;
 
@@ -69,6 +68,7 @@ public class GameFlowManager : MonoBehaviour
         {
             DisableGO();
             WinUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

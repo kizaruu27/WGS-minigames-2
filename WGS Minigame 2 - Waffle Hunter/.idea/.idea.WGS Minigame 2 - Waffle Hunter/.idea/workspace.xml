@@ -50,7 +50,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Program Files\Unity Version\2020.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;E:\Projects\Waffleverse\Minigames\Waffle Hunter\WGS-minigames-2\WGS Minigame 2 - Waffle Hunter&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Projects\Waffleverse\Minigames\Waffle Hunter\WGS-minigames-2\WGS Minigame 2 - Waffle Hunter" />
       <option name="PASS_PARENT_ENVS" value="1" />

@@ -1,15 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using RunMinigames.Models.Http.PlayerInfo;
-using RunMinigames.Services.Http;
-using RunMinigames.Services.Photon;
-using RunMinigames.View.Loading;
 using System;
 using System.Runtime.InteropServices;
 using M2_SimpleJSON;
+using RoyaleMinigames.Models.Http.PlayerInfo;
+using RoyaleMinigames.Services.Http;
+using RoyaleMinigames.Services.Photon;
+using RoyaleMinigames.View.Loading;
 
 
-namespace RunMinigames.Manager.Networking
+namespace RoyaleMinigames.Manager.Networking
 {
     public class M2_HttpManager : MonoBehaviour
     {

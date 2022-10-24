@@ -6,7 +6,7 @@ using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 
-namespace RunMinigames.Manager.Room
+namespace RoyaleMinigames.Manager.Room
 {
     public class M2_RoomManager : MonoBehaviourPunCallbacks
     {

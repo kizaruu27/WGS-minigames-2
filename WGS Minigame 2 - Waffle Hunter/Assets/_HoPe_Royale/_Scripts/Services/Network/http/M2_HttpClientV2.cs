@@ -3,10 +3,10 @@ using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Networking;
-using RunMinigames.Interface;
 using M2_SimpleJSON;
+using RoyaleMinigames.Interface;
 
-namespace RunMinigames.Services.Http
+namespace RoyaleMinigames.Services.Http
 {
     public class M2_HttpClientV2
     {

@@ -1,7 +1,7 @@
 using Photon.Pun;
 using Photon.Realtime;
 
-namespace RunMinigames.Services.Photon
+namespace RoyaleMinigames.Services.Photon
 {
     public class M2_PhotonOfflineRoom : MonoBehaviourPunCallbacks
     {

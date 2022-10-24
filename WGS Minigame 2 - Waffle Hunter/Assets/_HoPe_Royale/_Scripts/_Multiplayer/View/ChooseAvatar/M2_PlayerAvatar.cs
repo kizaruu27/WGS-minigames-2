@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using RoyaleMinigames.Manager.Room;
 using TMPro;
-using RunMinigames.Manager.Room;
 
-namespace RunMinigames.View.PlayerAvatar
+namespace RoyaleMinigames.View.PlayerAvatar
 {
     public class M2_PlayerAvatar : MonoBehaviourPunCallbacks
     {

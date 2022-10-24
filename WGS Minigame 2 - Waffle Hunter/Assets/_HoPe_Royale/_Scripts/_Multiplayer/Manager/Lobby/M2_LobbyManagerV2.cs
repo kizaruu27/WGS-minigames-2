@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using RoyaleMinigames.Manager.Room;
+using RoyaleMinigames.View.PlayerAvatar;
 using TMPro;
 using UnityEngine.UI;
-using RunMinigames.View.PlayerAvatar;
-using RunMinigames.Manager.Room;
 
-namespace RunMinigames.Manager.Lobby
+namespace RoyaleMinigames.Manager.Lobby
 {
     public class M2_LobbyManagerV2 : MonoBehaviourPunCallbacks
     {

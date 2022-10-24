@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Realtime;
-using RunMinigames.Manager.Lobby;
+using RoyaleMinigames.Manager.Lobby;
 
 public class M2_RoomItem : MonoBehaviour
 {

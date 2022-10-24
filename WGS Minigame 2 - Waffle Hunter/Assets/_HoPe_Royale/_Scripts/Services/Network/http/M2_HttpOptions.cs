@@ -3,11 +3,11 @@ using System;
 using System.Threading.Tasks;
 
 using UnityEngine;
-using RunMinigames.Interface;
 using M2_SimpleJSON;
+using RoyaleMinigames.Interface;
 
 
-namespace RunMinigames.Services.Http
+namespace RoyaleMinigames.Services.Http
 {
     public class M2_HttpOptions : M2_ISerializationOption
     {

@@ -1,4 +1,4 @@
-namespace RunMinigames.Models.Http
+namespace RoyaleMinigames.Models.Http
 {
     public struct M2_MHttpResponse<T>
     {

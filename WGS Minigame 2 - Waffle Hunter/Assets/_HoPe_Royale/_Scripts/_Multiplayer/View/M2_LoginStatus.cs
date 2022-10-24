@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-namespace RunMinigames.View.Loading
+namespace RoyaleMinigames.View.Loading
 {
     public class M2_LoginStatus : MonoBehaviour
     {

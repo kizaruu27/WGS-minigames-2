@@ -1,6 +1,6 @@
 using M2_SimpleJSON;
 
-namespace RunMinigames.Interface
+namespace RoyaleMinigames.Interface
 {
     public interface M2_ISerializationOption
     {

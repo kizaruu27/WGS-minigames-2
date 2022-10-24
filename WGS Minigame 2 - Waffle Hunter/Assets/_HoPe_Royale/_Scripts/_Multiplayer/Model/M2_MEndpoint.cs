@@ -1,5 +1,5 @@
 
-namespace RunMinigames.Models
+namespace RoyaleMinigames.Models
 {
     public class M2_MEndpoint
     {

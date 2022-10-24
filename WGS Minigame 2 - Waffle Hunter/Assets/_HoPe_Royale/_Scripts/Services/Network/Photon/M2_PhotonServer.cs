@@ -1,11 +1,11 @@
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
-using RunMinigames.Manager.Networking;
-using RunMinigames.View.Loading;
 using System.Text.RegularExpressions;
+using RoyaleMinigames.Manager.Networking;
+using RoyaleMinigames.View.Loading;
 
-namespace RunMinigames.Services.Photon
+namespace RoyaleMinigames.Services.Photon
 {
 
     public class M2_PhotonServer : MonoBehaviourPunCallbacks

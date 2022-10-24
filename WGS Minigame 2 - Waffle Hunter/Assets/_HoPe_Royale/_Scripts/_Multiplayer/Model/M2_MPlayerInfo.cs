@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace RunMinigames.Models.Http.PlayerInfo
+namespace RoyaleMinigames.Models.Http.PlayerInfo
 {
     // [Preserve(AllMembers = true)]
     [Serializable]
@@ -10,7 +10,7 @@ namespace RunMinigames.Models.Http.PlayerInfo
 #nullable enable
         public bool? status { get; set; }
         public string? message { get; set; }
-        public Data? data { get; set; }
+        public M2_Data? data { get; set; }
 
         [JsonConstructor]
         public M2_MPlayerInfo() { }
@@ -18,7 +18,7 @@ namespace RunMinigames.Models.Http.PlayerInfo
 
     // [Preserve(AllMembers = true)]
     [Serializable]
-    public class Data
+    public class M2_Data
     {
 #nullable enable
 
@@ -33,6 +33,6 @@ namespace RunMinigames.Models.Http.PlayerInfo
         public DateTime? updated_at { get; set; }
 
         [JsonConstructor]
-        public Data() { }
+        public M2_Data() { }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 
-namespace RunMinigames.Manager.MasterClientMonitor
+namespace RoyaleMinigames.Manager.MasterClientMonitor
 {
     public class M2_MasterClientMonitor : MonoBehaviourPunCallbacks
     {

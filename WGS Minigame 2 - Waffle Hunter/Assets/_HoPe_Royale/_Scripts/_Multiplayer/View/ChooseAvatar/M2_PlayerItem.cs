@@ -6,7 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 
-namespace RunMinigames.View.ChooseAvatar
+namespace RoyaleMinigames.View.ChooseAvatar
 {
     public class M2_PlayerItem : MonoBehaviourPunCallbacks
     {

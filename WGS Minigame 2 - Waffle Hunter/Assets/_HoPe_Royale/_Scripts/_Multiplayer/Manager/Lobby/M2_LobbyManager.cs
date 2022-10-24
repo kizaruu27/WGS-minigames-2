@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using RoyaleMinigames.View.ChooseAvatar;
 using TMPro;
 using UnityEngine.UI;
-using RunMinigames.View.ChooseAvatar;
 
 
-namespace RunMinigames.Manager.Lobby
+namespace RoyaleMinigames.Manager.Lobby
 {
     public class M2_LobbyManager : MonoBehaviourPunCallbacks
     {

@@ -1,7 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="" />
+    <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/Character 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/Character 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/NPC v2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/NPC v2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS2_Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS2_Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AIAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AIAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AIAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AIAttack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AIController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AIController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AIMultiplayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AIMultiplayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/AIMultiplayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_AIMultiplayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/EnemyAiTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_EnemyAiTutorial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/EnemyAiTutorial.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_EnemyAiTutorial.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/NextSinglePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_NextSinglePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/NextSinglePlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_NextSinglePlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/SinglePlayerAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_SinglePlayerAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/SinglePlayerAI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/AI NPC/M2_SinglePlayerAI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Attack Script/AttackScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Attack Script/M2_AttackScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Attack Script/AttackScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Attack Script/M2_AttackScript.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/DestroyGameobject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/M2_DestroyGameobject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/DestroyGameobject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/M2_DestroyGameobject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/RotateObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/M2_RotateObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/RotateObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Behaviour/M2_RotateObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/DirectionHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/M2_DirectionHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/DirectionHolder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/M2_DirectionHolder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/DirectionalArrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/M2_DirectionalArrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/DirectionalArrow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/M2_DirectionalArrow.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/Waffle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/M2_Waffle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/Waffle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Direction Arrow/M2_Waffle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/ItemTimerUIHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/M2_ItemTimerUIHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/ItemTimerUIHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/M2_ItemTimerUIHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Items Indicator/ItemsIndicatorHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Items Indicator/M2_ItemsIndicatorHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Items Indicator/ItemsIndicatorHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Items Indicator/M2_ItemsIndicatorHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/RotateShield.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/M2_RotateShield.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/RotateShield.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/M2_RotateShield.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/ShieldHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/M2_ShieldHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/ShieldHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/M2_ShieldHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/ShieldItemBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/M2_ShieldItemBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/ShieldItemBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Shield Item/M2_ShieldItemBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/Chest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/Chest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/SlowDownSpeed.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/SlowDownSpeed.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/SpeedUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/SpeedUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/SpeedUpItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/M2_SpeedUpItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/SpeedUpItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Speed Change/M2_SpeedUpItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Validation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Validation/ItemValidation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Validation/ItemValidation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Waffle Magnet.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Waffle Magnet/Magnet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Waffle Magnet/Magnet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Waffle Magnet/MagnetTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Waffle Magnet/MagnetTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Weapon/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Weapon/M2_Attack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Weapon/Attack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Weapon/M2_Attack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Weapon/WeaponShow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Weapon/WeaponShow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/GameFlowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_GameFlowManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/GameFlowManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_GameFlowManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/LoadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_LoadScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/LoadScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_LoadScene.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/ObjectAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/M2_ObjectAudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/ObjectAudioManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/M2_ObjectAudioManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/PlayerAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/M2_PlayerAudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/PlayerAudioManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Manager/Audio/M2_PlayerAudioManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Obstacles/SlowDownObstacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Obstacles/M2_SlowDownObstacle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Obstacles/SlowDownObstacle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Obstacles/M2_SlowDownObstacle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Platform/CheckPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Platform/M2_CheckPlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Platform/CheckPlatform.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Platform/M2_CheckPlatform.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_CameraFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/CameraFollow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_CameraFollow.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/ListOnPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_ListOnPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/ListOnPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_ListOnPlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_PlayerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/PlayerUIHitInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_PlayerUIHitInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/PlayerUIHitInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Player/M2_PlayerUIHitInfo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Scriptable Object/ScriptableValue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Scriptable Object/M2_ScriptableValue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Scriptable Object/ScriptableValue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Scriptable Object/M2_ScriptableValue.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/PhotonOfflineRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonOfflineRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/PhotonOfflineRoom.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonOfflineRoom.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/PhotonServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/PhotonServer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonServer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/HttpClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpClientV2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/HttpClient.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpClientV2.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/HttpConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/HttpConfig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpConfig.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/HttpOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/HttpOptions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpOptions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/ItemSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/M2_ItemSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/ItemSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/M2_ItemSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/WaffleHunterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/M2_WaffleHunterSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/WaffleHunterSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Spawner/M2_WaffleHunterSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/CountdownStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_CountdownStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/CountdownStart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_CountdownStart.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/InGameTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_InGameTimer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/InGameTimer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_InGameTimer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Trigger Event/TriggerEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Trigger Event/M2_TriggerEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Trigger Event/TriggerEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Trigger Event/M2_TriggerEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/UI/UIAnimationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/UI/M2_UIAnimationHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/UI/UIAnimationHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/UI/M2_UIAnimationHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/CheckPlayerConnected.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/M2_CheckPlayerConnected.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/CheckPlayerConnected.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/M2_CheckPlayerConnected.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/SimpleJson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/M2_SimpleJSON.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/SimpleJson.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Util/M2_SimpleJSON.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/SpawnWaffleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_SpawnWaffleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/SpawnWaffleManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_SpawnWaffleManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/WaffleBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_WaffleBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/WaffleBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_WaffleBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/WaffleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_WaffleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/WaffleHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_WaffleHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/WaffleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_WaffleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/WaffleManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Waffle Manager/M2_WaffleManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/Zetcode_CameraFollowPlayerFixed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/M2_Zetcode_CameraFollowPlayerFixed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/Zetcode_CameraFollowPlayerFixed.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/M2_Zetcode_CameraFollowPlayerFixed.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/Zetcode_CameraFollowPlayerSmooth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/M2_Zetcode_CameraFollowPlayerSmooth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/Zetcode_CameraFollowPlayerSmooth.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/Camera/M2_Zetcode_CameraFollowPlayerSmooth.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/LoadScene/Zetcode_LoadSceneClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/LoadScene/M2_Zetcode_LoadSceneClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/LoadScene/Zetcode_LoadSceneClick.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Zetcode/LoadScene/M2_Zetcode_LoadSceneClick.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Camera/M2_CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Camera/CameraController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Camera/M2_CameraController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/HttpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/M2_HttpManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/HttpManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/M2_HttpManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Player/PlayerControllerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Player/M2_PlayerControllerV2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Player/PlayerControllerV2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Player/M2_PlayerControllerV2.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/IDemageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/M2_IDemageable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/IDemageable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/M2_IDemageable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/ISerializationOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/M2_ISerializationOption.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/ISerializationOption.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/M2_ISerializationOption.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/LobbyManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/LobbyManagerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManagerV2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/LobbyManagerV2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManagerV2.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/MasterClientMonitor/MasterClientMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/MasterClientMonitor/M2_MasterClientMonitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/MasterClientMonitor/MasterClientMonitor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/MasterClientMonitor/M2_MasterClientMonitor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/M2_RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/RoomManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/M2_RoomManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/ScoreManager/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/ScoreManager/M2_ScoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/ScoreManager/ScoreManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/ScoreManager/M2_ScoreManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/NpcSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/M2_NpcSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/NpcSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/M2_NpcSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/PlayerSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/M2_PlayerSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/PlayerSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Mechanics/Spawner/M2_PlayerSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/HttpResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MHttpResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/HttpResponse.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MHttpResponse.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/MEndpoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MEndpoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/MEndpoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MEndpoint.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/MPlayerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MPlayerInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/MPlayerInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MPlayerInfo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/MPlayerScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MPlayerScore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/MPlayerScore.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MPlayerScore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/NpcController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/M2_NpcController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/NpcController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/M2_NpcController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/TargetHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/M2_TargetHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/TargetHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/M2_TargetHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/TargetScanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/NPC v2/TargetScanner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/TrialSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/M2_TrialSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/TrialSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/M2_TrialSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/PlayerAvatar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerAvatar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/PlayerAvatar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerAvatar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/PlayerItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/PlayerItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/LoginStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/M2_LoginStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/LoginStatus.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/M2_LoginStatus.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/PodiumStandingItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/M2_PodiumStandingItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/PodiumStandingItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/M2_PodiumStandingItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/PodiumUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/M2_PodiumUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/PodiumUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/Podium/M2_PodiumUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/RoomItem/RoomItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/RoomItem/M2_RoomItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/RoomItem/RoomItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/RoomItem/M2_RoomItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,17 +192,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-project&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "discord-project",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../Build/Waffle Hunter.exe" />
@@ -93,6 +268,7 @@
       <workItem from="1663129069176" duration="3309000" />
       <workItem from="1663912498243" duration="278000" />
       <workItem from="1664162757551" duration="2797000" />
+      <workItem from="1666599174358" duration="3428000" />
     </task>
     <servers />
   </component>

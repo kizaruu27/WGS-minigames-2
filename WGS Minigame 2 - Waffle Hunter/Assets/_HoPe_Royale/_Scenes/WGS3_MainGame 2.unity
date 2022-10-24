@@ -15541,7 +15541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6723223321044731596, guid: 71302aa685f370a47915e439d92c2b9c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6723223321044731596, guid: 71302aa685f370a47915e439d92c2b9c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -15625,6 +15625,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7553792349130937882, guid: 71302aa685f370a47915e439d92c2b9c, type: 3}
       propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 303803634}
+    - target: {fileID: 7553792349130937882, guid: 71302aa685f370a47915e439d92c2b9c, type: 3}
+      propertyPath: m2ScoreManager
       value: 
       objectReference: {fileID: 303803634}
     m_RemovedComponents: []
@@ -24971,9 +24975,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CountdownTXT: {fileID: 1709649146}
   InitialCountdown: 4
-  _inGameTimer: {fileID: 1329703902}
+  m2InGameTimer: {fileID: 1329703902}
   photonView: {fileID: 1709649145}
-  checkPlayer: {fileID: 227235876}
+  m2CheckPlayer: {fileID: 227235876}
 --- !u!1 &1709870368
 GameObject:
   m_ObjectHideFlags: 0
@@ -41513,7 +41517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Players: []
   photonView: {fileID: 2113965646}
-  checkPlayer: {fileID: 227235876}
+  m2CheckPlayer: {fileID: 227235876}
 --- !u!114 &2113965646
 MonoBehaviour:
   m_ObjectHideFlags: 0

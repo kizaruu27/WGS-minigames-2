@@ -11,7 +11,7 @@ public class SpeedUp : MonoBehaviour
     private float speedBoostDuration = 5f;
     private float slowSpeed = 3f;
 
-    PlayerController playerController;
+    M2_PlayerController _m2PlayerController;
     // public SpeedChanger speedChanger;
 
     // public string namePowerUp;
@@ -20,7 +20,7 @@ public class SpeedUp : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        playerController = GetComponentInChildren<PlayerController>();
+        _m2PlayerController = GetComponentInChildren<M2_PlayerController>();
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class SpeedUp : MonoBehaviour
     {
         if (other.tag == "SpeedChange")
         {
-            SpeedUpItem Changer = other.GetComponent<SpeedUpItem>();
+            M2_SpeedUpItem Changer = other.GetComponent<M2_SpeedUpItem>();
 
             if (Changer.namePowerUp == "SpeedUp")
             {
@@ -69,17 +69,17 @@ public class SpeedUp : MonoBehaviour
 
     IEnumerator SpeedBoostCooldown()
     {
-        playerController.playerSpeed = speedBoost;
+        _m2PlayerController.playerSpeed = speedBoost;
         yield return new WaitForSeconds(speedBoostDuration);
-        playerController.playerSpeed = normalSpeed;
+        _m2PlayerController.playerSpeed = normalSpeed;
 
     }
 
     IEnumerator SlowBoostCooldown()
     {
-        playerController.playerSpeed = slowSpeed;
+        _m2PlayerController.playerSpeed = slowSpeed;
         yield return new WaitForSeconds(speedBoostDuration);
-        playerController.playerSpeed = normalSpeed;
+        _m2PlayerController.playerSpeed = normalSpeed;
     }
 
 }

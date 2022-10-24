@@ -35,13 +35,13 @@ public class TargetScanner
         return null;
     }
 
-    public PlayerControllerV2 DetectPlayer(Transform detector, bool useHeightDifference = true)
+    public M2_PlayerControllerV2 DetectPlayer(Transform detector, bool useHeightDifference = true)
     {
-        if (PlayerControllerV2.instance == null) return null;
+        if (M2_PlayerControllerV2.instance == null) return null;
 
         Vector3 eyePos = detector.position + Vector3.up * heightOffset;
-        Vector3 toPlayer = PlayerControllerV2.instance.transform.position - eyePos;
-        Vector3 toPlayerTop = PlayerControllerV2.instance.transform.position + Vector3.up * 1.5f - eyePos;
+        Vector3 toPlayer = M2_PlayerControllerV2.instance.transform.position - eyePos;
+        Vector3 toPlayerTop = M2_PlayerControllerV2.instance.transform.position + Vector3.up * 1.5f - eyePos;
 
         Vector3 toPlayerFlat = toPlayer;
         toPlayerFlat.y = 0;
@@ -55,7 +55,7 @@ public class TargetScanner
                 Debug.DrawRay(eyePos, toPlayer, Color.blue);
                 Debug.DrawRay(eyePos, toPlayerTop, Color.blue);
 
-                return PlayerControllerV2.instance;
+                return M2_PlayerControllerV2.instance;
             }
         }
 

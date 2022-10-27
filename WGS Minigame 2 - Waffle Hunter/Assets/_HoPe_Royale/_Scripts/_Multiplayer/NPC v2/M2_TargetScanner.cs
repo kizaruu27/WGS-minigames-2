@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class TargetScanner
+public class M2_TargetScanner
 {
     public float heightOffset = 0.0f;
     public float detectionRadius = 10;

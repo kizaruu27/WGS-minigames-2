@@ -10,7 +10,7 @@ public class M2_NpcController : MonoBehaviour
     [SerializeField] GameObject P_Target = null;
     public float timeToStopPursuit;
     protected float m_TimerSinceLostTarget = 0.0f;
-    public TargetScanner playerScanner;
+    public M2_TargetScanner playerScanner;
     public GameObject[] waypoint;
     public int randomPointer;
     public M2_TargetHandler playerM2Targets;

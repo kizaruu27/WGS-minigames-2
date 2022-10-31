@@ -13,13 +13,7 @@ public class M2_ItemTimerUIHandler : MonoBehaviour
     [SerializeField] string message;
     [SerializeField] float time;
 
-    [Header("Indicator Elements")]
-    [SerializeField] M2_ItemsIndicatorHandler SpeedUpIndicator;
-    [SerializeField] M2_ItemsIndicatorHandler ShieldIndicator;
-    [SerializeField] M2_ItemsIndicatorHandler DirectionIndicator;
-
     [Header("Notification ELements")]
-    [SerializeField] M2_UIAnimationHandler uIAnimationHandler;
     [SerializeField] Text notificationText;
 
     [Header("Message Elements")]
@@ -43,10 +37,6 @@ public class M2_ItemTimerUIHandler : MonoBehaviour
         textTimer = GameObject.FindGameObjectWithTag("Item Time").GetComponent<Text>();
 
         //indicator UI
-        SpeedUpIndicator = GameObject.FindGameObjectWithTag("Speed indicator").GetComponent<M2_ItemsIndicatorHandler>();
-        ShieldIndicator = GameObject.FindGameObjectWithTag("Shield Indicator").GetComponent<M2_ItemsIndicatorHandler>();
-        DirectionIndicator = GameObject.FindGameObjectWithTag("Direction Indicator").GetComponent<M2_ItemsIndicatorHandler>();
-        uIAnimationHandler = GameObject.FindGameObjectWithTag("Notification").GetComponent<M2_UIAnimationHandler>();
         notificationText = GameObject.FindGameObjectWithTag("Notification Text").GetComponent<Text>();
     }
 
@@ -70,8 +60,10 @@ public class M2_ItemTimerUIHandler : MonoBehaviour
             isActive = true;
             time = GetComponent<M2_DirectionHolder>().itemTime;
             message = "Direction Acquired!";
-            DirectionIndicator.activateIndicator();
             CallUINotif(message);
+            
+            M2_ItemsIndicatorHandler DirectionIndicator = GameObject.Find("Direction Indicator").GetComponent<M2_ItemsIndicatorHandler>();
+            DirectionIndicator.activateIndicator();
             // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
         }
 
@@ -80,8 +72,10 @@ public class M2_ItemTimerUIHandler : MonoBehaviour
             isActive = true;
             time = GetComponent<M2_ShieldHandler>().shieldTime;
             message = "Shield Acquired!";
-            ShieldIndicator.activateIndicator();
             CallUINotif(message);
+            
+            M2_ItemsIndicatorHandler ShieldIndicator = GameObject.Find("Shield Indicator").GetComponent<M2_ItemsIndicatorHandler>();
+            ShieldIndicator.activateIndicator();
             // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
         }
 
@@ -90,8 +84,10 @@ public class M2_ItemTimerUIHandler : MonoBehaviour
             isActive = true;
             time = col.GetComponent<M2_SpeedUpItem>().itemTime;
             message = "Speed Up!";
-            SpeedUpIndicator.activateIndicator();
             CallUINotif(message);
+            
+            M2_ItemsIndicatorHandler SpeedUpIndicator = GameObject.Find("SpeedUp Indicator").GetComponent<M2_ItemsIndicatorHandler>();
+            SpeedUpIndicator.activateIndicator();
             // pv.RPC("CallUINotif", RpcTarget.AllBuffered, message);
 
         }
@@ -118,8 +114,13 @@ public class M2_ItemTimerUIHandler : MonoBehaviour
             isActive = false;
 
             //deactivate indicator
+            M2_ItemsIndicatorHandler DirectionIndicator = GameObject.Find("Direction Indicator").GetComponent<M2_ItemsIndicatorHandler>();
             DirectionIndicator.deactivateIndicator();
+            
+            M2_ItemsIndicatorHandler SpeedUpIndicator = GameObject.Find("SpeedUp Indicator").GetComponent<M2_ItemsIndicatorHandler>();
             SpeedUpIndicator.deactivateIndicator();
+            
+            M2_ItemsIndicatorHandler ShieldIndicator = GameObject.Find("Shield Indicator").GetComponent<M2_ItemsIndicatorHandler>();
             ShieldIndicator.deactivateIndicator();
         }
     }
@@ -129,6 +130,7 @@ public class M2_ItemTimerUIHandler : MonoBehaviour
     {
         if (pv.IsMine)
         {
+            M2_UIAnimationHandler uIAnimationHandler = GameObject.Find("UI Animation Handler").GetComponent<M2_UIAnimationHandler>();
             uIAnimationHandler.PlayNotifAnimation();
             notificationText.text = notif;
         }

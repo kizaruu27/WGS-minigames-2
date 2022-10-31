@@ -46,8 +46,6 @@ public class M2_InGameTimer : MonoBehaviour
             {
                 duration = 0;
                 timerText.text = "00:00";
-                // GameOverUI.SetActive(true);
-                // Time.timeScale = 0;
             }
         }
     }

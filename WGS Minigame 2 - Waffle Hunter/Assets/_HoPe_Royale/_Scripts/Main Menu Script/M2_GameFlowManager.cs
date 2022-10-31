@@ -68,7 +68,15 @@ public class M2_GameFlowManager : MonoBehaviour
         {
             DisableGO();
             WinUI.SetActive(true);
-            Time.timeScale = 0;
+
+            M2_PlayerControllerV2[] playercontroller = FindObjectsOfType<M2_PlayerControllerV2>();
+            foreach (var controller in playercontroller)
+            {
+                controller.enabled = false;
+            }
+
+            M2_NpcController npcController = FindObjectOfType<M2_NpcController>();
+            npcController.enabled = false;
         }
     }
 }

@@ -167,7 +167,7 @@ namespace RoyaleMinigames.Manager.Room
             {
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 // PhotonNetwork.LoadLevel(sceneName[Random.Range(0, sceneName.Length)]);
-                PhotonNetwork.LoadLevel(sceneName[1]);
+                PhotonNetwork.LoadLevel(sceneName[0]);
             }
         }
 

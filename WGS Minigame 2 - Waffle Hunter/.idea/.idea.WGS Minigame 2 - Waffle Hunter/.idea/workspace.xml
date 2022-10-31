@@ -3,32 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonOfflineRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonOfflineRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpClientV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpClientV2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/http/M2_HttpOptions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/M2_HttpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/M2_HttpManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/M2_ISerializationOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Interface/M2_ISerializationOption.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManagerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Lobby/M2_LobbyManagerV2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/MasterClientMonitor/M2_MasterClientMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/MasterClientMonitor/M2_MasterClientMonitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/Character 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/Character 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/M2_ItemTimerUIHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/M2_ItemTimerUIHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_GameFlowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_GameFlowManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_InGameTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_InGameTimer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/M2_RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/M2_RoomManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MEndpoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MEndpoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MHttpResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MHttpResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MPlayerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Model/M2_MPlayerInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerAvatar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerAvatar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/ChooseAvatar/M2_PlayerItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/M2_LoginStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/M2_LoginStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/RoomItem/M2_RoomItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/View/RoomItem/M2_RoomItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../Waffleverse/test/Waffle Test/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/M2_HttpManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -117,6 +104,7 @@
       <workItem from="1664162757551" duration="2797000" />
       <workItem from="1666599174358" duration="3428000" />
       <workItem from="1666604863300" duration="1292000" />
+      <workItem from="1667196474198" duration="3606000" />
     </task>
     <servers />
   </component>

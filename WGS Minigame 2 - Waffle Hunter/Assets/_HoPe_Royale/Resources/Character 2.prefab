@@ -241,10 +241,6 @@ MonoBehaviour:
   textTimer: {fileID: 0}
   message: 
   time: 0
-  SpeedUpIndicator: {fileID: 0}
-  ShieldIndicator: {fileID: 0}
-  DirectionIndicator: {fileID: 0}
-  uIAnimationHandler: {fileID: 0}
   notificationText: {fileID: 0}
   messageText: {fileID: 8744779195704895025, guid: 45c7836c73b1e4644bfa876cd86c5bd8, type: 3}
   isActive: 0

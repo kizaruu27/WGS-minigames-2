@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class M2_LeaveRoom : MonoBehaviour
 {
+    public string targetScene;
+    
     public void LeaveRoom()
     {
         PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene("WGS2_Lobby");
+        SceneManager.LoadScene(targetScene);
     }
 }

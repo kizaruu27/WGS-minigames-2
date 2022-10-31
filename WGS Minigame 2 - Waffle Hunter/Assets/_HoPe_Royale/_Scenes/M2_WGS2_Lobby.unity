@@ -5133,8 +5133,8 @@ MonoBehaviour:
   DisplayAvaParent: {fileID: 1832513868}
   AvaToggleGroup: {fileID: 1730162216}
   sceneName:
-  - WGS3_MainGame 1
-  - WGS3_MainGame 2
+  - M2_WGS3_MainGame 1
+  - M2_WGS3_MainGame 2
   playersList: []
 --- !u!4 &1522020811
 Transform:

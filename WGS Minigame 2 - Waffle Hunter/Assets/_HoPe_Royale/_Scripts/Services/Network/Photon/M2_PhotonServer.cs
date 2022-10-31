@@ -41,7 +41,7 @@ namespace RoyaleMinigames.Services.Photon
             if (!httpManager.enabled)
             {
                 Destroy(httpManager.gameObject);
-                SceneManager.LoadScene("WGS2_Lobby");
+                SceneManager.LoadScene("M2_WGS2_Lobby");
             }
 
         }

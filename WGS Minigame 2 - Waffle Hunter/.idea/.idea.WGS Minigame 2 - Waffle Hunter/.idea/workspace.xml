@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3d15c74-63d5-4323-9b4c-1adf7a0408d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WGS Minigame 2 - Waffle Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/Character 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/Resources/Character 2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/M2_ItemTimerUIHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Items/Item Time/M2_ItemTimerUIHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_GameFlowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Main Menu Script/M2_GameFlowManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_InGameTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Timer/M2_InGameTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/M2_RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Manager/Room Matchmaking/M2_RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS1_Login.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS1_Login.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS2_Lobby.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS2_Lobby.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scenes/WGS3_MainGame 2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/Services/Network/Photon/M2_PhotonServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/M2_HttpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_HoPe_Royale/_Scripts/_Multiplayer/Controller/Network/M2_HttpManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +107,7 @@
       <workItem from="1664162757551" duration="2797000" />
       <workItem from="1666599174358" duration="3428000" />
       <workItem from="1666604863300" duration="1292000" />
-      <workItem from="1667196474198" duration="3606000" />
+      <workItem from="1667196474198" duration="3947000" />
     </task>
     <servers />
   </component>
